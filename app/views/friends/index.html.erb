@@ -1,0 +1,17 @@
+
+
+<div class="container">
+  <h1>My Friends:</h1>
+  <%= link_to "New friend", new_friend_path, class: "button-home" %>
+
+  <div class="row">
+    <% @friends.each do |friend| %>
+      <div class="col-xs-6 col-sm-4">
+        <%= link_to friend.name , friend_path(friend.id) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+

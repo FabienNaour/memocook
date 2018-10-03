@@ -1,0 +1,13 @@
+
+
+
+<div class="container">
+  <%= @friend.name %>
+  <div class="row">
+    <% @friend.recipes.each do |recipe| %>
+      <div class="col-xs-6 col-sm-4">
+        <%= recipe.name  %>
+      </div>
+    <% end %>
+  </div>
+</div>

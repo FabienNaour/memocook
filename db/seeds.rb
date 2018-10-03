@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "destruction des tables users, recipes, friends, receptions"
 
+Reception.destroy_all
 User.destroy_all
 Recipe.destroy_all
 Friend.destroy_all
-Reception.destroy_all
+
 
 puts " lancement des seeds"
 
@@ -19,21 +20,92 @@ user1 = User.create(
     password: 'password',
     password_confirmation: 'password'
   )
-recipe1 = Recipe.create(
-    name: "Choucroute" ,
+
+recipe11 = Recipe.create(
+    name: "Choucroute user1" ,
     link: "" ,
-    description: "description complete de la choucroute" ,
+    description: "description complete de la choucroute user1" ,
     user: user1
   )
-friend1 = Friend.create(
-    name: "Ugo et Magali" ,
+recipe12 = Recipe.create(
+    name: "Poulet citron user1" ,
+    link: "" ,
+    description: "description complete du poulet au citron user1" ,
+    user: user1
+  )
+friend11 = Friend.create(
+    name: "Ugo et Magali user1" ,
     email: 'ugo@gmail.com',
     telephone: "0622456789" ,
     user: user1
   )
-reception1 = Reception.create(
+friend12 = Friend.create(
+    name: "Tonio et Fatou user1" ,
+    email: 'tonio@gmail.com',
+    telephone: "0622456789" ,
+    user: user1
+  )
+friend13 = Friend.create(
+    name: "Marie et Loic user1" ,
+    email: 'marie@gmail.com',
+    telephone: "0622456789" ,
+    user: user1
+  )
+reception11 = Reception.create(
     date: DateTime.new(2018,2,3),
-    friend: friend1 ,
-    recipe: recipe1
+    friend: friend11 ,
+    recipe: recipe11
+  )
+reception12 = Reception.create(
+    date: DateTime.new(2018,2,3),
+    friend: friend11 ,
+    recipe: recipe12
+  )
+
+
+user2 = User.create(
+    email: 'user2@gmail.com',
+    password: 'password',
+    password_confirmation: 'password'
+  )
+recipe21 = Recipe.create(
+    name: "Choucroute user2" ,
+    link: "" ,
+    description: "description complete de la choucroute user2" ,
+    user: user2
+  )
+recipe22 = Recipe.create(
+    name: "Poulet citron user2" ,
+    link: "" ,
+    description: "description complete du poulet au citron user2" ,
+    user: user2
+  )
+friend21 = Friend.create(
+    name: "Ugo et Magali user2" ,
+    email: 'ugo@gmail.com',
+    telephone: "0622456789" ,
+    user: user2
+  )
+friend22 = Friend.create(
+    name: "Tonio et Fatou user2" ,
+    email: 'tonio@gmail.com',
+    telephone: "0622456789" ,
+    user: user2
+  )
+friend23 = Friend.create(
+    name: "Marie et Loic user2" ,
+    email: 'marie@gmail.com',
+    telephone: "0622456789" ,
+    user: user2
+  )
+reception21 = Reception.create(
+    date: DateTime.new(2018,2,3),
+    friend: friend21 ,
+    recipe: recipe21
+  )
+reception22 = Reception.create(
+    date: DateTime.new(2018,2,3),
+    friend: friend21 ,
+    recipe: recipe22
   )
 puts "seeds terminés"

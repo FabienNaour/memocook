@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <div class="container">
+    <div class="banner-content">
+      <% if !user_signed_in? %>
+        <h1>MemoCook</h1>
+        <h2>Never cook twice the same recipe for your friends and family </h2>
+      <% else %>
+       <!--  <a class="button-home btn-lg">My Friends</a> -->
+
+        <%= link_to "My Friends", friends_path, class: "button-home btn-lg" %>
+        <%= link_to "My Recipes", friends_path, class: "button-home btn-lg" %>
+
+      <% end %>
+
+   </div>
+  </div>
+</div>
+
+
+
