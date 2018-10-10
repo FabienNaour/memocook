@@ -1,6 +1,10 @@
 class FriendsController < ApplicationController
   def show
     @friend = Friend.find(params[:id])
+
+    @receptions = Reception.where(friend_id: @friend).all.order(:date)
+
+
   end
 
   def index

@@ -1,3 +1,5 @@
+<% content_for :home_navbar, render('shared/home-navbar') %>
+
 <div class="banner">
   <div class="container">
     <div class="banner-content">
@@ -5,13 +7,25 @@
         <h1>MemoCook</h1>
         <h2>Never cook twice the same recipe for your friends and family </h2>
       <% else %>
-       <!--  <a class="button-home btn-lg">My Friends</a> -->
 
-        <%= link_to "My Friends", friends_path, class: "button-home btn-lg" %>
-        <%= link_to "My Recipes", friends_path, class: "button-home btn-lg" %>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+           <div class="icons-size">
+            <%= link_to  friends_path, class: "button-home " do %>
+              <i class="fas fa-user-friends"></i>   My Friends
+            <% end %>
+           </div>
+          </div>
 
+          <div class="col-xs-12 col-sm-6">
+           <div class="icons-size">
+            <%= link_to  friends_path, class: "button-home " do %>
+              <i class="fas fa-utensils"></i>   My Recipes
+            <% end %>
+           </div>
+          </div>
+        </div>
       <% end %>
-
    </div>
   </div>
 </div>

@@ -1,13 +1,38 @@
-
-
-
 <div class="container">
-  <%= @friend.name %>
-  <div class="row">
-    <% @friend.recipes.each do |recipe| %>
-      <div class="col-xs-6 col-sm-4">
-        <%= recipe.name  %>
+  <div class="text-white">
+
+
+    <div class="row">
+      <div class="col-xs-2 col-sm-2">
+        <div class="arrow-return">
+          <%= link_to friends_path, class: "button-memo " do %>
+            <i class="fas fa-angle-double-left"></i>
+          <% end %>
+        </div>
       </div>
-    <% end %>
+      <div class="col-xs-10 col-sm-10">
+        <h2>Recipes for <%= @friend.name %></h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <% @receptions.each do |reception| %>
+      <%= render 'partials/recipe', reception: reception %>
+        <div class="col-xs-12 col-sm-4">
+          <a data-toggle="modal" href="#myModal<%= reception.id %>">
+           <div class="card">
+              <div class="card-category">
+                 <%= reception.date.strftime(" %e %b %Y")  %>
+              </div>
+              <div class="card-description">
+                <h2><%= reception.recipe.name  %></h2>
+              </div>
+           </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
+

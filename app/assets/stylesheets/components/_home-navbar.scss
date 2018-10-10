@@ -1,89 +1,86 @@
-
 /* Main navbar */
-.navbar-wagon {
+.home-navbar-wagon {
   transition: all 0.2s ease;
   height: 60px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.navbar-background {
-  background-color: white;
+  background: linear-gradient(180deg, #F90D0E, #F80C0D);;
 }
 
 /* Logo */
-.navbar-wagon-brand {
+.home-navbar-wagon-brand {
   font-family: 'Maven Pro', sans-serif;
   font-size: 24px;
-  color: #FF0000;
+  color: white;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
-.navbar-wagon-brand:hover {
-  text-decoration: none;
-  color: #FF0000;
+.home-navbar-wagon-brand:hover {
+  text-decoration:none;
+  color: white;
   opacity: 0.5;
 }
-.navbar-wagon-brand:active {
-  text-decoration: none;
-  color: #FF0000;
+
+.home-navbar-wagon-brand:active {
+  text-decoration:none;
+  color: white;
 }
 
 /* User Avatar */
-.navbar-wagon .avatar {
+.home-navbar-wagon .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
 }
 
 /* Right section */
-.navbar-wagon-right {
+.home-navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Basic navbar item */
-.navbar-wagon-item {
+/* Basic home-navbar item */
+.home-navbar-wagon-item {
   cursor: pointer;
   padding-left: 20px;
 }
 
-/* Navbar link */
-.navbar-wagon-link {
-  color: #FF0000;
+/* home-Navbar link */
+.home-navbar-wagon-link {
+  color: white;
   font-weight: 300;
   font-size: 17px;
   transition: all 0.2s ease;
 }
-.navbar-wagon-link:hover {
-  color: #FF0000;
+.home-navbar-wagon-link:hover {
+  color: white;
   opacity: 0.5;
   text-decoration: none;
 }
 
 /* Dropdown menu */
-.dropdown-toggle {
-  color: #FF0000;
+.home-dropdown-toggle {
+  color: white;
   :hover {
     text-decoration:none;
-    color: #FF0000;
+    color: white;
     opacity: 0.5;
   }
   :active {
-    color: #FF0000;
+    color: white;
   }
 }
 
-.navbar-wagon-dropdown-menu {
+.home-navbar-wagon-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px rgba(0,0,0, 0.3);
   border-color: #E6E6E6;
 }
-.navbar-wagon-dropdown-menu li > a {
+.home-navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: #999999 !important;
@@ -91,11 +88,11 @@
   line-height: 22px !important;
   padding: 10px 20px;
 }
-.navbar-wagon-dropdown-menu li > a:hover {
+.home-navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
   color: black !important;
 }
-.navbar-wagon-dropdown-menu:before {
+.home-navbar-wagon-dropdown-menu:before {
   content: ' ';
   height: 10px;
   width: 10px;

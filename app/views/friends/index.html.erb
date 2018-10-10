@@ -1,17 +1,30 @@
 
-
 <div class="container">
-  <h1>My Friends:</h1>
-  <%= link_to "New friend", new_friend_path, class: "button-home" %>
+
+   <div class="row">
+      <div class="col-xs-2 col-md-1">
+        <div class="icons-size">
+          <%= link_to root_path, class: "button-memo " do %>
+          <i class="fas fa-angle-double-left"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-xs-10 col-md-8">
+        <%= link_to  new_friend_path, class: "button-memo " do %>
+          <i class="fas fa-user-plus"></i> Add a friend
+        <% end %>
+      </div>
+    </div>
 
   <div class="row">
     <% @friends.each do |friend| %>
-      <div class="col-xs-6 col-sm-4">
-        <%= link_to friend.name , friend_path(friend.id) %>
-      </div>
+    <div class="col-xs-12 col-sm-4 ">
+        <%= link_to friend.name , friend_path(friend.id) , class: "button-friends "%>
+    </div>
     <% end %>
   </div>
 </div>
+
 
 
 
