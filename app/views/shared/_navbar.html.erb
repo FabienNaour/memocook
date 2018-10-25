@@ -6,13 +6,19 @@
       <%= image_tag "saucepanred.png", height: 50 %>
     <% end %>
 
+   <% if user_signed_in? %>
+      <div class="navbar-wagon-logo">
+        <h3>Memo<strong>Cook</strong></h3>
+      </div>
+    <% end %>
+
 
     <!-- Right Navigation -->
     <div class="navbar-wagon-right hidden-xs hidden-sm">
 
       <% if user_signed_in? %>
 
-        <!-- Avatar with dropdown menu -->
+
         <div class="navbar-wagon-item">
           <div class="dropdown">
             <%= link_to "#", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" do %>

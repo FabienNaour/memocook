@@ -4,6 +4,11 @@
       <%= image_tag "saucepanwhite.png", height: 50 %>
     <% end %>
 
+   <% if user_signed_in? %>
+      <div class="home-navbar-wagon-logo">
+        <h3>Memo<strong>Cook</strong></h3>
+      </div>
+    <% end %>
   <!-- Right Navigation -->
   <div class="home-navbar-wagon-right hidden-xs hidden-sm">
 
@@ -31,6 +36,8 @@
         </div>
       </div>
     <% else %>
+
+
       <!-- Login link (when logged out) -->
       <%= link_to new_user_session_path, class: "home-navbar-wagon-item home-navbar-wagon-link" do %>
         <%= t(".sign_in", default: "Login") %>

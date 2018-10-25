@@ -3,7 +3,7 @@
     font-size: 30px;
     font-weight: 300;
     line-height: 1.3333333;
-    border-radius: 5px;
+    border-radius: 200px;
     display: inline-block;
     margin-top: 10px;
     text-align: center;
@@ -24,7 +24,7 @@
 }
 
 .button-friends {
-    width: 370px;
+    width: 350px;
     height: 70px;
     padding: 15px 10px;
     font-size: 30px;
@@ -90,7 +90,9 @@ a.button-custo {
 }
 
 .button-memo {
-  padding: 20px 10px;
+  width: 374px;
+  height: 70px;
+  padding: 17px 17px;
   font-size: 30px;
   font-weight: 300;
   line-height: 1.3333333;
@@ -108,10 +110,16 @@ a.button-custo {
   font-family: 'Maven Pro', sans-serif;
 }
 
-.button-memo-width {
-  width: 370px;
+.button-fleche-width {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px
 }
-
+.button-add-recipe-width {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px
+}
 .button-memo:hover {
   text-decoration: none;
   color: black;

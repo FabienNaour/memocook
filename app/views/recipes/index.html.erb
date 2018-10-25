@@ -1,20 +1,17 @@
-
-
-
 <div class="container ">
   <div class="row">
 
-    <div class="col-xs-12  col-sm-offset-4 col-sm-4 ">
-      <%= link_to new_friend_path, class: "button-memo " do %>
-      <i class="fas fa-user-plus"></i> Add a friend
+    <div class="col-xs-12 col-sm-offset-4 col-sm-6 ">
+      <%= link_to  new_recipe_path, class: "button-memo " do %>
+      <i class="fas fa-utensils"></i>  Add a recipe
       <% end %>
     </div>
   </div>
   <div class="div cadre">
     <div class="row">
-      <% @friends.each do |friend| %>
-      <div class="col-xs-12 col-sm-6  col-lg-4">
-        <%= link_to friend.name , friend_path(friend.id) , class: "button-friends "%>
+      <% @recipes.each do |recipe| %>
+      <div class="col-xs-12 col-sm-6 col-lg-4">
+        <%= link_to recipe.name , recipe_path(recipe.id) , class: "button-friends "%>
       </div>
       <% end %>
     </div>
@@ -30,6 +27,3 @@
     </div>
   </div>
 </div>
-
-
-

@@ -23,25 +23,25 @@ user1 = User.create(
 
 recipe11 = Recipe.create(
     name: "Choucroute user1" ,
-    link: "" ,
+    link: "https://www.marmiton.org/recettes/recette_choucroute_20312.aspx" ,
     description: "description complete de la choucroute " ,
     user: user1
   )
 recipe12 = Recipe.create(
     name: "Poulet citron user1" ,
-    link: "" ,
+    link: "https://www.marmiton.org/recettes/recette_poulet-a-la-coriandre-et-citron-vert_166524.aspx" ,
     description: "description complete du poulet au citron usr1, 1. acheter un beau poulet 2. le deplumer 3. le couper 4. le faire cuire casserole 4. ajouter sel et poivre 5. mijoter 20minutes" ,
     user: user1
   )
 recipe13 = Recipe.create(
     name: "Cabillaud purée user1" ,
-    link: "" ,
+    link: "https://www.marmiton.org/recettes/recette_dos-de-cabillaud-tout-simple_72532.aspx" ,
     description: "description complete du cabillaud purée " ,
     user: user1
   )
 recipe14 = Recipe.create(
     name: "Moule frite user1" ,
-    link: "" ,
+    link: "https://www.marmiton.org/recettes/recette_moules-frites-et-non-avec-des-pommes-frites_332938.aspx" ,
     description: "description complete Moule frite " ,
     user: user1
   )

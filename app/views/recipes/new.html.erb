@@ -1,0 +1,34 @@
+<div class="container">
+
+
+    <div class="form-input">
+      <%= simple_form_for @recipe, url: suggestions_recipes_path, method: :get do |f| %>
+      <h3>Search for a new recipe</h3>
+      <div class="form-cells">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+            <%= f.input :name, required: true, autofocus: true , label: "Name"%>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+            <%= f.submit "Valider", class: "button-custo " %>
+          </div>
+        </div>
+        <% end %>
+
+        <div class="row">
+          <div class="col-xs-2 col-md-1">
+            <div class="icons-size">
+              <%= link_to :back, class: "button-memo button-fleche-width  " do %>
+              <i class="fas fa-angle-double-left"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+  </div>
+
