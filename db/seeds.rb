@@ -102,32 +102,32 @@ recipe22 = Recipe.create(
     description: "description complete du poulet au citron user2" ,
     user: user2
   )
-friend21 = Friend.create(
-    name: "Ugo et Magali user2" ,
-    email: 'ugo@gmail.com',
-    telephone: "0622456789" ,
-    user: user2
-  )
-friend22 = Friend.create(
-    name: "Tonio et Fatou user2" ,
-    email: 'tonio@gmail.com',
-    telephone: "0622456789" ,
-    user: user2
-  )
-friend23 = Friend.create(
-    name: "Marie et Loic user2" ,
-    email: 'marie@gmail.com',
-    telephone: "0622456789" ,
-    user: user2
-  )
-reception21 = Reception.create(
-    date: DateTime.new(2018,2,3),
-    friend: friend21 ,
-    recipe: recipe21
-  )
-reception22 = Reception.create(
-    date: DateTime.new(2018,2,3),
-    friend: friend21 ,
-    recipe: recipe22
-  )
+# friend21 = Friend.create(
+#     name: "Ugo et Magali user2" ,
+#     email: 'ugo@gmail.com',
+#     telephone: "0622456789" ,
+#     user: user2
+#   )
+# friend22 = Friend.create(
+#     name: "Tonio et Fatou user2" ,
+#     email: 'tonio@gmail.com',
+#     telephone: "0622456789" ,
+#     user: user2
+#   )
+# friend23 = Friend.create(
+#     name: "Marie et Loic user2" ,
+#     email: 'marie@gmail.com',
+#     telephone: "0622456789" ,
+#     user: user2
+#   )
+# reception21 = Reception.create(
+#     date: DateTime.new(2018,2,3),
+#     friend: friend21 ,
+#     recipe: recipe21
+#   )
+# reception22 = Reception.create(
+#     date: DateTime.new(2018,2,3),
+#     friend: friend21 ,
+#     recipe: recipe22
+#   )
 puts "seeds terminés"
