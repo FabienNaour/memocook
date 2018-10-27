@@ -2,28 +2,32 @@
   <div class="div cadre">
     <div class="row">
       <% @suggestions.each do |suggestion| %>
+
+        <%= render 'partials/modal-recipe', :variable_name => suggestion %>
+
+
+
+
+
       <div class="col-xs-12 col-sm-6 col-lg-4">
         <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=suggestion[:picture]%>');">
-          <div class="card-category">Marmiton</div>
+          <div class="card-category-brand">Marmiton</div>
           <div class="card-description-recipe">
             <h2><%= suggestion[:title] %></h2>
-            <!--        <%= suggestion[:link] %>
-            -->
           </div>
-          <!--           <a class="card-link" href="#" ></a>
-          -->
-          <%= link_to recipes_path, class: " btn-medium card-button-recipe-visualize " do %>
+           <%= link_to recipes_path, class: " btn-medium card-button-recipe-visualize " do %>
           <i class="far fa-eye"></i>
           <% end %>
+          <button type="button" class="btn-medium card-button-recipe-visualize" data-toggle="modal" data-target="#myModal">
+            <i class="far fa-eye"></i>
+          </button>
           <%= link_to recipes_path, class: " btn-medium card-button-recipe-add " do %>
           <i class="fas fa-plus"></i>
           <% end %>
         </div>
-        <!--                <iframe
-        src="#{<%= suggestion[:link] %>}" width="100%" height="100px" >
-        -->
       </div>
       <% end %>
+
     </div>
   </div>
   <div class="row">
@@ -37,6 +41,5 @@
   </div>
 </div>
 
-<%#{suggestion[:picture]}%>
 
 

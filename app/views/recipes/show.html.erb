@@ -1,20 +1,47 @@
 
-<div class="container ">
+<div class="container">
   <div class="row">
-    <div class="col-xs-2 col-md-1">
-      <div class="icons-size">
-        <%= link_to :back, class: "button-memo button-fleche-width  " do %>
-        <i class="fas fa-angle-double-left"></i>
-        <% end %>
-      </div>
+    <div class="col-xs-12 col-md-12">
+
+        <span class="icons-size">
+          <%= link_to :back, class: "button-memo button-fleche-width  " do %>
+          <i class="fas fa-angle-double-left"></i>
+          <% end %></span>
+         <span class="font30px"><%= @recipe.name%> </span>
+
     </div>
   </div>
+</div>
 
- <iframe src="<%= @recipe.link%>" height="600" width= 100% > </iframe>
-<!-- <iframe src="https://www.750g.com/mousse-au-chocolat-incroyable-r99153.htm
-" height="600" width= 100% > </iframe> -->
-<!-- css media query
-ou
-boot strap iframe modal ... -->
 
+
+<!-- AFFICHAGE VIDEO YOUTUBE ok il faut embed
+ -->
+<!--  <div class="col-xs-12 ">
+  <div class="video-wrapper">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/1b99rSw2g_0" width="800" height="448" frameborder="0"></iframe>
+    </div>
+  </div>
  </div>
+</div> -->
+
+
+
+<!-- Affichage Website -->
+<!-- Affichage Mobile -->
+<!--  ou Affichage desktop -->
+
+<div class="iframerecipe">
+
+  <iframe class="mobile" height="100%" width="100%" scrolling="no" src="<%= @recipe.link%>"></iframe>
+
+  <iframe class="desktop" height="1000" width="100%" scrolling="yes" src="<%= @recipe.link%>"></iframe>
+</div>
+
+
+
+
+
+
+

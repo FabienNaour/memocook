@@ -11,7 +11,10 @@
     <div class="row">
       <% @recipes.each do |recipe| %>
       <div class="col-xs-12 col-sm-6 col-lg-4">
+<!--         <%= link_to recipe.name , recipe_path(recipe.id) , class: "button-friends "%>
+ -->
         <%= link_to recipe.name , recipe_path(recipe.id) , class: "button-friends "%>
+
       </div>
       <% end %>
     </div>
