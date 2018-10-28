@@ -62,7 +62,7 @@ def suggestions
    end
    index_recipes += 12
 
-   boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 5 ))
+   boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 1 ))
 
   end
   # FIN MARMITON
