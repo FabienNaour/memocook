@@ -1,24 +1,52 @@
 <div class="container ">
   <div class="row">
-
     <div class="col-xs-12 col-sm-offset-4 col-sm-6 ">
       <%= link_to  new_recipe_path, class: "button-memo " do %>
-      <i class="fas fa-utensils"></i>  Add a recipe
+      <i class="fas fa-utensils"></i>  Search new recipe
       <% end %>
     </div>
   </div>
+
+
+
   <div class="div cadre">
     <div class="row">
       <% @recipes.each do |recipe| %>
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-<!--         <%= link_to recipe.name , recipe_path(recipe.id) , class: "button-friends "%>
- -->
-        <%= link_to recipe.name , recipe_path(recipe.id) , class: "button-friends "%>
+      <%= render 'partials/recipe-from-list', recipe: recipe %>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <a data-toggle="modal" href="#myModal<%= recipe.id %>">
 
+            <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=recipe.image %>');">
+
+              <div class="card-description">
+                <h2><%= recipe.name  %></h2>
+              </div>
+
+              <div class="card-user">
+                <% if recipe.logo == "M"%>
+                  <%= image_tag "marmiton.png", height: 30 %>
+                <% else %>
+                  <%= image_tag "750g.png", height: 20 %>
+                <% end %>
+              </div>
+
+
+            </div>
+          </a>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+<!--   <div class="div cadre">
+    <div class="row">
+      <% @recipes.each do |recipe| %>
+      <div class="col-xs-12 col-sm-6 col-lg-4">
+        <%= link_to recipe.name , recipe_path(recipe.id) , class: "button-friends "  %>
       </div>
       <% end %>
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col-xs-2 col-md-1">
@@ -30,3 +58,8 @@
     </div>
   </div>
 </div>
+
+
+
+
+

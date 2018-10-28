@@ -22,27 +22,43 @@ user1 = User.create(
   )
 
 recipe11 = Recipe.create(
-    name: "Choucroute user1" ,
+    name: "Choucroute" ,
+    logo: "M",
     link: "https://www.marmiton.org/recettes/recette_choucroute_20312.aspx" ,
     description: "description complete de la choucroute " ,
+    image: "https://images.marmitoncdn.org/recipephotos/multiphoto/8c/8c447c04-7792-45e4-91ca-9f5761a7e6cc_w350h250c1.jpg",
     user: user1
   )
 recipe12 = Recipe.create(
-    name: "Poulet citron user1" ,
+    name: "Poulet citron" ,
+    logo: "M",
     link: "https://www.marmiton.org/recettes/recette_poulet-a-la-coriandre-et-citron-vert_166524.aspx" ,
     description: "description complete du poulet au citron usr1, 1. acheter un beau poulet 2. le deplumer 3. le couper 4. le faire cuire casserole 4. ajouter sel et poivre 5. mijoter 20minutes" ,
+    image: "https://images.marmitoncdn.org/recipephotos/multiphoto/88/88cd2ecb-1bda-4570-98ee-a64082ffe973_w350h250c1.jpg",
     user: user1
   )
 recipe13 = Recipe.create(
-    name: "Cabillaud purée user1" ,
+    name: "Cabillaud purée" ,
+    logo: "M",
     link: "https://www.marmiton.org/recettes/recette_dos-de-cabillaud-tout-simple_72532.aspx" ,
     description: "description complete du cabillaud purée " ,
+    image: "https://images.marmitoncdn.org/recipephotos/multiphoto/a9/a927e657-825f-49b8-8dfa-7585a8b8fa7b_w350h250c1.jpg",
     user: user1
   )
 recipe14 = Recipe.create(
-    name: "Moule frite user1" ,
+    name: "Moule frite" ,
+    logo: "M",
     link: "https://www.marmiton.org/recettes/recette_moules-frites-et-non-avec-des-pommes-frites_332938.aspx" ,
     description: "description complete Moule frite " ,
+    image: "https://images.marmitoncdn.org/recipephotos/multiphoto/0c/0c3fc5cf-6f24-4692-8c43-a62661293439_w350h250c1.jpg",
+    user: user1
+  )
+recipe15 = Recipe.create(
+    name: "Pizza royale" ,
+    logo: "750",
+    link: "https://www.750g.com/pizza-royale-au-barbecue-r75180.htm" ,
+    description: "description complete Pizza " ,
+    image: "https://static.750g.com/images/622-auto/b4d093dd2bffa8972341596dfc693999/pizza-royale-au-barbecue.jpeg",
     user: user1
   )
 friend11 = Friend.create(
@@ -84,6 +100,11 @@ reception14 = Reception.create(
     date: DateTime.new(2018,1,3),
     friend: friend11 ,
     recipe: recipe14
+  )
+reception15 = Reception.create(
+    date: DateTime.new(2018,2,2),
+    friend: friend11 ,
+    recipe: recipe15
   )
 user2 = User.create(
     email: 'user2@gmail.com',

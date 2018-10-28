@@ -30,10 +30,11 @@
 }
 .card-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 2px;
+  right: 2px;
   font-size: 15px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 .card-category-brand {
   position: absolute;
@@ -56,15 +57,16 @@
   left: 10px;
 }
 .card-description-recipe h2 {
-  font-size: 19px;
+  font-size: 30px;
   font-weight: 300;
   line-height: 1;
   text-align: left;
   vertical-align: middle;
   color: white;
+  margin-top: 17px;
 }
 .card-description h2 {
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 300;
   line-height: 1;
   text-align: left;
@@ -77,18 +79,21 @@
 }
 .card-user {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  left: 2px;
+  top: 2px;
   width: 40px;
   border-radius: 50%;
 }
 .card-button-recipe-add {
   position: absolute;
-  right: 10px;
+  right: 2px;
   top: 2px;
-  width: 50px;
-
+  width: 40px;
+  border-radius: 50%;
 }
+
+
+
 .card-button-recipe-visualize {
   position: absolute;
   right: 90px;

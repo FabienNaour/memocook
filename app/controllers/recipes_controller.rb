@@ -17,6 +17,7 @@ end
 def create
   @recipe = Recipe.new(recipes_params)
   @recipe.user = current_user
+  raise
   if @recipe.save
   redirect_to recipes_path
   else
@@ -30,10 +31,12 @@ def open_file(url)
 end
 
 def suggestions
+
+  @recipe = Recipe.new
   # DEBUT MARMITON
   require 'open-uri'
-  @ingredient = params[:recipe][:name]
-  url = "https://www.marmiton.org/recettes/recherche.aspx?type=all&aqt=#{@ingredient}"
+  @search_recipe = params[:recipe][:name]
+  url = "https://www.marmiton.org/recettes/recherche.aspx?type=all&aqt=#{@search_recipe}"
   html_doc = open_file(url)
 
   # on recupere le Nb de recettes à parser
@@ -47,7 +50,7 @@ def suggestions
    @suggestions = []
    while (boucle)
 
-    url = "https://www.marmiton.org/recettes/recherche.aspx?type=all&aqt=#{@ingredient}"+"&start=#{index_recipes}"
+    url = "https://www.marmiton.org/recettes/recherche.aspx?type=all&aqt=#{@search_recipe}"+"&start=#{index_recipes}"
     html_doc = open_file(url)
 
     html_doc.search('.recipe-card-link').each do |element|
@@ -55,8 +58,10 @@ def suggestions
       if (element.search('.recipe-card__rating')[0] != nil)
         @suggestions << {
         link: element.attribute('href').value,
-        title: element.search('.recipe-card__title')[0].text.strip,
-        picture: element.search('.recipe-card__picture img').attribute('src').value
+        name: element.search('.recipe-card__title')[0].text.strip,
+        picture: element.search('.recipe-card__picture img').attribute('src').value,
+        logo: "M"
+
         }
       end
    end
