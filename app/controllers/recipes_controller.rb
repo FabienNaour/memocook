@@ -16,8 +16,9 @@ end
 
 def create
   @recipe = Recipe.new(recipes_params)
-  @recipe.user = current_user
   raise
+  @recipe.user = current_user
+
   if @recipe.save
   redirect_to recipes_path
   else
@@ -32,46 +33,51 @@ end
 
 def suggestions
 
-  @recipe = Recipe.new
+
   # DEBUT MARMITON
   require 'open-uri'
   @search_recipe = params[:recipe][:name]
-  url = "https://www.marmiton.org/recettes/recherche.aspx?type=all&aqt=#{@search_recipe}"
-  html_doc = open_file(url)
 
-  # on recupere le Nb de recettes à parser
-  nb_recipes = 0
-  nb_recipes = html_doc.search('.recipe-search__nb-results')[0].text.split[0].to_i
- # raise
-
-   # boucle sur chaque page
-   boucle = true
-   index_recipes = 0
-   @suggestions = []
-   while (boucle)
-
-    url = "https://www.marmiton.org/recettes/recherche.aspx?type=all&aqt=#{@search_recipe}"+"&start=#{index_recipes}"
+  if @search_recipe == ""
+    @recipe = Recipe.new
+    render :new
+  else
+    url = "https://www.marmiton.org/recettes/recherche.aspx?type=all&aqt=#{@search_recipe}"
     html_doc = open_file(url)
 
-    html_doc.search('.recipe-card-link').each do |element|
-      # on ne selectinne que les fiches (donc recettes) qui sont notées
-      if (element.search('.recipe-card__rating')[0] != nil)
-        @suggestions << {
-        link: element.attribute('href').value,
-        name: element.search('.recipe-card__title')[0].text.strip,
-        picture: element.search('.recipe-card__picture img').attribute('src').value,
-        logo: "M"
+    # on recupere le Nb de recettes à parser
+    nb_recipes = 0
+    nb_recipes = html_doc.search('.recipe-search__nb-results')[0].text.split[0].to_i
+   # raise
 
-        }
-      end
-   end
-   index_recipes += 12
+     # boucle sur chaque page
+     boucle = true
+     index_recipes = 0
+     @suggestions = []
+     while (boucle)
 
-   boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 1 ))
+      url = "https://www.marmiton.org/recettes/recherche.aspx?type=all&aqt=#{@search_recipe}"+"&start=#{index_recipes}"
+      html_doc = open_file(url)
 
-  end
+      html_doc.search('.recipe-card-link').each do |element|
+        # on ne selectinne que les fiches (donc recettes) qui sont notées
+        if (element.search('.recipe-card__rating')[0] != nil)
+          @suggestions << {
+          link: element.attribute('href').value,
+          name: element.search('.recipe-card__title')[0].text.strip,
+          picture: element.search('.recipe-card__picture img').attribute('src').value,
+          logo: "M"
+
+          }
+        end
+     end
+     index_recipes += 12
+
+     boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 1 ))
+
+    end
   # FIN MARMITON
-
+ end
 end
 
   private

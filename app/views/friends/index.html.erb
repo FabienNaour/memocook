@@ -10,16 +10,29 @@
       <% end %>
     </div>
   </div>
-  <div class="div cadre">
-    <div class="row">
-      <% @friends.each do |friend| %>
-      <div class="col-xs-12 col-sm-6  col-lg-4">
-        <%= link_to friend.name , friend_path(friend.id) , class: "button-friends "%>
-      </div>
-      <% end %>
-    </div>
-  </div>
 
+
+
+
+
+  <% if @friends.length == 0 %>
+    <div class="text-white">It's time to test Memo<strong>Cook</strong> ! Register your first friend</div>
+    <% else %>
+      <div class="div cadre">
+        <div class="row">
+          <% @friends.each do |friend| %>
+          <div class="col-xs-12 col-sm-6  col-lg-4">
+            <%= link_to friend.name , friend_path(friend.id) , class: "button-friends " %>
+            <%= link_to friend_path(friend.id), method: :delete, data: { confirm: "Delete #{friend.name}?" } do %>
+            <i class="fas fa-trash" style="font-size:20px;color:white"></i>
+            <% end %>
+          </div>
+
+
+          <% end %>
+        </div>
+      </div>
+  <% end %>
   <div class="row">
     <div class="col-xs-2 col-md-1">
       <div class="icons-size">
