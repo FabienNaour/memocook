@@ -1,16 +1,17 @@
 <div class="container">
+
     <% if @receptions.length == 0 %>
-    <div class="text-white">No recipes ... you should invite <%= @friend.name %> ;-)</div>
+    <div class="text-white">No recipes yet ... you should organize a dinner with  <%= @friend.name %> ;-)</div>
     <% else %>
-    <h2>Recipes for <%= @friend.name %></h2>
+
+    <div class="text-white-titre"> <h2>Recipes for <%= @friend.name %></h2></div>
     <div class="div cadre">
       <div class="row">
         <% @receptions.each do |reception| %>
+
         <%= render 'partials/recipe', reception: reception %>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
           <a data-toggle="modal" href="#myModal<%= reception.id %>">
-            <!--             <div class="card">
-              -->
               <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=reception.recipe.image %>');">
                 <div class="card-category">
                   <%= reception.date.strftime(" %e %b %Y")  %>
@@ -31,8 +32,9 @@
           <% end %>
         </div>
       </div>
-    </div>
+
     <% end %>
+
     <div class="row">
       <div class="col-xs-2 col-md-1">
         <div class="arrow-return">
@@ -41,4 +43,6 @@
           <% end %>
         </div>
       </div>
-  </div>
+    </div>
+
+</div>

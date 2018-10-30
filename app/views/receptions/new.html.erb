@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <div class="form-input">
+      <%= simple_form_for @reception do |f| %>
+      <h3>New reception</h3>
+      <div class="form-cells">
+        <div class="row">
+          <div class="col-xs-4 date-select">
+            <%= f.input :date, as: :date, required: true, start_year: Date.today.year ,
+            end_year: Date.today.year + 2 ,
+            order: [:day, :month, :year]  %>
+          </div>
+        </div>
+        <!--          <div class="row">
+          <div class="col-xs-4">
+            <%= f.association :friend , as: :check_boxes, required: false%>
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="form-group ">
+            <label class="control-label check_boxes optional reception_friend">
+              My friends
+            </label>
+            <input type="hidden" name="reception[friend_id][]" value="">
+            <div class="category-choices">
+              <% Friend.all.each do |category| %>
+              <div class="col-xs-12 col-md-6">
+                <input class="hidden" type="checkbox" value="<%= category.id %>" name="reception[friend_id][]" id="reception_friend_id_<%= category.id %>">
+                <label class="category-choice" for="reception_friend_id_<%= category.id %>">
+                  <%= category.name %>
+                  <i class="fa fa-check"></i>
+                </label>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group ">
+          <label class="control-label check_boxes optional reception_recipe">
+            My recipes
+          </label>
+          <input type="hidden" name="reception[recipe_id][]" value="">
+          <div class="category-choices">
+            <% Recipe.all.each do |category| %>
+            <div class="col-xs-12 col-md-6">
+              <input class="hidden" type="checkbox" value="<%= category.id %>" name="reception[recipe_id][]" id="reception_recipe_id_<%= category.id %>">
+              <label class="category-choice" for="reception_recipe_id_<%= category.id %>">
+                <%= category.name %>
+                <i class="fa fa-check"></i>
+              </label>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+          <%= f.submit "Validate", class: "button-custo btn-block" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <div class="row">
+      <div class="col-xs-2 col-md-1">
+        <div class="icons-size">
+          <%= link_to friends_path, class: "button-memo button-fleche-width  " do %>
+          <i class="fas fa-angle-double-left"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- <fieldset class="form-group check_boxes optional reception_friend">
+<legend class="col-form-label pt-0">Friend</legend>
+<input type="hidden" name="reception[friend_id][]" value="">
+<div class="form-check">
+  <input class="form-check-input check_boxes optional" type="checkbox" value="86" name="reception[friend_id][]" id="reception_friend_id_86">
+  <label class="collection_check_boxes" for="reception_friend_id_86">Ugo et Magali </label>
+</div>
+</fieldset> -->

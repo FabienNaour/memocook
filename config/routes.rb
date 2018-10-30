@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # get 'friends/show'
   devise_for :users
   root to: 'pages#home'
+  resources :receptions, only: [:new , :create ]
   resources :friends, only: [:show , :index , :new , :create, :destroy]
   resources :recipes, only: [:show , :index , :new , :create] do
     get :suggestions, on: :collection

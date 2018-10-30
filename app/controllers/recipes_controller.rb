@@ -16,7 +16,6 @@ end
 
 def create
   @recipe = Recipe.new(recipes_params)
-  raise
   @recipe.user = current_user
 
   if @recipe.save
@@ -30,6 +29,8 @@ end
 def open_file(url)
   return Nokogiri::HTML(open(url).read)
 end
+
+
 
 def suggestions
 
@@ -47,37 +48,44 @@ def suggestions
 
     # on recupere le Nb de recettes à parser
     nb_recipes = 0
-    nb_recipes = html_doc.search('.recipe-search__nb-results')[0].text.split[0].to_i
-   # raise
 
-     # boucle sur chaque page
-     boucle = true
-     index_recipes = 0
-     @suggestions = []
-     while (boucle)
+    if (html_doc.search('.recipe-search__nb-results')[0] == nil)
+      @recipe = Recipe.new
 
-      url = "https://www.marmiton.org/recettes/recherche.aspx?type=all&aqt=#{@search_recipe}"+"&start=#{index_recipes}"
-      html_doc = open_file(url)
+      render :new
+    else
 
-      html_doc.search('.recipe-card-link').each do |element|
-        # on ne selectinne que les fiches (donc recettes) qui sont notées
-        if (element.search('.recipe-card__rating')[0] != nil)
-          @suggestions << {
-          link: element.attribute('href').value,
-          name: element.search('.recipe-card__title')[0].text.strip,
-          picture: element.search('.recipe-card__picture img').attribute('src').value,
-          logo: "M"
+        nb_recipes = html_doc.search('.recipe-search__nb-results')[0].text.split[0].to_i
 
-          }
+         # boucle sur chaque page
+         boucle = true
+         index_recipes = 0
+         @suggestions = []
+         while (boucle)
+
+          url = "https://www.marmiton.org/recettes/recherche.aspx?type=all&aqt=#{@search_recipe}"+"&start=#{index_recipes}"
+          html_doc = open_file(url)
+
+          html_doc.search('.recipe-card-link').each do |element|
+            # on ne selectinne que les fiches (donc recettes) qui sont notées
+            if (element.search('.recipe-card__rating')[0] != nil)
+              @suggestions << {
+              link: element.attribute('href').value,
+              name: element.search('.recipe-card__title')[0].text.strip,
+              picture: element.search('.recipe-card__picture img').attribute('src').value,
+              logo: "M"
+
+              }
+            end
+         end
+         index_recipes += 12
+
+         boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 1 ))
+
         end
-     end
-     index_recipes += 12
-
-     boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 1 ))
-
-    end
   # FIN MARMITON
- end
+    end
+  end
 end
 
   private

@@ -2,37 +2,34 @@
 <div class="container">
   <div class="col-xs-12 col-sm-8 col-sm-offset-2">
     <div class="form-input">
+
       <%= simple_form_for @friend do |f| %>
       <h3>New friend</h3>
       <div class="form-cells">
-
-
         <div class="row">
           <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-          <%= f.input :name, required: true, autofocus: true , label: "Name"%>
+            <%= f.input :name, required: true, autofocus: true , label: "Name"%>
           </div>
         </div>
-
-        <div class="row">
+        <!--        <div class="row">
           <div class="col-xs-12 col-sm-4 col-sm-offset-4">
             <%= f.input :email,
-                        autofocus: true , placeholder: "bob@gmail.com",
-                        input_html: { autocomplete: "Email" }%>
+            autofocus: true , placeholder: "bob@gmail.com",
+            input_html: { autocomplete: "Email" }%>
           </div>
         </div>
-
         <div class="row">
           <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-          <%= f.input :telephone, autofocus: true, placeholder: "0612345678" , label: "Phone" %>
+            <%= f.input :telephone, autofocus: true, placeholder: "0612345678" , label: "Phone" %>
           </div>
         </div>
-
+        -->
         <div class="row">
           <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-            <%= f.submit "Valider", class: "button-custo btn-block" %>
+            <%= f.submit "Validate", class: "button-custo btn-block" %>
           </div>
         </div>
-      <% end %>
+        <% end %>
 
         <div class="row">
           <div class="col-xs-2 col-md-1">
@@ -44,7 +41,7 @@
           </div>
         </div>
 
+      </div>
     </div>
   </div>
 </div>
-

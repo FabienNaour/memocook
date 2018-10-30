@@ -1,18 +1,14 @@
 
-
-
 <div class="container ">
-  <div class="row">
 
-    <div class="col-xs-12  col-sm-offset-4 col-sm-4 ">
-      <%= link_to new_friend_path, class: "button-memo " do %>
-      <i class="fas fa-user-plus"></i> Add a friend
-      <% end %>
-    </div>
+  <div class="align-buttons">
+    <div class="inner"><%= link_to new_friend_path, class: "button-memo " do %>
+          <i class="fas fa-user-plus"></i> Add a friend
+          <% end %></div>
+    <div class="inner"><%= link_to new_reception_path, class: "button-memo " do %>
+          <i class="far fa-address-card"></i> Associate a recipe
+          <% end %></div>
   </div>
-
-
-
 
 
   <% if @friends.length == 0 %>
@@ -42,6 +38,7 @@
       </div>
     </div>
   </div>
+
 </div>
 
 
