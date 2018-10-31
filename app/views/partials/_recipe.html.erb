@@ -1,29 +1,19 @@
 <!-- Modal -->
-
 <div class="modal fade" id="myModal<%= reception.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-
       <div class="modal-header">
-      <button type="button" class="button-custo btn-block" data-dismiss="modal">Close</button>
-
+        <button type="button" class="button-custo btn-block" data-dismiss="modal">Close</button>
       </div>
       <div class="modal-body">
-
-         <div class="iframerecipe">
+        <div class="iframerecipe">
           <iframe class="mobile" height="100%" width="100%" scrolling="no" src="<%=reception.recipe.link%>"></iframe>
-
           <iframe class="desktop" height="1000" width="100%" scrolling="yes" src="<%=reception.recipe.link%>"></iframe>
+
         </div>
-
-
-
       </div>
-
-
     </div>
   </div>
 </div>
-
 
 

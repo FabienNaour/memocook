@@ -1,9 +1,7 @@
 <div class="container ">
   <div class="row">
-    <div class="col-xs-12 col-sm-offset-4 col-sm-6 ">
-      <%= link_to  new_recipe_path, class: "button-memo " do %>
-      <i class="fas fa-utensils"></i>  Search new recipe
-      <% end %>
+    <div class="col-xs-12 col-sm-offset-5 col-sm-6 ">
+      <div class="text-white-titre"> <h2>     My recipes </h2></div>
     </div>
   </div>
   <% if @recipes.length == 0 %>
@@ -11,13 +9,21 @@
   <% else %>
     <div class="div cadre">
       <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
+          <%= link_to  new_recipe_path, class: "button-memo button-memo-custo button-memo-custo-padding" do %>
+          <i class="fas fa-utensils"></i>  Search new recipe
+          <% end %>
+        </div>
+
         <% @recipes.each do |recipe| %>
         <%= render 'partials/recipe-from-list', recipe: recipe %>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
           <a data-toggle="modal" href="#myModal<%= recipe.id %>">
             <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=recipe.image %>');">
               <div class="card-description">
-                <h2><%= recipe.name  %></h2>
+                  <% str = recipe.name %>
+                  <h2><%= str.length > 35 ? str[0...35]+"..." : str[0...35] %></h2>
               </div>
               <div class="card-user">
                 <% if recipe.logo == "M"%>

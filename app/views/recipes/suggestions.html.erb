@@ -8,12 +8,13 @@
       <% @suggestions.each do |suggestion| %>
       <%= render 'partials/modal-recipe', suggestion:  suggestion %>
       <div class="col-xs-12 col-sm-6 col-lg-4">
-
+<%= raise %>
         <a href="#" data-toggle="modal" data-target="#myModal<%= suggestion.object_id  %>">
 
           <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=suggestion[:picture]%>');">
             <div class="card-description-recipe">
-              <h2><%= suggestion[:name] %></h2>
+              <% str = suggestion[:name]%>
+              <h2><%= str.length > 35 ? str[0...35]+"..." : str[0...35] %></h2>
             </div>
             <div class="card-user">
               <% if suggestion[:logo] == "M"%>

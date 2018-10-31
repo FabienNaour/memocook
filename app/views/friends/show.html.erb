@@ -16,9 +16,13 @@
                 <div class="card-category">
                   <%= reception.date.strftime(" %e %b %Y")  %>
                 </div>
+
+
                 <div class="card-description">
-                  <h2><%= reception.recipe.name  %></h2>
+                  <% str = reception.recipe.name %>
+                  <h2><%= str.length > 35 ? str[0...35]+"..." : str[0...35] %></h2>
                 </div>
+
                 <div class="card-user">
                   <% if reception.recipe.logo == "M"%>
                   <%= image_tag "marmiton.png", height: 30 %>

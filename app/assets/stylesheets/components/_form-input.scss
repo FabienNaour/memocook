@@ -107,6 +107,41 @@ padding: 10px;
   }
 }
 
+.category-choice0 {
+  background: #b7b7b7;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 0 30%;
+  text-align: center;
+  width: 100%;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+  background: #F76800;
+  color: white;
+  opacity: .5;
+  }
+}
 
+.category-choice1 {
+  background: #b7b7b7;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 0 30%;
+  text-align: center;
+  width: 100%;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
 
-.form-inline div { display: inline-block }
+  }
+  &.active {
+  background: #83CE56;
+  opacity: .5;
+  color: white;
+  }
+}

@@ -4,26 +4,34 @@
       <%= simple_form_for @reception do |f| %>
       <h3>New reception</h3>
       <div class="form-cells">
+
         <div class="row">
           <div class="col-xs-4 date-select">
-            <%= f.input :date, as: :date, required: true, start_year: Date.today.year ,
+  <!--           <%= f.input :date, as: :date, required: true, start_year: Date.today.year ,
             end_year: Date.today.year + 2 ,
-            order: [:day, :month, :year]  %>
+            order: [:day, :month, :year]  %> -->
+
+
+            <%= f.input :date, as: :string, required: true, input_html: {class: "datepicker", placeholder: "choose a date" } %>
+
+
           </div>
         </div>
-        <!--          <div class="row">
+        <!-- <div class="row">
           <div class="col-xs-4">
             <%= f.association :friend , as: :check_boxes, required: false%>
           </div>
         </div> -->
         <div class="row">
           <div class="form-group ">
-            <label class="control-label check_boxes optional reception_friend">
-              My friends
+            <label class="control-label check_boxes optional reception_friend font25px">
+              My friends *
             </label>
+
             <input type="hidden" name="reception[friend_id][]" value="">
             <div class="category-choices">
               <% Friend.all.each do |category| %>
+
               <div class="col-xs-12 col-md-6">
                 <input class="hidden" type="checkbox" value="<%= category.id %>" name="reception[friend_id][]" id="reception_friend_id_<%= category.id %>">
                 <label class="category-choice" for="reception_friend_id_<%= category.id %>">
@@ -35,11 +43,12 @@
             </div>
           </div>
         </div>
-      </div>
+
+
       <div class="row">
         <div class="form-group ">
-          <label class="control-label check_boxes optional reception_recipe">
-            My recipes
+          <label class="control-label check_boxes optional reception_recipe font25px">
+            My recipes *
           </label>
           <input type="hidden" name="reception[recipe_id][]" value="">
           <div class="category-choices">
@@ -63,6 +72,7 @@
       </div>
     </div>
     <% end %>
+    </div>
     <div class="row">
       <div class="col-xs-2 col-md-1">
         <div class="icons-size">
@@ -75,11 +85,4 @@
   </div>
 </div>
 </div>
-<!-- <fieldset class="form-group check_boxes optional reception_friend">
-<legend class="col-form-label pt-0">Friend</legend>
-<input type="hidden" name="reception[friend_id][]" value="">
-<div class="form-check">
-  <input class="form-check-input check_boxes optional" type="checkbox" value="86" name="reception[friend_id][]" id="reception_friend_id_86">
-  <label class="collection_check_boxes" for="reception_friend_id_86">Ugo et Magali </label>
-</div>
-</fieldset> -->
+
