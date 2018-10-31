@@ -1,43 +1,41 @@
 
 <div class="container ">
-
   <div class="align-buttons">
-    <div class="inner"><%= link_to new_friend_path, class: "button-memo " do %>
-          <i class="fas fa-user-plus"></i> Add friend
-          <% end %></div>
     <div class="inner"><%= link_to new_reception_path, class: "button-memo " do %>
-          <i class="fas fa-users"></i> Invite friend
-          <% end %></div>
-  </div>
-
-
-  <% if @friends.length == 0 %>
-    <div class="text-white">It's time to test Memo<strong>Cook</strong> ! Register your first friend</div>
-    <% else %>
-      <div class="div cadre">
-        <div class="row">
-          <% @friends.each do |friend| %>
-          <div class="col-xs-12 col-sm-6  col-lg-4">
-            <%= link_to friend.name , friend_path(friend.id) , class: "button-friends " %>
-            <%= link_to friend_path(friend.id), method: :delete, data: { confirm: "Delete #{friend.name}?" } do %>
-            <i class="fas fa-trash" style="font-size:20px;color:white"></i>
-            <% end %>
-          </div>
-
-
-          <% end %>
-        </div>
+      <i class="fas fa-users"></i> Invite friend
+    <% end %>
       </div>
-  <% end %>
-  <div class="row">
-    <div class="col-xs-2 col-md-1">
-      <div class="icons-size">
-        <%= link_to root_path, class: "button-memo button-fleche-width  " do %>
-        <i class="fas fa-angle-double-left"></i>
+  </div>
+  <% if @friends.length == 0 %>
+  <div class="text-white">It's time to test Memo<strong>Cook</strong> ! Register your first friend</div>
+  <% else %>
+  <div class="div cadre">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
+      <div class="inner"><%= link_to new_friend_path, class: "button-memo button-memo-custo-friend" do %>
+        <i class="fas fa-user-plus"></i> Add friend
         <% end %>
       </div>
     </div>
+    <% @friends.each do |friend| %>
+    <div class="col-xs-12 col-sm-6  col-lg-4">
+      <%= link_to friend.name , friend_path(friend.id) , class: "button-friends " %>
+      <%= link_to friend_path(friend.id), method: :delete, data: { confirm: "Delete #{friend.name}?" } do %>
+      <i class="fas fa-trash" style="font-size:20px;color:white"></i>
+      <% end %>
+    </div>
+    <% end %>
   </div>
+</div>
+<% end %>
+<div class="row">
+  <div class="col-xs-2 col-md-1">
+    <div class="icons-size">
+      <%= link_to root_path, class: "button-memo button-fleche-width  " do %>
+      <i class="fas fa-angle-double-left"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 </div>
 

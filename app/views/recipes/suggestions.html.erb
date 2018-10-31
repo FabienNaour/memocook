@@ -8,7 +8,7 @@
       <% @suggestions.each do |suggestion| %>
       <%= render 'partials/modal-recipe', suggestion:  suggestion %>
       <div class="col-xs-12 col-sm-6 col-lg-4">
-<%= raise %>
+
         <a href="#" data-toggle="modal" data-target="#myModal<%= suggestion.object_id  %>">
 
           <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=suggestion[:picture]%>');">
