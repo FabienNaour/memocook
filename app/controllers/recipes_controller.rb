@@ -15,7 +15,6 @@ def new
  @items = []
  @items[0] = "Marmiton"
  @items[1] = "750g"
-
 end
 
 def create
