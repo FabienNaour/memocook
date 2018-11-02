@@ -1,14 +1,23 @@
 
 <div class="container ">
-  <div class="align-buttons">
-    <div class="inner"><%= link_to new_reception_path, class: "button-memo " do %>
-      <i class="fas fa-users"></i> Invite friend
-    <% end %>
-      </div>
-  </div>
+
   <% if @friends.length == 0 %>
-  <div class="text-white">It's time to test Memo<strong>Cook</strong> ! Register your first friend</div>
+    <div class="align-buttons">
+      <div class="inner"><%= link_to new_friend_path, class: "button-memo " do %>
+        <i class="fas fa-user-plus"></i> Add friend
+      <% end %>
+      </div>
+    </div>
+    <div class="text-white center">It's time to test Memo<strong>Cook</strong> ! Register your first friend
+    </div>
+
   <% else %>
+  <div class="align-buttons">
+  <div class="inner"><%= link_to new_reception_path, class: "button-memo " do %>
+    <i class="fas fa-users"></i> Invite friend
+  <% end %>
+    </div>
+  </div>
   <div class="div cadre">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
       <div class="inner"><%= link_to new_friend_path, class: "button-memo button-memo-custo-friend" do %>

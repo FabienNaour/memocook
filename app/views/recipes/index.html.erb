@@ -1,12 +1,25 @@
 <div class="container ">
-  <div class="row">
-    <div class="col-xs-12 col-sm-offset-5 col-sm-6 ">
-      <div class="text-white-titre"> <h2>     My recipes </h2></div>
-    </div>
-  </div>
+
+
   <% if @recipes.length == 0 %>
-     <div class="text-white">It's time to test Memo<strong>Cook</strong> ! Register your first recipe </div>
+
+
+    <div class="align-buttons">
+      <div class="inner"><%= link_to new_recipe_path, class: "button-memo " do %>
+        <i class="fas fa-utensils"></i> Search new recipe
+      <% end %>
+      </div>
+    </div>
+    <div class="text-white center">It's time to test Memo<strong>Cook</strong> ! Register your first recipe
+    </div>
+
   <% else %>
+
+      <div class="row">
+      <div class="col-xs-12 col-sm-offset-5 col-sm-6 ">
+        <div class="text-white-titre"> <h2>     My recipes </h2></div>
+      </div>
+    </div>
     <div class="div cadre">
       <div class="row">
 

@@ -1,16 +1,13 @@
 <div class="container ">
   <% if @suggestions.length == 0 %>
-   <div class="text-white">Sorry, no result for <%=@search_recipe%> </div>
+  <div class="text-white">Sorry, no result for <%=@search_recipe%> </div>
   <% else %>
-
   <div class="div cadre">
     <div class="row">
       <% @suggestions.each do |suggestion| %>
       <%= render 'partials/modal-recipe', suggestion:  suggestion %>
       <div class="col-xs-12 col-sm-6 col-lg-4">
-
         <a href="#" data-toggle="modal" data-target="#myModal<%= suggestion.object_id  %>">
-
           <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=suggestion[:picture]%>');">
             <div class="card-description-recipe">
               <% str = suggestion[:name]%>
@@ -18,9 +15,9 @@
             </div>
             <div class="card-user">
               <% if suggestion[:logo] == "M"%>
-                <%= image_tag "marmiton.png", height: 30 %>
+              <%= image_tag "marmiton.png", height: 30 %>
               <% else %>
-                <%= image_tag "750g.png", height: 20 %>
+              <%= image_tag "750g.png", height: 20 %>
               <% end %>
             </div>
             <%= link_to recipes_path, class: " btn-medium card-button-recipe-add " do %>
@@ -42,10 +39,7 @@
       </div>
     </div>
   </div>
-
 </div>
-
-
 
 
 
