@@ -26,8 +26,10 @@
                 <div class="card-user">
                   <% if reception.recipe.logo == "M"%>
                   <%= image_tag "marmiton.png", height: 30 %>
-                  <% else %>
+                  <% elsif reception.recipe.logo == "750" %>
                   <%= image_tag "750g.png", height: 20 %>
+                  <% else  %>
+                  <%= image_tag "logo.png", height: 20 %>
                   <% end %>
                 </div>
               </div>
@@ -42,7 +44,7 @@
     <div class="row">
       <div class="col-xs-2 col-md-1">
         <div class="arrow-return">
-          <%= link_to friends_path, class: "button-memo button-fleche-width " do %>
+          <%= link_to friends_path, class: " button-fleche-width " do %>
           <i class="fas fa-angle-double-left"></i>
           <% end %>
         </div>

@@ -94,13 +94,13 @@ a.button-custo {
 }
 
 .button-memo {
-  width: 374px;
+  width: 340px;
   height: 70px;
   padding: 17px 17px;
   font-size: 30px;
   font-weight: 300;
   line-height: 1.3333333;
-  border-radius: 5px;
+  border-radius: 50px;
   display: inline-block;
   margin-top: 10px;
 
@@ -128,8 +128,14 @@ a.button-custo {
 .button-fleche-width {
     width: 70px;
     height: 70px;
-    border-radius: 50px
+    border-radius: 50px;
+    color: black;
 }
+
+.button-fleche-width:hover {
+  opacity: 0.5;
+}
+
 .button-add-recipe-width {
     width: 70px;
     height: 70px;

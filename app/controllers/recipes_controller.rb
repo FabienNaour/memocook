@@ -41,18 +41,33 @@ def suggestions
   # DEBUT MARMITON
   require 'open-uri'
   @search_recipe = params[:recipe][:name]
+  @search_description = params[:recipe][:description]
   @search_provider = params[:items]
   @search_provider.delete_if(&:blank?)
   @suggestions = []
 
-
+# si recette saisie vide ou pas de site saisi
   if @search_recipe == "" || @search_provider.length == 0
-    @recipe = Recipe.new
-    @items = []
-    @items[0] = "Marmiton"
-    @items[1] = "750g"
-    render :new
+    # si recette saisie vide Pb
+    if @search_recipe == ""
+      @recipe = Recipe.new
+      @items = []
+      @items[0] = "Marmiton"
+      @items[1] = "750g"
+      render :new
+    # sinon on ajoute la recette saisie, pas de lien vers un site cuisine
+    else
 
+    recipe = Recipe.create(
+        name: @search_recipe ,
+        logo: "moi",
+        link: "" ,
+        description: "#{@search_description}" ,
+        image: "",
+        user: current_user
+      )
+    redirect_to recipes_path
+    end
   else
     #DEBUT MARMITON
     if @search_provider.include? "0"

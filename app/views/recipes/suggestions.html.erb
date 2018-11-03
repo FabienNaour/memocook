@@ -14,11 +14,18 @@
               <h2><%= str.length > 35 ? str[0...35]+"..." : str[0...35] %></h2>
             </div>
             <div class="card-user">
+
+
               <% if suggestion[:logo] == "M"%>
               <%= image_tag "marmiton.png", height: 30 %>
-              <% else %>
+              <% elsif suggestion[:logo] == "750" %>
               <%= image_tag "750g.png", height: 20 %>
+              <% else  %>
+              <%= image_tag "logo.png", height: 20 %>
               <% end %>
+
+
+
             </div>
             <%= link_to recipes_path, class: " btn-medium card-button-recipe-add " do %>
             <i class="fas fa-plus"></i>
@@ -33,7 +40,7 @@
   <div class="row">
     <div class="col-xs-2 col-md-1">
       <div class="icons-size">
-        <%= link_to recipes_path, class: "button-memo button-fleche-width  " do %>
+        <%= link_to recipes_path, class: " button-fleche-width  " do %>
         <i class="fas fa-angle-double-left"></i>
         <% end %>
       </div>

@@ -5,18 +5,28 @@
     <div class="banner-content">
       <% if !user_signed_in? %>
 
-        <h1>MemoCook</h1>
+        <h1>Memo<strong>Cook</strong></h1>
         <h2>Never cook twice the same recipe for your friends and family </h2>
+        <div class="elements-container">
+        <div class="element">
+          <div class="icon"><%= image_tag('icons/lock.png') %></div>
+          <span class="word-green">My Recipes</span>
+          <p class= "p-banner">Easy access to my favourite recipes</p>
+        </div>
+
+        <div class="element">
+          <div class="icon"><%= image_tag('icons/multiple-11.png') %></div>
+          <span class="word-green">My Friends</span>
+          <p class= "p-banner">They are in my    hearth</p>
+        </div>
+        <div class="element">
+          <div class="icon"><%= image_tag('icons/lock.png') %></div>
+          <span class="word-green">Remember</span>
+          <p class= "p-banner">What you cooked for your friends</p>
+        </div>
       <% else %>
 
         <div class="row">
-          <div class="col-xs-12 col-sm-6">
-           <div class="icons-size">
-            <%= link_to  friends_path, class: "button-home " do %>
-              <i class="fas fa-user-friends"></i>   My Friends
-            <% end %>
-           </div>
-          </div>
 
           <div class="col-xs-12 col-sm-6">
            <div class="icons-size">
@@ -25,6 +35,15 @@
             <% end %>
            </div>
           </div>
+
+          <div class="col-xs-12 col-sm-6">
+           <div class="icons-size">
+            <%= link_to  friends_path, class: "button-home " do %>
+              <i class="fas fa-user-friends"></i>   My Friends
+            <% end %>
+           </div>
+          </div>
+
         </div>
       <% end %>
    </div>

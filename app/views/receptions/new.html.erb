@@ -6,7 +6,8 @@
       <div class="form-cells">
 
         <div class="row">
-          <div class="col-xs-4 date-select">
+          <div class="col-xs-4 date-select" style="
+    font-size: 25px " >
   <!--           <%= f.input :date, as: :date, required: true, start_year: Date.today.year ,
             end_year: Date.today.year + 2 ,
             order: [:day, :month, :year]  %> -->
@@ -25,7 +26,7 @@
         <div class="row">
           <div class="form-group ">
             <label class="control-label check_boxes optional reception_friend font25px">
-              My friends *
+              My friends
             </label>
 
             <input type="hidden" name="reception[friend_id][]" value="">
@@ -48,7 +49,7 @@
       <div class="row">
         <div class="form-group ">
           <label class="control-label check_boxes optional reception_recipe font25px">
-            My recipes *
+            My recipes
           </label>
           <input type="hidden" name="reception[recipe_id][]" value="">
           <div class="category-choices">
@@ -65,22 +66,24 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-          <%= f.submit "Validate", class: "button-custo btn-block" %>
-        </div>
-      </div>
-    </div>
-    <% end %>
-    </div>
     <div class="row">
       <div class="col-xs-2 col-md-1">
         <div class="icons-size">
-          <%= link_to friends_path, class: "button-memo button-fleche-width  " do %>
+          <%= link_to friends_path, class: " button-fleche-width  " do %>
           <i class="fas fa-angle-double-left"></i>
           <% end %>
         </div>
       </div>
+
+
+
+        <div class="col-xs-6 col-sm-6 col-sm-offset-2">
+          <%= f.submit "Validate", class: "button-custo btn-block" %>
+        </div>
+      </div>
+
+    </div>
+    <% end %>
     </div>
   </div>
 </div>
