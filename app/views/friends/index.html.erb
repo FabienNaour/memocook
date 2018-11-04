@@ -1,4 +1,6 @@
 <div class="container ">
+
+
   <% if @friends.length == 0 %>
     <div class="align-buttons">
       <div class="inner"><%= link_to new_friend_path, class: "button-memo " do %>
@@ -8,30 +10,40 @@
     </div>
     <div class="text-white center">It's time to test Memo<strong>Cook</strong> ! Register your first friend
     </div>
+
   <% else %>
+
     <div class="align-buttons">
       <div class="inner"><%= link_to new_reception_path, class: "button-memo button-memo-width-250 " do %>
         <i class="fas fa-users"></i> Invite friend
         <% end %>
       </div>
     </div>
+
     <div class="div cadre">
+
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
         <div class="inner"><%= link_to new_friend_path, class: "button-memo button-memo-custo-friend" do %>
           <i class="fas fa-user-plus"></i> Add friend
           <% end %>
         </div>
       </div>
+
       <% @friends.each do |friend| %>
+
       <div class="col-xs-12 col-sm-6  col-lg-4">
         <%= link_to friend.name , friend_path(friend.id) , class: "button-friends " %>
         <%= link_to friend_path(friend.id), method: :delete, data: { confirm: "Delete #{friend.name}?" } do %>
         <i class="fas fa-trash" style="font-size:20px;color:white"></i>
         <% end %>
       </div>
+
       <% end %>
+
     </div>
+
   </div>
+
   <% end %>
 
   <div class="row">
@@ -43,6 +55,8 @@
       </div>
     </div>
   </div>
+
+
 
 </div>
 

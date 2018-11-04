@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "destruction des tables users, recipes, friends, receptions"
+puts "destruction des tables users, recipes, friends, receptions, admin"
 
 Reception.destroy_all
 User.destroy_all
+AdminUser.destroy_all
 Recipe.destroy_all
 Friend.destroy_all
 
@@ -18,8 +19,57 @@ puts " lancement des seeds"
 user1 = User.create(
     email: 'user1@gmail.com',
     password: 'password',
-    password_confirmation: 'password'
+    password_confirmation: 'password',
+
+
   )
+adminuser = AdminUser.create(
+    email: 'admin@gmail.com',
+    password: 'password',
+    password_confirmation: 'password',
+
+  )
+
+  # create_table "admin_users", force: :cascade do |t|
+  #   t.string "email", default: "", null: false
+  #   t.string "encrypted_password", default: "", null: false
+  #   t.string "reset_password_token"
+  #   t.datetime "reset_password_sent_at"
+  #   t.datetime "remember_created_at"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  #   t.index ["email"], name: "index_admin_users_on_email", unique: true
+  #   t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  # end
+
+
+  # create_table "users", force: :cascade do |t|
+  #   t.string "email", default: "", null: false
+  #   t.string "encrypted_password", default: "", null: false
+  #   t.string "reset_password_token"
+  #   t.datetime "reset_password_sent_at"
+  #   t.datetime "remember_created_at"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  #   t.index ["email"], name: "index_users_on_email", unique: true
+  #   t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  # end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 recipe11 = Recipe.create(
     name: "Choucroute" ,
@@ -152,3 +202,4 @@ recipe22 = Recipe.create(
 #     recipe: recipe22
 #   )
 puts "seeds terminés"
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

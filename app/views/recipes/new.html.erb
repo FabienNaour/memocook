@@ -5,14 +5,23 @@
     <div class="form-cells">
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-          <%= f.input :name, required: true, autofocus: true , label: "Name"%>
+<!--           <%= f.input :name, required: true, autofocus: true , placeholder: "name of your friend", label: "Name"%> -->
+
+          <!-- CE BLOC REMPLACE CELUI DU DESSUS AFIN DE POUVOIR INSERER LE margin-left -->
+          <div class="form-group string required recipe_name" >
+            <label class="form-control-label string required" style=" margin-left:0px;" for="recipe_name">Name
+              <abbr title="required">*</abbr>
+            </label>
+            <input class="form-control string required" style="margin-left:0px; " autofocus="autofocus" required="required" aria-required="true" placeholder="name of your friend" type="text" name="recipe[name]" id="recipe_name">
+          </div>
+            <!-- END BLOC -->
         </div>
       </div>
-
       <div class="row">
-        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-          <%= f.input :description,autofocus: true , hint: "leave it blank if you select  Marmiton or 750gr", label: "Comments"%>
+        <div class="col-xs-12   >
+          <%= f.input :description,autofocus: true , placeholder: "description of your recipe",hint: "leave it blank if you select  Marmiton or 750gr", label: "Comments" %>
         </div>
+
       </div>
 
       <div class="row">
@@ -34,21 +43,21 @@
 
       </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-sm-offset-5">
-          <%= f.submit "Validate", class: "button-custo " %>
-        </div>
-      </div>
-      <% end %>
-      <div class="row">
+     <div class="row">
         <div class="col-xs-2 col-md-1">
           <div class="icons-size">
             <%= link_to :back, class: " button-fleche-width  " do %>
-            <i class="fas fa-angle-double-left"></i>
+            <i class=" fas fa-angle-double-left"></i>
             <% end %>
           </div>
         </div>
+        <div class="col-xs-6 col-sm-6 col-sm-offset-4">
+          <%= f.submit "Validate", class: "button-custo " %>
+        </div>
       </div>
+
+      <% end %>
+
     </div>
   </div>
 
