@@ -5,14 +5,14 @@
     <div class="form-cells">
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-<!--           <%= f.input :name, required: true, autofocus: true , placeholder: "name of your friend", label: "Name"%> -->
+<!--           <%= f.input :name, required: true, autofocus: true , placeholder: "recipe name", label: "Name"%> -->
 
           <!-- CE BLOC REMPLACE CELUI DU DESSUS AFIN DE POUVOIR INSERER LE margin-left -->
           <div class="form-group string required recipe_name" >
             <label class="form-control-label string required" style=" margin-left:0px;" for="recipe_name">Name
               <abbr title="required">*</abbr>
             </label>
-            <input class="form-control string required" style="margin-left:0px; " autofocus="autofocus" required="required" aria-required="true" placeholder="name of your friend" type="text" name="recipe[name]" id="recipe_name">
+            <input class="form-control string required" style="margin-left:0px; " autofocus="autofocus" required="required" aria-required="true" placeholder="recipe name" type="text" name="recipe[name]" id="recipe_name">
           </div>
             <!-- END BLOC -->
         </div>
@@ -46,7 +46,7 @@
      <div class="row">
         <div class="col-xs-2 col-md-1">
           <div class="icons-size">
-            <%= link_to :back, class: " button-fleche-width  " do %>
+            <%= link_to recipes_path, class: " button-fleche-width  " do %>
             <i class=" fas fa-angle-double-left"></i>
             <% end %>
           </div>

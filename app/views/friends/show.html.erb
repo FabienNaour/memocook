@@ -1,14 +1,17 @@
 <div class="container">
 
     <% if @receptions.length == 0 %>
+
     <div class="text-white">No recipes yet ... you should organize a dinner with  <%= @friend.name %> ;-)</div>
+
     <% else %>
 
     <div class="text-white-titre"> <h2>Recipes for <%= @friend.name %></h2></div>
     <div class="div cadre">
       <div class="row">
         <% @receptions.each do |reception| %>
-
+<!-- Fiche Marmiton or 750gr -->
+<% if reception.recipe.link != "" %>
         <%= render 'partials/recipe', reception: reception %>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
           <a data-toggle="modal" href="#myModal<%= reception.id %>">
@@ -35,15 +38,43 @@
               </div>
             </a>
           </div>
+<% else %>
+<%= render 'partials/recipe-comment', reception: reception %>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+  <a data-toggle="modal" href="#myModal<%= reception.id %>">
+    <div class="card-recipe" style="background:  #BC0000" >
+      <div class="card-category">
+        <%= reception.date.strftime(" %e %b %Y")  %>
+      </div>
+      <div class="card-description">
+          <% str = reception.recipe.name %>
+          <h2><%= str.length > 35 ? str[0...35] + "..." : str[0...35] %></h2>
+      </div>
+      <div class="card-user">
+        <% if reception.recipe.logo == "M"%>
+        <%= image_tag "marmiton.png", height: 30 %>
+        <% elsif reception.recipe.logo == "750" %>
+        <%= image_tag "750g.png", height: 20 %>
+        <% else  %>
+        <%= image_tag "logo.png", height: 20 %>
+        <% end %>
+      </div>
+    </div>
+  </a>
+</div>
+<% end %>
+
+
+
+
           <% end %>
         </div>
       </div>
 
-    <% end %>
-
+   <% end %>
     <div class="row">
       <div class="col-xs-2 col-md-1">
-        <div class="arrow-return">
+        <div class="icons-size">
           <%= link_to friends_path, class: " button-fleche-width " do %>
           <i class="fas fa-angle-double-left"></i>
           <% end %>
@@ -52,3 +83,5 @@
     </div>
 
 </div>
+
+

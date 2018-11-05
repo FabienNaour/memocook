@@ -79,6 +79,7 @@ def suggestions
       nb_recipes = 0
 
       if (html_doc.search('.recipe-search__nb-results')[0] == nil)
+
         @recipe = Recipe.new
         @items = []
         @items[0] = "Marmiton"

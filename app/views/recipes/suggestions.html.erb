@@ -1,10 +1,14 @@
 <div class="container ">
+
   <% if @suggestions.length == 0 %>
   <div class="text-white">Sorry, no result for <%=@search_recipe%> </div>
   <% else %>
   <div class="div cadre">
+
+
     <div class="row">
       <% @suggestions.each do |suggestion| %>
+
       <%= render 'partials/modal-recipe', suggestion:  suggestion %>
       <div class="col-xs-12 col-sm-6 col-lg-4">
         <a href="#" data-toggle="modal" data-target="#myModal<%= suggestion.object_id  %>">
