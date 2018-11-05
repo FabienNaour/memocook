@@ -20,7 +20,8 @@ gem 'nokogiri'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'twitter-bootstrap-rails-confirm'
-
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 
 group :development do

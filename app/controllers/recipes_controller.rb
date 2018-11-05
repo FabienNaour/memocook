@@ -41,10 +41,12 @@ def suggestions
   # DEBUT MARMITON
   require 'open-uri'
   @search_recipe = params[:recipe][:name]
+  @search_photo = params[:recipe][:photo]
   @search_description = params[:recipe][:description]
   @search_provider = params[:items]
   @search_provider.delete_if(&:blank?)
   @suggestions = []
+
 
 # si recette saisie vide ou pas de site saisi
   if @search_recipe == "" || @search_provider.length == 0
@@ -58,14 +60,25 @@ def suggestions
     # sinon on ajoute la recette saisie, pas de lien vers un site cuisine
     else
 
-    recipe = Recipe.create(
-        name: @search_recipe ,
-        logo: "moi",
-        link: "" ,
-        description: "#{@search_description}" ,
-        image: "",
-        user: current_user
-      )
+    # recipe = Recipe.create!(
+    #     name: @search_recipe ,
+    #     logo: "moi",
+    #     link: "" ,
+    #     description: "#{@search_description}" ,
+    #     image: "",
+    #     user: current_user,
+    #     remote_photo_url: @search_photo
+    #   )
+
+    recipe = Recipe.new(name: @search_recipe, logo: "moi", link: ""  ,  description:  "#{@search_description}" ,
+       image: "",user: current_user)
+
+    recipe.remote_photo_url = @search_photo
+    recipe.save
+
+
+
+    raise
     redirect_to recipes_path
     end
   else
@@ -181,7 +194,7 @@ end
   private
 
   def recipes_params
-    params.require(:recipe).permit(:name)
+    params.require(:recipe).permit(:name, :photo)
   end
 
 end
