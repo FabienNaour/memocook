@@ -1,6 +1,6 @@
 <div class="container">
   <div class="form-input">
-    <%= simple_form_for @recipe, url: suggestions_recipes_path(), method: :get do |f| %>
+    <%= simple_form_for @recipe, url: suggestions_recipes_path(), method: :post do |f| %>
     <h3>Add new recipe</h3>
     <div class="form-cells">
       <div class="row">
@@ -18,15 +18,15 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12   >
+        <div class="col-xs-12>
           <%= f.input :description,autofocus: true , placeholder: "description of your recipe",hint: "leave it blank if you select  Marmiton or 750gr", label: "Comments" %>
         </div>
 
       </div>
 
         <div class="row">
-          <div class="col-xs-12 ">
-              <%= f.input :photo , label: "Recipe picture"%>
+          <div class="col-xs-12 hidden-xs hidden-sm hidden-md ">
+              <%= f.input :photo , label: "Picture"%>
               <%= f.input :photo_cache, as: :hidden %>
           </div>
         </div>

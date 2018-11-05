@@ -42,6 +42,9 @@ def suggestions
   require 'open-uri'
   @search_recipe = params[:recipe][:name]
   @search_photo = params[:recipe][:photo]
+  if @search_photo.nil?
+    @search_photo = ""
+  end
   @search_description = params[:recipe][:description]
   @search_provider = params[:items]
   @search_provider.delete_if(&:blank?)
@@ -58,27 +61,24 @@ def suggestions
       @items[1] = "750g"
       render :new
     # sinon on ajoute la recette saisie, pas de lien vers un site cuisine
+    #
     else
 
-    # recipe = Recipe.create!(
-    #     name: @search_recipe ,
-    #     logo: "moi",
-    #     link: "" ,
-    #     description: "#{@search_description}" ,
-    #     image: "",
-    #     user: current_user,
-    #     remote_photo_url: @search_photo
-    #   )
+    recipe = Recipe.create!(
+        name: @search_recipe ,
+        logo: "moi",
+        link: "" ,
+        description: "#{@search_description}" ,
+        image: "",
+        user: current_user,
+        photo: @search_photo
+      )
 
-    recipe = Recipe.new(name: @search_recipe, logo: "moi", link: ""  ,  description:  "#{@search_description}" ,
-       image: "",user: current_user)
+    # recipe = Recipe.new(name: @search_recipe, logo: "moi", link: ""  ,  description:  "#{@search_description}" ,
+    #    image: "",user: current_user, photo:@search_photo)
 
-    recipe.remote_photo_url = @search_photo
-    recipe.save
+    # recipe.save
 
-
-
-    raise
     redirect_to recipes_path
     end
   else

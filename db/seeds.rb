@@ -71,6 +71,22 @@ recipe15 = Recipe.create(
     image: "https://static.750g.com/images/622-auto/b4d093dd2bffa8972341596dfc693999/pizza-royale-au-barbecue.jpeg",
     user: user1
   )
+
+# url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
+
+
+
+#   recipe = Recipe.new(name: "perso pizza", logo: "moi", link: ""  ,  description:  "description" ,
+#        image: "",user: user1)
+
+#     recipe.remote_photo_url = url
+#     recipe.save
+
+
+
+
+
+
 friend11 = Friend.create(
     name: "Ugo et Magali " ,
     email: 'ugo@gmail.com',
@@ -133,6 +149,9 @@ recipe22 = Recipe.create(
     description: "description complete du poulet au citron user2" ,
     user: user2
   )
+
+
+
 # friend21 = Friend.create(
 #     name: "Ugo et Magali user2" ,
 #     email: 'ugo@gmail.com',
