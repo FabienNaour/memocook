@@ -8,8 +8,8 @@
       </div>
       <div class="modal-body modal-body-custo">
 
-          <% if recipe.photo != "" %>
-            <%= cl_image_tag recipe.photo, height: 700, width: 500, crop: :fill %>
+          <% if recipe.photo != "" && recipe.photo != nil %>
+            <%= cl_image_tag recipe.photo, height: 600, width: 400, crop: :fill %>
           <% end %>
 
       </div>
