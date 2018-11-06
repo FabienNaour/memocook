@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :receptions, only: [:new , :create ]
   resources :friends, only: [:show , :index , :new , :create, :destroy]
 
-  resources :recipes, only: [:show , :index , :new , :create] do
+  resources :recipes, only: [:show , :index , :new , :create, :destroy] do
     post :suggestions, on: :collection
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

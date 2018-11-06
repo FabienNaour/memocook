@@ -37,7 +37,9 @@ recipe11 = Recipe.create(
     link: "https://www.marmiton.org/recettes/recette_choucroute_20312.aspx" ,
     description: "description complete de la choucroute " ,
     image: "https://images.marmitoncdn.org/recipephotos/multiphoto/8c/8c447c04-7792-45e4-91ca-9f5761a7e6cc_w350h250c1.jpg",
-    user: user1
+    user: user1,
+    photo: "",
+    photoexist: false
   )
 recipe12 = Recipe.create(
     name: "Poulet citron" ,
@@ -45,7 +47,9 @@ recipe12 = Recipe.create(
     link: "https://www.marmiton.org/recettes/recette_poulet-a-la-coriandre-et-citron-vert_166524.aspx" ,
     description: "description complete du poulet au citron usr1, 1. acheter un beau poulet 2. le deplumer 3. le couper 4. le faire cuire casserole 4. ajouter sel et poivre 5. mijoter 20minutes" ,
     image: "https://images.marmitoncdn.org/recipephotos/multiphoto/88/88cd2ecb-1bda-4570-98ee-a64082ffe973_w350h250c1.jpg",
-    user: user1
+    user: user1,
+    photo: "",
+    photoexist: false
   )
 recipe13 = Recipe.create(
     name: "Cabillaud purée" ,
@@ -53,7 +57,9 @@ recipe13 = Recipe.create(
     link: "https://www.marmiton.org/recettes/recette_dos-de-cabillaud-tout-simple_72532.aspx" ,
     description: "description complete du cabillaud purée " ,
     image: "https://images.marmitoncdn.org/recipephotos/multiphoto/a9/a927e657-825f-49b8-8dfa-7585a8b8fa7b_w350h250c1.jpg",
-    user: user1
+    user: user1,
+    photo: "",
+    photoexist: false
   )
 recipe14 = Recipe.create(
     name: "Moule frite" ,
@@ -61,7 +67,9 @@ recipe14 = Recipe.create(
     link: "https://www.marmiton.org/recettes/recette_moules-frites-et-non-avec-des-pommes-frites_332938.aspx" ,
     description: "description complete Moule frite " ,
     image: "https://images.marmitoncdn.org/recipephotos/multiphoto/0c/0c3fc5cf-6f24-4692-8c43-a62661293439_w350h250c1.jpg",
-    user: user1
+    user: user1,
+    photo: "",
+    photoexist: false
   )
 recipe15 = Recipe.create(
     name: "Pizza royale" ,
@@ -69,20 +77,10 @@ recipe15 = Recipe.create(
     link: "https://www.750g.com/pizza-royale-au-barbecue-r75180.htm" ,
     description: "description complete Pizza " ,
     image: "https://static.750g.com/images/622-auto/b4d093dd2bffa8972341596dfc693999/pizza-royale-au-barbecue.jpeg",
-    user: user1
+    user: user1,
+    photo: "",
+    photoexist: false
   )
-
-# url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
-
-
-
-#   recipe = Recipe.new(name: "perso pizza", logo: "moi", link: ""  ,  description:  "description" ,
-#        image: "",user: user1)
-
-#     recipe.remote_photo_url = url
-#     recipe.save
-
-
 
 
 
@@ -141,13 +139,17 @@ recipe21 = Recipe.create(
     name: "Choucroute user2" ,
     link: "" ,
     description: "description complete de la choucroute user2" ,
-    user: user2
+    user: user2,
+    photo: "",
+    photoexist: false
   )
 recipe22 = Recipe.create(
     name: "Poulet citron user2" ,
     link: "" ,
     description: "description complete du poulet au citron user2" ,
-    user: user2
+    user: user2,
+    photo: "",
+    photoexist: false
   )
 
 

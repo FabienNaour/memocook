@@ -28,6 +28,11 @@ def create
   end
 end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to recipes_path
+  end
 
 def open_file(url)
   return Nokogiri::HTML(open(url).read)
@@ -42,9 +47,12 @@ def suggestions
   require 'open-uri'
   @search_recipe = params[:recipe][:name]
   @search_photo = params[:recipe][:photo]
+  @photoexist = true
   if @search_photo.nil?
     @search_photo = ""
+    @photoexist = false
   end
+
   @search_description = params[:recipe][:description]
   @search_provider = params[:items]
   @search_provider.delete_if(&:blank?)
@@ -71,7 +79,8 @@ def suggestions
         description: "#{@search_description}" ,
         image: "",
         user: current_user,
-        photo: @search_photo
+        photo: @search_photo,
+        photoexist: @photoexist
       )
 
     # recipe = Recipe.new(name: @search_recipe, logo: "moi", link: ""  ,  description:  "#{@search_description}" ,

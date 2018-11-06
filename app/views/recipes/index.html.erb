@@ -41,26 +41,37 @@
                     <% str = recipe.name %>
                     <h2><%= str.length > 35 ? str[0...35] + "..." : str[0...35] %></h2>
                 </div>
+                <div class="card-how-many">
+                    <%="cooked #{recipe.receptions.count} time(s)" %>
+                </div>
                 <div class="card-user">
                   <% if recipe.logo == "M"%>
                   <%= image_tag "marmiton.png", height: 30 %>
                   <% elsif recipe.logo == "750" %>
                   <%= image_tag "750g.png", height: 20 %>
                   <% else  %>
-                  <%= image_tag "logo.png", height: 20 %>
+                  <%= image_tag "toque.jpg", height: 20 %>
                   <% end %>
                 </div>
               </div>
             </a>
+             <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: "Are you sure you want to delete #{recipe.name}?" } do %>
+              <i class="fas fa-trash" style="font-size:20px;color:white"></i>
+              <% end %>
           </div>
 <% else %>
+<!-- Recette perso -->
 <%= render 'partials/recipe-from-list-comment', recipe: recipe %>
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+
   <a data-toggle="modal" href="#myModal<%= recipe.id %>">
     <div class="card-recipe" style="background:  #BC0000" >
       <div class="card-description">
           <% str = recipe.name %>
           <h2><%= str.length > 35 ? str[0...35] + "..." : str[0...35] %></h2>
+      </div>
+      <div class="card-how-many">
+          <%="cooked #{recipe.receptions.count} time(s)" %>
       </div>
       <div class="card-user">
         <% if recipe.logo == "M"%>
@@ -68,11 +79,16 @@
         <% elsif recipe.logo == "750" %>
         <%= image_tag "750g.png", height: 20 %>
         <% else  %>
-        <%= image_tag "logo.png", height: 20 %>
+        <%= image_tag "toque.jpg", height: 20 %>
         <% end %>
       </div>
     </div>
   </a>
+
+   <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: "Are you sure you want to delete #{recipe.name}?" } do %>
+    <i class="fas fa-trash" style="font-size:20px;color:white"></i>
+    <% end %>
+
 </div>
 <% end %>
         <% end %>

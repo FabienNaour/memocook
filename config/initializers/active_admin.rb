@@ -1,5 +1,5 @@
 def authenticate_admin!
-
+raise
   redirect_to new_user_session_path unless current_user && current_user.admin
     #redirect_to new_user_session_path unless  !current_admin_user.nil?
 end
@@ -13,7 +13,7 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
   config.site_title = "Memocook"
-config.authentication_method = :authenticate_admin!
+config.authentication_method = :authenticate_admin!sdsqsdfqsdfqs
 
 config.current_user_method = :current_user
 

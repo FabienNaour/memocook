@@ -1,7 +1,10 @@
+
+
 <div class="container">
   <div class="form-input">
     <%= simple_form_for @recipe, url: suggestions_recipes_path(), method: :post do |f| %>
     <h3>Add new recipe</h3>
+
     <div class="form-cells">
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
@@ -17,26 +20,28 @@
             <!-- END BLOC -->
         </div>
       </div>
+<div class="div cadrerecipe">
       <div class="row">
-        <div class="col-xs-12>
-          <%= f.input :description,autofocus: true , placeholder: "description of your recipe",hint: "leave it blank if you select  Marmiton or 750gr", label: "Comments" %>
+        <div class="col-xs-12">
+          <%= f.input :description, autofocus: true , placeholder: "leave it blank if you select  Marmiton or 750gr", label: "My recipe" %>
         </div>
-
       </div>
 
         <div class="row">
 <!--           <div class="col-xs-12 hidden-xs hidden-sm hidden-md ">
  -->          <div class="col-xs-12  ">
-
               <%= f.input :photo , label: "Picture"%>
               <%= f.input :photo_cache, as: :hidden %>
-          </div>
+              </div>
         </div>
-
-
+</div>
       <div class="row">
-
-
+        <div class="col-xs-12">
+          <h3>or</h3>
+        </div>
+      </div>
+<div class="div cadrerecipe">
+      <div class="row">
           <input type="hidden" name="items[]" value="">
           <div class="category-choices">
             <% @items.each_with_index do |category, index| %>
@@ -52,7 +57,7 @@
           </div>
 
       </div>
-
+</div>
      <div class="row">
         <div class="col-xs-2 col-md-1">
           <div class="icons-size">
@@ -62,12 +67,13 @@
           </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-sm-offset-4">
-          <%= f.submit "Validate", class: "button-custo " %>
+
+            <%= f.submit "Validate", class: "button-custo", data: { disable_with: " search in progress..." } %>
         </div>
       </div>
 
-      <% end %>
 
+      <% end %>
     </div>
   </div>
 

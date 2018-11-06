@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_163755) do
+ActiveRecord::Schema.define(version: 2018_11_06_123040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2018_11_05_163755) do
     t.string "image"
     t.string "logo"
     t.string "photo"
+    t.boolean "photoexist"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 

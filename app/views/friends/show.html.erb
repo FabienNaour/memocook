@@ -32,7 +32,7 @@
                   <% elsif reception.recipe.logo == "750" %>
                   <%= image_tag "750g.png", height: 20 %>
                   <% else  %>
-                  <%= image_tag "logo.png", height: 20 %>
+                  <%= image_tag "toque.jpg", height: 20 %>
                   <% end %>
                 </div>
               </div>
@@ -46,6 +46,7 @@
       <div class="card-category">
         <%= reception.date.strftime(" %e %b %Y")  %>
       </div>
+
       <div class="card-description">
           <% str = reception.recipe.name %>
           <h2><%= str.length > 35 ? str[0...35] + "..." : str[0...35] %></h2>
@@ -56,7 +57,7 @@
         <% elsif reception.recipe.logo == "750" %>
         <%= image_tag "750g.png", height: 20 %>
         <% else  %>
-        <%= image_tag "logo.png", height: 20 %>
+        <%= image_tag "toque.jpg", height: 20 %>
         <% end %>
       </div>
     </div>

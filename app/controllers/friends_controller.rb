@@ -6,6 +6,7 @@ class FriendsController < ApplicationController
 
   def index
     @friends = Friend.where(user_id: current_user).all.order(:name)
+    @recipes = Recipe.where(user_id: current_user).all.order(:name)
   end
 
   def new

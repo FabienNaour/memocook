@@ -3,6 +3,7 @@ class ReceptionsController < ApplicationController
     @reception = Reception.new
     @friends = Friend.where(user_id: current_user).all.order(:name)
     @recipes = Recipe.where(user_id: current_user).all.order(:name)
+
   end
   def create
 
@@ -30,6 +31,8 @@ class ReceptionsController < ApplicationController
       redirect_to friends_path
     else
       @reception = Reception.new
+      @friends = Friend.where(user_id: current_user).all.order(:name)
+      @recipes = Recipe.where(user_id: current_user).all.order(:name)
       render :new
     end
 

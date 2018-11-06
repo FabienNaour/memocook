@@ -52,7 +52,11 @@
   top: 10px;
   left: 30px;
 }
-
+.card-how-many {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
 .card-description-recipe {
   position: absolute;
   top: 15px;
@@ -81,8 +85,8 @@
 }
 .card-user {
   position: absolute;
-  left: 2px;
-  top: 2px;
+  left: 0px;
+  top: 0px;
   width: 40px;
   border-radius: 50%;
 }

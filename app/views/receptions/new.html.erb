@@ -30,7 +30,7 @@
 
             <input type="hidden" name="reception[friend_id][]" value="">
             <div class="category-choices">
-              <% Friend.all.each do |category| %>
+              <% @friends.each do |category| %>
 
               <div class="col-xs-12 col-md-6">
                 <input class="hidden" type="checkbox" value="<%= category.id %>" name="reception[friend_id][]" id="reception_friend_id_<%= category.id %>">
@@ -52,7 +52,7 @@
           </label>
           <input type="hidden" name="reception[recipe_id][]" value="">
           <div class="category-choices">
-            <% Recipe.all.each do |category| %>
+            <% @recipes.each do |category| %>
             <div class="col-xs-12 col-md-6">
               <input class="hidden" type="checkbox" value="<%= category.id %>" name="reception[recipe_id][]" id="reception_recipe_id_<%= category.id %>">
               <label class="category-choice" for="reception_recipe_id_<%= category.id %>">
