@@ -13,7 +13,7 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
   config.site_title = "Memocook"
-config.authentication_method = :authenticate_admin!sdsqsdfqsdfqs
+config.authentication_method = :authenticate_admin!
 
 config.current_user_method = :current_user
 
