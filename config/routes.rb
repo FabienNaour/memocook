@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   # get 'friends/show'
 
   root to: 'pages#home'
-  resources :receptions, only: [:new , :create ]
+  resources :receptions, only: [:new , :create, :destroy ]
   resources :friends, only: [:show , :index , :new , :create, :destroy]
 
   resources :recipes, only: [:show , :index , :new , :create, :destroy] do
     post :suggestions, on: :collection
+    # post :suggestionchoix, on: :collection
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

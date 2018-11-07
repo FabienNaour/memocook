@@ -7,7 +7,7 @@
         <% if  reception.recipe.friends.length > 0 %>
            <%="Ont gouté: "  %>
             <% reception.recipe.friends.each do |friend|  %>
-                <%=friend.name  %>
+                <%="#{friend.name}."  %>
             <% end  %>
         <% end  %>
       </div>

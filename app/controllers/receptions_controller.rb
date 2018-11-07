@@ -1,4 +1,13 @@
 class ReceptionsController < ApplicationController
+
+  def destroy
+
+    @reception = Reception.find(params[:id])
+    @reception.destroy
+
+    redirect_to friend_path(@reception.friend_id)
+  end
+
   def new
     @reception = Reception.new
     @friends = Friend.where(user_id: current_user).all.order(:name)
@@ -40,6 +49,6 @@ class ReceptionsController < ApplicationController
   private
 
   def receptions_params
-    params.require(:reception).permit(:date,:friend_id)
+    params.require(:reception).permit(:date,:friend_id,:recipe_id)
   end
 end

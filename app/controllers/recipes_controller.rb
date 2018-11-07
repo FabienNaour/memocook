@@ -18,6 +18,7 @@ def new
 end
 
 def create
+  raise
   @recipe = Recipe.new(recipes_params)
   @recipe.user = current_user
 
@@ -38,7 +39,10 @@ def open_file(url)
   return Nokogiri::HTML(open(url).read)
 end
 
-
+# def suggestionchoix
+#   raise
+# @search_recipe = params[:recipe]
+# end
 
 def suggestions
 
