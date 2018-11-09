@@ -29,45 +29,38 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  confirm_delete: 'Are you sure you want to delete %{name}'
+
+fr:
   pages:
     home:
-      sign_in: "Se connecter"
-      welcome: "Never cook twice the same recipe for your friends and family "
-      title_box1: "My Recipes"
-      titre_box1: "Access to my favourite recipes"
-      title_box2: "My Friends"
-      titre_box2: "Close to me"
-      title_box3: "Remember"
-      titre_box3: "What you cooked for them"
-      myrecipes: "My Recipes"
-      myfriends: "My Friends"
+      welcome: "Ne cuisine jamais 2 fois la même recette pour tes amis et ta famille "
+      title_box1: "Mes recettes"
+      titre_box1: "sont sauvegardées"
+      title_box2: "Mes amis"
+      titre_box2: "sont enregistrés"
+      title_box3: "Souviens toi"
+      titre_box3: "De ce que tu leur a cuisiné"
+      myrecipes: "Mes Recettes"
+      myfriends: "Mes Amis"
   friends:
     index:
-      add_friend: "Add friend"
-      add_recipes: "Add recipes"
-      invite_friend: "Invite friend"
+      add_friend: "Ajouter ami"
+      add_recipes: "Ajouter recettes"
+      invite_friend: "Inviter ami"
   recipes:
     index:
-      title: "My recipes"
-      button_add: "Add recipe"
+      title: "Mes recettes"
+      button_add: "Ajouter recette"
     new:
-      title: "Add recipe"
-      name: "Name"
-      desc: "My recipe"
-      picture: "Picture"
-      or: "OR"
-      recipe_name: "recipe name"
+      title: "Ajouter recette"
+      name: "Nom"
+      desc: "Mes recettes"
+      picture: "Photo"
+      or: "OU"
+      recipe_name: "Nom de la recette"
   simple_form:
     placeholders:
       recipe:
-        description: 'leave it blank if you select  Marmiton or 750gr'
-        label: "My recipe"
-        label: "Picture"
-
-
-
-
-
-
+        description: 'laisser vide si vous selectionnez Marmiton ou 750gr'
+        label: "Mes recettes"
+        label: "Photo"

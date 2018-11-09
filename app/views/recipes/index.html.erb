@@ -17,7 +17,7 @@
 
       <div class="row">
       <div class="col-xs-12 col-sm-offset-5 col-sm-6 ">
-        <div class="text-white-titre"> <h2>     My recipes </h2></div>
+        <div class="text-white-titre"> <h2> <%= t('.title') %></h2></div>
       </div>
     </div>
     <div class="div cadre">
@@ -25,7 +25,7 @@
 
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
           <%= link_to  new_recipe_path, class: "button-memo button-memo-custo button-memo-custo-padding" do %>
-          <i class="fas fa-utensils"></i>  Add new recipe
+          <i class="fas fa-utensils"></i>  <%= t('.button_add') %>
           <% end %>
         </div>
 
@@ -55,7 +55,9 @@
                 </div>
               </div>
             </a>
-             <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: "Are you sure you want to delete #{recipe.name}?" } do %>
+
+
+             <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: "confirm to delete #{recipe.name}" } do %>
               <i class="fas fa-trash" style="font-size:20px;color:white"></i>
               <% end %>
           </div>

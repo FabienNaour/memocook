@@ -6,23 +6,24 @@
       <% if !user_signed_in? %>
 
         <h1>Memo<strong>Cook</strong></h1>
-        <h2>Never cook twice the same recipe for your friends and family </h2>
-        <div class="elements-container">
+        <h2><%= t('.welcome') %></h2>
+<!--         <h2><%= t('test') %></h2>
+ -->        <div class="elements-container">
         <div class="element">
           <div class="icon"><%= image_tag('icons/lock.png') %></div>
-          <span class="word-green">My Recipes</span>
-          <p class= "p-banner">Easy access to my favourite recipes</p>
+          <span class="word-green"><%= t('.title_box1') %></span>
+          <p class= "p-banner"><%= t('.titre_box1') %></p>
         </div>
 
         <div class="element">
           <div class="icon"><%= image_tag('icons/multiple-11.png') %></div>
-          <span class="word-green">My Friends</span>
-          <p class= "p-banner">They are in my    hearth</p>
+          <span class="word-green"><%= t('.title_box2') %></span>
+          <p class= "p-banner"><%= t('.titre_box2') %></p>
         </div>
         <div class="element">
           <div class="icon"><%= image_tag('icons/lock.png') %></div>
-          <span class="word-green">Remember</span>
-          <p class= "p-banner">What you cooked for your friends</p>
+          <span class="word-green"><%= t('.title_box3') %></span>
+          <p class= "p-banner"><%= t('.titre_box3') %></p>
         </div>
       <% else %>
 
@@ -31,7 +32,7 @@
           <div class="col-xs-12 col-sm-6">
            <div class="icons-size">
             <%= link_to  recipes_path, class: "button-home " do %>
-              <i class="fas fa-utensils"></i>   My Recipes
+              <i class="fas fa-utensils"></i>   <%= t('.myrecipes') %>
             <% end %>
            </div>
           </div>
@@ -39,7 +40,7 @@
           <div class="col-xs-12 col-sm-6">
            <div class="icons-size">
             <%= link_to  friends_path, class: "button-home " do %>
-              <i class="fas fa-user-friends"></i>   My Friends
+              <i class="fas fa-user-friends"></i>  <%= t('.myfriends') %>
             <% end %>
            </div>
           </div>

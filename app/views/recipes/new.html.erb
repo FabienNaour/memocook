@@ -3,7 +3,7 @@
 <div class="container">
   <div class="form-input">
     <%= simple_form_for @recipe, url: suggestions_recipes_path(), method: :post do |f| %>
-    <h3>Add new recipe</h3>
+    <h3><%= t('.title') %></h3>
 
     <div class="form-cells">
       <div class="row">
@@ -12,10 +12,11 @@
 
           <!-- CE BLOC REMPLACE CELUI DU DESSUS AFIN DE POUVOIR INSERER LE margin-left -->
           <div class="form-group string required recipe_name" >
-            <label class="form-control-label string required" style=" margin-left:0px;" for="recipe_name">Name
+            <label class="form-control-label string required" style=" margin-left:0px;" for="recipe_name"><%= t('.name') %>
               <abbr title="required">*</abbr>
             </label>
-            <input class="form-control string required" style="margin-left:0px; " autofocus="autofocus" required="required" aria-required="true" placeholder="recipe name" type="text" name="recipe[name]" id="recipe_name">
+            <%aa = t('.recipe_name') %>
+            <input class="form-control string required" style="margin-left:0px; " autofocus="autofocus" required="required" aria-required="true" placeholder="<%=aa%>" type="text" name="recipe[name]" id="recipe_name">
           </div>
             <!-- END BLOC -->
         </div>
@@ -23,21 +24,21 @@
 <div class="div cadrerecipe">
       <div class="row">
         <div class="col-xs-12">
-          <%= f.input :description, autofocus: true , placeholder: "leave it blank if you select  Marmiton or 750gr", label: "My recipe" %>
+          <%= f.input :description, autofocus: true %>
         </div>
       </div>
 
         <div class="row">
 <!--           <div class="col-xs-12 hidden-xs hidden-sm hidden-md ">
  -->          <div class="col-xs-12  ">
-              <%= f.input :photo , label: "Picture"%>
+              <%= f.input :photo %>
               <%= f.input :photo_cache, as: :hidden %>
               </div>
         </div>
 </div>
       <div class="row">
         <div class="col-xs-12">
-          <h3>or</h3>
+          <h3><%= t('.or') %></h3>
         </div>
       </div>
 <div class="div cadrerecipe">

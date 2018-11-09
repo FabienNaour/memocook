@@ -22,6 +22,8 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'twitter-bootstrap-rails-confirm'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'rails-i18n'
+gem 'devise-i18n'
 
 
 group :development do

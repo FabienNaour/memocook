@@ -29,7 +29,7 @@
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Déconnexion") %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Sign out") %>
               <% end %>
             </li>
           </ul>
@@ -40,7 +40,7 @@
 
       <!-- Login link (when logged out) -->
       <%= link_to new_user_session_path, class: "home-navbar-wagon-item home-navbar-wagon-link" do %>
-        <%= t(".sign_in", default: "Login") %>
+        <%= t(".sign_in", default: "Sign in") %>
       <% end %>
     <% end %>
   </div>
@@ -60,13 +60,13 @@
         </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Sign out") %>
           <% end %>
         </li>
       <% else %>
         <li>
           <%= link_to new_user_session_path, class: "home-navbar-wagon-item home-navbar-wagon-link" do %>
-            <%= t(".sign_in", default: "Login") %>
+            <%= t(".sign_in", default: "Sign in") %>
           <% end %>
         </li>
       <% end %>

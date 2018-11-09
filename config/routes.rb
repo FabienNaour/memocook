@@ -2,18 +2,22 @@ Rails.application.routes.draw do
 
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  # get 'friends/show'
 
-  root to: 'pages#home'
-  resources :receptions, only: [:new , :create, :destroy ]
-  resources :friends, only: [:show , :index , :new , :create, :destroy]
 
-  resources :recipes, only: [:show , :index , :new , :create, :destroy] do
-    post :suggestions, on: :collection
-    # post :suggestionchoix, on: :collection
+  scope '(:locale)', locale: /fr|en/ do
+    root to: 'pages#home'
+
+    resources :receptions, only: [:new , :create, :destroy ]
+    resources :friends, only: [:show , :index , :new , :create, :destroy]
+
+    resources :recipes, only: [:show , :index , :new , :create, :destroy] do
+      post :suggestions, on: :collection
+      # post :suggestionchoix, on: :collection
+    ActiveAdmin.routes(self)
+    end
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
 end
 
 
