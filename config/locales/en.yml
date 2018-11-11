@@ -30,6 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  profile: "Profile"
+  sign_out: "Sign out"
+  sign_in: "Sign in"
+  helpers:
+  submit:
+    friend:
+      create: "Add "
+    recipe:
+      create: "Add "
+    reception:
+      create: "Invite "
   confirm_delete: 'Are you sure you want to delete %{name}'
   pages:
     home:
@@ -43,11 +54,18 @@ en:
       titre_box3: "What you cooked for them"
       myrecipes: "My Recipes"
       myfriends: "My Friends"
+  receptions:
+    new:
+      title: "New invitation"
+      my_friends: "I invite"
+      my_recipes: "I cook"
   friends:
     index:
       add_friend: "Add friend"
       add_recipes: "Add recipes"
       invite_friend: "Invite friend"
+    new:
+      title: "Add friend"
   recipes:
     index:
       title: "My recipes"
@@ -65,7 +83,13 @@ en:
         description: 'leave it blank if you select  Marmiton or 750gr'
         label: "My recipe"
         label: "Picture"
-
+      reception:
+        date: 'Select a date'
+      friend:
+        name: '> 3 characters'
+    labels:
+      friend:
+        name: 'Name'
 
 
 

@@ -4,11 +4,11 @@
     <div class="form-input">
 
       <%= simple_form_for @friend do |f| %>
-      <h3>New friend</h3>
+      <h3><%= t('.title') %></h3>
       <div class="form-cells">
         <div class="row">
           <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-            <%= f.input :name, required: true, autofocus: true , label: "Name"%>
+            <%= f.input :name, required: true, autofocus: true %>
           </div>
         </div>
         <!--        <div class="row">
@@ -35,7 +35,7 @@
           </div>
 
           <div class="col-xs-6 col-sm-6 col-sm-offset-4">
-            <%= f.submit "Validate", class: "button-custo " %>
+            <%= f.submit  class: "button-custo " %>
           </div>
         </div>
         <% end %>

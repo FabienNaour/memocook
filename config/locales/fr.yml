@@ -31,6 +31,17 @@
 
 
 fr:
+  profile: "Profil"
+  sign_out: "Deconnexion"
+  sign_in: "Connexion"
+  helpers:
+    submit:
+      friend:
+        create: "Ajouter "
+      recipe:
+        create: "Ajouter "
+      reception:
+        create: "Inviter "
   pages:
     home:
       welcome: "Ne cuisine jamais 2 fois la même recette pour tes amis et ta famille "
@@ -42,11 +53,18 @@ fr:
       titre_box3: "De ce que tu leur a cuisiné"
       myrecipes: "Mes Recettes"
       myfriends: "Mes Amis"
+  receptions:
+    new:
+      title: "Nouvelle invitation"
+      my_friends: "J'invite"
+      my_recipes: "Je cuisine"
   friends:
     index:
       add_friend: "Ajouter ami"
       add_recipes: "Ajouter recettes"
       invite_friend: "Inviter ami"
+    new:
+      title: "Ajouter ami"
   recipes:
     index:
       title: "Mes recettes"
@@ -64,3 +82,11 @@ fr:
         description: 'laisser vide si vous selectionnez Marmiton ou 750gr'
         label: "Mes recettes"
         label: "Photo"
+      reception:
+        date: 'Selectionnez une date'
+      friend:
+        name: '> 3 caracteres'
+    labels:
+      friend:
+        name: 'Nom'
+
