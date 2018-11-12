@@ -2,11 +2,12 @@
 
     <% if @receptions.length == 0 %>
 
-    <div class="text-white">No recipes yet ... you should organize a dinner with  <%= @friend.name %> ;-)</div>
+    <div class="text-white">  <%= t('.no_recipe' , name:  @friend.name )  %></div>
 
     <% else %>
 
-    <div class="text-white-titre"> <h2>Recipes for <%= @friend.name %></h2></div>
+    <div class="text-white-titre"> <h2> <%= t('.title', name: @friend.name) %></h2></div>
+
     <div class="div cadre">
       <div class="row">
         <% @receptions.each do |reception| %>
@@ -37,7 +38,7 @@
                 </div>
               </div>
             </a>
-              <%= link_to reception_path(reception.id), method: :delete, data: { confirm: "Are you sure you want to delete the event of #{reception.date.strftime(" %e %b %Y")} with #{@friend.name} ?" } do %>
+              <%= link_to reception_path(reception.id), method: :delete, data: { confirm: "t('confirm_delete')" } do %>
               <i class="fas fa-trash" style="font-size:20px;color:white"></i>
               <% end %>
 
@@ -66,7 +67,7 @@
       </div>
     </div>
   </a>
-    <%= link_to reception_path(reception.id), method: :delete, data: { confirm: "Are you sure you want to delete the event of #{reception.date.strftime(" %e %b %Y") } with #{@friend.name} ?" } do %>
+    <%= link_to reception_path(reception.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
   <i class="fas fa-trash" style="font-size:20px;color:white"></i>
   <% end %>
 </div>

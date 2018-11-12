@@ -6,11 +6,11 @@
 
     <div class="align-buttons">
       <div class="inner"><%= link_to new_recipe_path, class: "button-memo " do %>
-        <i class="fas fa-utensils"></i> Add new recipe
+        <i class="fas fa-utensils"></i> <%=t('.button_add')  %>
       <% end %>
       </div>
     </div>
-    <div class="text-white center">It's time to test Memo<strong>Cook</strong> ! Register your first recipe
+    <div class="text-white "><%=t('.no_recipes_html') %>
     </div>
 
   <% else %>
@@ -57,7 +57,7 @@
             </a>
 
 
-             <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: "confirm to delete #{recipe.name}" } do %>
+             <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
               <i class="fas fa-trash" style="font-size:20px;color:white"></i>
               <% end %>
           </div>
@@ -87,7 +87,7 @@
     </div>
   </a>
 
-   <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: "Are you sure you want to delete #{recipe.name}?" } do %>
+   <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
     <i class="fas fa-trash" style="font-size:20px;color:white"></i>
     <% end %>
 

@@ -33,6 +33,11 @@ en:
   profile: "Profile"
   sign_out: "Sign out"
   sign_in: "Sign in"
+  send_me_reset_password_instructions: "Send me instructions"
+  confirm_delete: 'Confirm delete ?'
+  names: "They eat : "
+  close_button: 'close'
+  title_editer: 'Edit'
   helpers:
   submit:
     friend:
@@ -41,19 +46,18 @@ en:
       create: "Add "
     reception:
       create: "Invite "
-  confirm_delete: 'Are you sure you want to delete %{name}'
   pages:
     home:
       sign_in: "Se connecter"
       welcome: "Never cook twice the same recipe for your friends and family "
-      title_box1: "My Recipes"
-      titre_box1: "Access to my favourite recipes"
-      title_box2: "My Friends"
-      titre_box2: "Close to me"
-      title_box3: "Remember"
-      titre_box3: "What you cooked for them"
+      title_box1: "Book"
+      titre_box1: "your recipes"
+      title_box2: "Remember"
+      titre_box2: "your guests"
+      title_box3: "Note"
+      titre_box3: "your dinner"
       myrecipes: "My Recipes"
-      myfriends: "My Friends"
+      myfriends: "My Guests"
   receptions:
     new:
       title: "New invitation"
@@ -61,28 +65,35 @@ en:
       my_recipes: "I cook"
   friends:
     index:
-      add_friend: "Add friend"
-      add_recipes: "Add recipes"
-      invite_friend: "Invite friend"
+      title: "My guests"
+      add_friend: "Add"
+      add_recipes: "Add"
+      invite_friend: "Invite "
+      no_friends_html: "It's time to test Memo<strong>Cook</strong>, register your first guest"
     new:
-      title: "Add friend"
+      title: "Add guest"
+    show:
+      title: "Recettes pour %{name}"
+      no_recipe: "No invitation yet ... you should organize a dinner with %{name}"
   recipes:
     index:
       title: "My recipes"
-      button_add: "Add recipe"
+      button_add: "Add "
+      no_recipes_html: "It's time to test Memo<strong>Cook</strong>, register your first recipe"
     new:
       title: "Add recipe"
       name: "Name"
       desc: "My recipe"
       picture: "Picture"
       or: "OR"
+      search: "Search on"
       recipe_name: "recipe name"
   simple_form:
     placeholders:
       recipe:
-        description: 'leave it blank if you select  Marmiton or 750gr'
+        description: 'leave it blank if you search on Marmiton or 750gr'
         label: "My recipe"
-        label: "Picture"
+        label: "Picture of my recipe"
       reception:
         date: 'Select a date'
       friend:

@@ -1,20 +1,26 @@
 
   <div class="navbar-wagon navbar-background ">
-    <!-- Logo -->
-
 
 
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
       <%= image_tag "saucepanred.png", height: 50 %>
     <% end %>
 
+
+
    <% if user_signed_in? %>
       <div class="navbar-wagon-logo">
         <h3>Memo<strong>Cook</strong></h3>
       </div>
+
+    <% else%>
+      <div class="navbar-wagon-flag " >
+        <a href="/fr"><%= image_tag "fr.svg", height: 30 %></a>
+      </div>
+      <div class="navbar-wagon-flag " >
+        <a href="/en"><%= image_tag "gb.svg", height: 30 %></a>
+      </div>
     <% end %>
-
-
     <!-- Right Navigation -->
     <div class="navbar-wagon-right hidden-xs hidden-sm">
 

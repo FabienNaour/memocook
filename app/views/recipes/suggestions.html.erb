@@ -1,14 +1,12 @@
 <div class="container ">
 
-<!--
-<%= simple_form_for recipe=Recipe.new, url: suggestionchoix_recipes_path(), method: :post do |f| %>-->
   <% if @suggestions.length == 0 %>
-  <div class="text-white">Sorry, no result for <%=@search_recipe%> </div>
+    <div class="text-white">Sorry, no result for <%=@search_recipe%> </div>
   <% else %>
-  <div class="div cadre">
 
 
-    <div class="row">
+    <div class="div cadre">
+      <div class="row">
       <% @suggestions.each do |suggestion| %>
 
       <%= render 'partials/modal-recipe', suggestion:  suggestion %>
@@ -31,18 +29,16 @@
            <%= link_to recipes_path, class: " btn-medium card-button-recipe-add " do %>
             <i class="fas fa-plus"></i>
             <% end %>
-
-
-
           </div>
         </a>
-<!-- <%= f.submit "Validate", class: "btn-medium card-button-recipe-add", data: { disable_with: " search in progress..." } %>-->
+
 
       </div>
       <% end %>
     </div>
   </div>
   <% end %>
+
   <div class="row">
     <div class="col-xs-2 col-md-1">
       <div class="icons-size">
@@ -52,8 +48,11 @@
       </div>
     </div>
   </div>
-  <% end %>
+
 </div>
+
+
+
 
 
 

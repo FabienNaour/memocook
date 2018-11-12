@@ -34,6 +34,11 @@ fr:
   profile: "Profil"
   sign_out: "Deconnexion"
   sign_in: "Connexion"
+  send_me_reset_password_instructions: "Envoyez moi les instructions"
+  confirm_delete: 'Confirmer la suppression ?'
+  names: "Ont adoré : "
+  close_button: 'fermer'
+  title_editer: 'Editer'
   helpers:
     submit:
       friend:
@@ -45,14 +50,14 @@ fr:
   pages:
     home:
       welcome: "Ne cuisine jamais 2 fois la même recette pour tes amis et ta famille "
-      title_box1: "Mes recettes"
-      titre_box1: "sont sauvegardées"
-      title_box2: "Mes amis"
-      titre_box2: "sont enregistrés"
-      title_box3: "Souviens toi"
-      titre_box3: "De ce que tu leur a cuisiné"
+      title_box1: "Enregistre"
+      titre_box1: "tes recettes"
+      title_box2: "Souviens toi"
+      titre_box2: "de tes invités"
+      title_box3: "Note"
+      titre_box3: "tes repas"
       myrecipes: "Mes Recettes"
-      myfriends: "Mes Amis"
+      myfriends: "Mes Invités"
   receptions:
     new:
       title: "Nouvelle invitation"
@@ -60,28 +65,35 @@ fr:
       my_recipes: "Je cuisine"
   friends:
     index:
-      add_friend: "Ajouter ami"
-      add_recipes: "Ajouter recettes"
-      invite_friend: "Inviter ami"
+      title: "Mes invités"
+      add_friend: "Ajouter"
+      add_recipes: "Ajouter"
+      invite_friend: "Inviter "
+      no_friends_html: "Il est temps de tester Memo<strong>Cook</strong>, enregistre ton 1er invité"
     new:
-      title: "Ajouter ami"
+      title: "Ajouter invité"
+    show:
+      title: "Recettes pour %{name}"
+      no_recipe: "Pas encore d'invitation ... vous devriez organiser un repas avec %{name}"
   recipes:
     index:
       title: "Mes recettes"
-      button_add: "Ajouter recette"
+      button_add: "Ajouter"
+      no_recipes_html: "Il est temps de tester Memo<strong>Cook</strong>, enregistre ta 1ere recette"
     new:
-      title: "Ajouter recette"
+      title: "Ajouter recette "
       name: "Nom"
       desc: "Mes recettes"
       picture: "Photo"
       or: "OU"
+      search: "Rechercher sur"
       recipe_name: "Nom de la recette"
   simple_form:
     placeholders:
       recipe:
-        description: 'laisser vide si vous selectionnez Marmiton ou 750gr'
+        description: 'laisser vide si vous recherchez sur Marmiton ou 750gr'
         label: "Mes recettes"
-        label: "Photo"
+        label: "Photo de la recette"
       reception:
         date: 'Selectionnez une date'
       friend:

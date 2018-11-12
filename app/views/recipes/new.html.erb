@@ -42,7 +42,14 @@
         </div>
       </div>
 <div class="div cadrerecipe">
+        <div class="row">
+        <div class="col-xs-12" style="size:23px ;font-weight: bold">
+          <%= t('.search') %>
+        </div>
+      </div>
+
       <div class="row">
+
           <input type="hidden" name="items[]" value="">
           <div class="category-choices">
             <% @items.each_with_index do |category, index| %>
