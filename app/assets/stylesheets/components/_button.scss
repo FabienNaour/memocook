@@ -92,6 +92,29 @@ a.button-custo {
     text-decoration:none;
   }
 }
+.button-memo-reception {
+
+  font-family: 'Maven Pro', sans-serif;
+  border-radius: 50px;
+  background-color: #e8e5e5;
+  font-size: 30px;
+  font-weight: 300;
+  box-shadow: 0px 1px 4px rgba(0,0,0, 0.1);
+  color: black;
+  width: 100px;
+  height: 70px;
+  padding: 17px 17px;
+  cursor: pointer;
+
+}
+
+.button-memo-reception:hover {
+  text-decoration: none;
+  color: black;
+  background-color: #e8e5e5;
+  opacity: 0.7;
+  box-shadow: 0px 2px 7px rgba(0,0,0, 0.1);
+}
 
 .button-memo {
   width: 340px;

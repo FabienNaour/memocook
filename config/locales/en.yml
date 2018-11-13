@@ -38,6 +38,9 @@ en:
   names: "They eat : "
   close_button: 'close'
   title_editer: 'Edit'
+  invite: 'Invite'
+  add: 'Add'
+  addorsearch: 'Add or Search'
   helpers:
   submit:
     friend:

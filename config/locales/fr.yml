@@ -39,6 +39,9 @@ fr:
   names: "Ont adoré : "
   close_button: 'fermer'
   title_editer: 'Editer'
+  invite: 'Inviter'
+  add: 'Ajouter'
+  addorsearch: 'Ajout ou Recherche'
   helpers:
     submit:
       friend:

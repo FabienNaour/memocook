@@ -14,25 +14,25 @@
 
   <% else %>
     <div class="row">
-        <div class="col-xs-12 col-sm-offset-5 col-sm-6 ">
-          <div class="text-white-titre"> <h2> <%= t('.title') %></h2></div>
+        <div class="col-xs-12 col-sm-offset-5 col-sm-6 margin">
+          <div class="text-white-titre "> <h2> <%= t('.title') %></h2></div>
         </div>
       </div>
     <% if @recipes.length != 0 %>
       <div class="align-buttons">
-        <div class="inner"><%= link_to new_reception_path, class: "button-memo  " do %>
+        <div class="inner"><%= link_to new_reception_path, class: "button-memo-reception  " do %>
           <i class="fas fa-users"></i> <%= t('.invite_friend')%>
           <% end %>
         </div>
       </div>
     <% else %>
 
-     <div class="align-buttons">
+<!--      <div class="align-buttons">
         <div class="inner"><%= link_to recipes_path, class: "button-memo  " do %>
           <i class="fas fa-utensils"></i> <%= t('.add_recipes')%>
           <% end %>
         </div>
-      </div>
+      </div> -->
 
     <% end %>
     <div class="div cadre">
