@@ -29,13 +29,16 @@
           <% end %>
         </div>
 
+        <%= render 'partials/recipe-from-list' %>
+
         <% @recipes.each do |recipe| %>
 <!-- Marmiton or 750gr -->
 <% if recipe.link != "" %>
-          <%= render 'partials/recipe-from-list', recipe: recipe %>
+
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 
-            <a data-toggle="modal" href="#myModal<%= recipe.id %>">
+            <a class="iframemodal" href="#myModal"  data-value="<%=recipe.link%>">
+
               <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=recipe.image %>');">
                 <div class="card-description">
                     <% str = recipe.name %>
@@ -54,12 +57,15 @@
                   <% end %>
                 </div>
               </div>
+
             </a>
 
 
              <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
               <i class="fas fa-trash" style="font-size:20px;color:white"></i>
               <% end %>
+
+
           </div>
 <% else %>
 <!-- Recette perso -->
@@ -87,9 +93,24 @@
     </div>
   </a>
 
-   <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
-    <i class="fas fa-trash" style="font-size:20px;color:white"></i>
-    <% end %>
+
+        <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
+        <i class="fas fa-trash" style="font-size:20px;color:white"></i>
+        <% end %>
+
+
+        <%= render 'partials/modal-delete' , recipe: recipe%>
+
+        <button type="button" class="btn btn-outline-danger"
+             data-toggle="modal" data-target="#deleteModal">
+          Delete
+        </button>
+
+
+        <%= link_to recipe_path(recipe.id), method: :delete, data: {toggle: "modal", target: "#deleteModal"} do %>
+            <i class="fas fa-trash" style="font-size:20px;color:white"></i>
+            <% end %>
+
 
 </div>
 <% end %>

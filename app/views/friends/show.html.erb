@@ -10,13 +10,19 @@
 
     <div class="div cadre">
       <div class="row">
+
+
+      <%= render 'partials/recipe-from-list' %>
+
         <% @receptions.each do |reception| %>
 <!-- Fiche Marmiton or 750gr -->
 <% if reception.recipe.link != "" %>
-        <%= render 'partials/recipe', reception: reception %>
+
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-          <a data-toggle="modal" href="#myModal<%= reception.id %>">
-              <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=reception.recipe.image %>');">
+
+        <a class="iframemodal" href="#myModal"  data-value="<%= reception.recipe.link %>">
+
+             <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=reception.recipe.image %>');">
                 <div class="card-category">
                   <%= reception.date.strftime(" %e %b %Y")  %>
                 </div>
@@ -38,7 +44,7 @@
                 </div>
               </div>
             </a>
-              <%= link_to reception_path(reception.id), method: :delete, data: { confirm: "t('confirm_delete')" } do %>
+              <%= link_to reception_path(reception.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
               <i class="fas fa-trash" style="font-size:20px;color:white"></i>
               <% end %>
 

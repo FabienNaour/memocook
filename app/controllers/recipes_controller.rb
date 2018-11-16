@@ -18,9 +18,14 @@ def new
 end
 
 def create
-  raise
+
+
   @recipe = Recipe.new(recipes_params)
+
   @recipe.user = current_user
+  @recipe.photo = ""
+  @recipe.photoexist = false;
+  @recipe.description = ""
 
   if @recipe.save
   redirect_to recipes_path
@@ -146,8 +151,8 @@ def suggestions
               end #end if
             end #each do element
            index_recipes += 12
-
-           boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 1 ))
+          # on s'arrete aux 3 premieres pages
+           boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 3 ))
           end #while boucle
 
       end #else if (html_doc.search('.recipe-search__nb-results')[0] == nil)
@@ -196,7 +201,7 @@ def suggestions
         end #each do element
        index_recipes += 1
 
-       boucle = false if ((index_recipes >= borne_index) || (index_recipes > 1 ))
+       boucle = false if ((index_recipes >= borne_index) || (index_recipes > 3 ))
       end #while boucle
     end # else  if (nb_recipes == 0)
    end #end  if @search_provider.include? "1"
@@ -207,7 +212,7 @@ end
   private
 
   def recipes_params
-    params.require(:recipe).permit(:name, :photo)
+    params.require(:recipe).permit(:name, :photo, :logo, :link, :description, :image, :user, :photo, :photoexist )
   end
 
 end
