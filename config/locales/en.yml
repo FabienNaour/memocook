@@ -41,6 +41,8 @@ en:
   invite: 'Invite'
   add: 'Add'
   addorsearch: 'Add or Search'
+  titre_memo_html: "Memorize your recipes with <strong>Memo</strong>Cook"
+  titre_simple_memo_html: "<strong>Memo</strong>Cook"
   helpers:
   submit:
     friend:

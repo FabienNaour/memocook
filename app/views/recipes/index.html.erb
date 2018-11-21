@@ -1,6 +1,9 @@
+
+
+
+
+
 <div class="container ">
-
-
   <% if @recipes.length == 0 %>
 
 
@@ -14,20 +17,15 @@
     </div>
 
   <% else %>
-
-      <div class="row">
-      <div class="col-xs-12 col-sm-offset-5 col-sm-6 ">
-        <div class="text-white-titre"> <h2> <%= t('.title') %></h2></div>
-      </div>
+    <div class="row">
+    <div class="col-xs-12 col-sm-offset-5 col-sm-6 ">
+      <div class="text-white-titre"> <h2> <%= t('.title') %></h2></div>
     </div>
+
+  </div>
+
     <div class="div cadre">
       <div class="row">
-
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
-          <%= link_to  new_recipe_path, class: "button-memo button-memo-custo button-memo-custo-padding" do %>
-          <i class="fas fa-utensils"></i>  <%= t('.button_add') %>
-          <% end %>
-        </div>
 
         <%= render 'partials/recipe-from-list' %>
 
@@ -38,34 +36,41 @@
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 
             <a class="iframemodal" href="#myModal"  data-value="<%=recipe.link%>">
+                <div class="card-test ">
+                  <div class=" card-profile-test">
 
-              <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=recipe.image %>');">
-                <div class="card-description">
-                    <% str = recipe.name %>
-                    <h2><%= str.length > 35 ? str[0...35] + "..." : str[0...35] %></h2>
-                </div>
-                <div class="card-how-many">
-                    <%="cooked #{recipe.receptions.count} time(s)" %>
-                </div>
-                <div class="card-user">
-                  <% if recipe.logo == "M"%>
-                  <%= image_tag "marmiton.png", height: 30 %>
-                  <% elsif recipe.logo == "750" %>
-                  <%= image_tag "750g.png", height: 20 %>
-                  <% else  %>
-                  <%= image_tag "toque.jpg", height: 20 %>
-                  <% end %>
-                </div>
-              </div>
+                    <div class="card-avatar-test">
+                      <img class="img" src="<%=recipe.image %>">
+                    </div>
 
+                    <div class="card-description-test">
+                      <% str = recipe.name %>
+                      <h2><%= str.length > 29 ? str[0...29] + "..." : str[0...29] %></h2>
+                    </div>
+
+                    <div class="card-how-many-test">
+                      <%="cooked #{recipe.receptions.count} time(s)" %>
+                    </div>
+
+                    <div class="card-user-test">
+                      <% if recipe.logo == "M"%>
+                      <%= image_tag "marmiton.png", height: 30 %>
+                      <% elsif recipe.logo == "750" %>
+                      <%= image_tag "750g.png", height: 20 %>
+                      <% else  %>
+                      <%= image_tag "toque.jpg", height: 20 %>
+                      <% end %>
+                    </div>
+
+                  </div>
+                </div>
             </a>
 
-
-             <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
-              <i class="fas fa-trash" style="font-size:20px;color:white"></i>
-              <% end %>
-
-
+              <div class="card-button-test">
+                 <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
+                  <i class="fas fa-minus-circle" style="font-size:30px;color:#000000"></i>
+                  <% end %>
+              </div>
           </div>
 <% else %>
 <!-- Recette perso -->
@@ -73,30 +78,43 @@
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 
   <a data-toggle="modal" href="#myModal<%= recipe.id %>">
-    <div class="card-recipe" style="background:  #BC0000" >
-      <div class="card-description">
+
+
+    <div class="card-test">
+      <div class=" card-profile-test" >
+        <div class="card-description-test">
+          <div class="card-avatar-test1">
+
+          </div>
           <% str = recipe.name %>
-          <h2><%= str.length > 35 ? str[0...35] + "..." : str[0...35] %></h2>
-      </div>
-      <div class="card-how-many">
+          <h2><%= str.length > 29 ? str[0...29] + "..." : str[0...29] %></h2>
+        </div>
+
+        <div class="card-how-many-test">
           <%="cooked #{recipe.receptions.count} time(s)" %>
-      </div>
-      <div class="card-user">
-        <% if recipe.logo == "M"%>
-        <%= image_tag "marmiton.png", height: 30 %>
-        <% elsif recipe.logo == "750" %>
-        <%= image_tag "750g.png", height: 20 %>
-        <% else  %>
-        <%= image_tag "toque.jpg", height: 20 %>
-        <% end %>
+        </div>
+
+        <div class="card-user-test">
+          <% if recipe.logo == "M"%>
+          <%= image_tag "marmiton.png", height: 30 %>
+          <% elsif recipe.logo == "750" %>
+          <%= image_tag "750g.png", height: 20 %>
+          <% else  %>
+          <%= image_tag "toque.jpg", height: 20 %>
+          <% end %>
+        </div>
+
       </div>
     </div>
   </a>
 
+     <div class="card-button-test">
+         <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
+          <i class="fas fa-minus-circle" style="font-size:30px;color:#000000"></i>
+          <% end %>
+      </div>
 
-        <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
-        <i class="fas fa-trash" style="font-size:20px;color:white"></i>
-        <% end %>
+
 
 
         <%= render 'partials/modal-delete' , recipe: recipe%>
@@ -108,8 +126,9 @@
 
 
         <%= link_to recipe_path(recipe.id), method: :delete, data: {toggle: "modal", target: "#deleteModal"} do %>
-            <i class="fas fa-trash" style="font-size:20px;color:white"></i>
+            <i class="fas fa-plus-circle" style="font-size:30px;color:white"></i>
             <% end %>
+
 
 
 </div>
@@ -118,6 +137,13 @@
       </div>
     </div>
   <% end %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
+        <%= link_to  new_recipe_path, class: "button-memo " do %>
+        <i class="fas fa-utensils"></i>  <%= t('.button_add') %>
+      <% end %>
+      </div>
+  </div>
   <div class="row">
     <div class="col-xs-2 col-md-1">
       <div class="icons-size">
@@ -128,6 +154,14 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
 
 
 

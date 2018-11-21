@@ -8,7 +8,7 @@
 
    <% if user_signed_in? %>
       <div class="home-navbar-wagon-logo">
-        <h3>Memo<strong>Cook</strong></h3>
+        <h1><%= t('titre_simple_memo_html') %></h1>
       </div>
     <% else%>
       <div class="home-navbar-wagon-flag " >
@@ -39,7 +39,7 @@
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t("sign_out") %>
+                <i class="fa fa-sign-out-alt"></i>  <%= t("sign_out") %>
               <% end %>
             </li>
           </ul>
@@ -70,7 +70,7 @@
         </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t("sign_out") %>
+            <i class="fa fa-sign-out-alt"></i>  <%= t("sign_out") %>
           <% end %>
         </li>
       <% else %>

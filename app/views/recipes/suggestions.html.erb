@@ -16,7 +16,41 @@
         <a class="iframemodal" href="#myModal" data-value="<%=suggestion[:link]%>">
 
 
-         <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=suggestion[:picture]%>');">
+          <div class="card-test ">
+            <div class=" card-profile-test">
+
+              <div class="card-avatar-test">
+                <img class="img" src="<%=suggestion[:picture]%>">
+              </div>
+
+              <div class="card-description-test">
+                <% str = suggestion[:name] %>
+                <h2><%= str.length > 29 ? str[0...29] + "..." : str[0...29] %></h2>
+              </div>
+
+
+              <div class="card-user-test">
+                <% if suggestion[:logo] == "M"%>
+                <%= image_tag "marmiton.png", height: 30 %>
+                <% elsif suggestion[:logo] == "750" %>
+                <%= image_tag "750g.png", height: 20 %>
+                <% else  %>
+                <%= image_tag "toque.jpg", height: 20 %>
+                <% end %>
+              </div>
+            <div class="card-button-add-test">
+             <%= link_to recipes_path(recipe: {name: suggestion[:name], image: suggestion[:picture], link:suggestion[:link], logo: suggestion[:logo]}), method: :post do %>
+              <i class="fas fa-plus-circle" style="font-size:30px;color:#000000"></i>
+              <% end %>
+             </div>
+
+            </div>
+          </div>
+
+
+
+
+<!--          <div class="card-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=suggestion[:picture]%>');">
             <div class="card-description-recipe">
               <% str = suggestion[:name]%>
               <h2><%= str.length > 35 ? str[0...35]+"..." : str[0...35] %></h2>
@@ -33,7 +67,9 @@
            <%= link_to recipes_path(recipe: {name: suggestion[:name], image: suggestion[:picture], link:suggestion[:link], logo: suggestion[:logo]}), method: :post, class: " btn-medium card-button-recipe-add " do %>
             <i class="fas fa-plus"></i>
             <% end %>
-          </div>
+          </div> -->
+
+
         </a>
 
 
