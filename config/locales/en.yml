@@ -38,7 +38,7 @@ en:
   names: "They eat : "
   close_button: 'close'
   title_editer: 'Edit'
-  invite: 'Invite'
+  invite: 'Book'
   add: 'Add'
   addorsearch: 'Add or Search'
   titre_memo_html: "Memorize your recipes with <strong>Memo</strong>Cook"
@@ -50,7 +50,7 @@ en:
     recipe:
       create: "Add "
     reception:
-      create: "Invite "
+      create: "Book "
   pages:
     home:
       sign_in: "Se connecter"
@@ -65,7 +65,7 @@ en:
       myfriends: "My Guests"
   receptions:
     new:
-      title: "New invitation"
+      title: "New booking"
       my_friends: "I invite"
       my_recipes: "I cook"
   friends:
@@ -73,7 +73,7 @@ en:
       title: "My guests"
       add_friend: "Add"
       add_recipes: "Add"
-      invite_friend: "Invite "
+      invite_friend: "Book "
       no_friends_html: "It's time to test Memo<strong>Cook</strong>, register your first guest"
     new:
       title: "Add guest"
@@ -86,7 +86,7 @@ en:
       button_add: "Add "
       no_recipes_html: "It's time to test Memo<strong>Cook</strong>, register your first recipe"
     new:
-      title: "Add recipe"
+      title: "New recipe"
       name: "Name"
       desc: "My recipe"
       picture: "Picture"

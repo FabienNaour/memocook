@@ -3,12 +3,6 @@
 
 <div class="container ">
   <% if @friends.length == 0 %>
-    <div class="align-buttons">
-      <div class="inner"><%= link_to new_friend_path, class: "button-memo " do %>
-        <i class="fas fa-user-plus"></i> <%= t('.add_friend') %>
-        <% end %>
-      </div>
-    </div>
     <div class="text-white"> <%=t('.no_friends_html') %>
     </div>
 
@@ -48,13 +42,18 @@
         <% end %>
       </div> -->
 
+ <a href="<%=friend_path(friend.id) %>">
+
      <div class="col-xs-12 col-sm-6  col-lg-4">
+
+
            <div class="card-test ">
               <div class=" card-profile-test">
 
                 <div class="card-avatar-test">
-                  <img class="img" src="">
+                  <img class="img" src= "cook.png">
                 </div>
+
                 <div class="card-description-test">
                   <h2><%= friend.name %></h2>
                 </div>
@@ -71,31 +70,30 @@
             </div>
        </div>
 
+
+</a>
       <% end %>
     </div>
   </div>
 
   <% end %>
 
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
-    <div class="inner"><%= link_to new_friend_path, class: "button-memo " do %>
-      <i class="fas fa-user-plus"></i> <%= t('.add_friend')%>
-      <% end %>
+
+  <div class="row">
+    <div class="col-xs-5 col-sm-6 align-back" >
+        <%= link_to root_path, class: " button-fleche-width  " do %>
+        <i class="fas fa-angle-double-left" ></i>
+        <% end %>
     </div>
-  </div>
-
-
-
-
-    <div class="row">
-      <div class="col-xs-2 col-md-1">
-        <div class="icons-size">
-          <%= link_to root_path, class: " button-fleche-width  " do %>
-          <i class="fas fa-angle-double-left"></i>
+    <div class="col-xs-5 col-sm-6" >
+        <%= link_to new_friend_path do %>
+          <i class="fa fa-plus-circle" style="font-size:45px;padding-top:10px;color:#000000"></i>
           <% end %>
-        </div>
-      </div>
     </div>
+ </div>
+
+
+
 </div>
 
 

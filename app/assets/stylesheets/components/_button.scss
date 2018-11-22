@@ -115,7 +115,21 @@ a.button-custo {
   opacity: 0.7;
   box-shadow: 0px 2px 7px rgba(0,0,0, 0.1);
 }
-
+.button-add {
+  border-radius: 50px;
+  background-color: #e8e5e5;
+  box-shadow: 0px 1px 4px rgba(0,0,0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 10px;
+}
+.button-add:hover {
+  text-decoration: none;
+  color: black;
+  background-color: #e8e5e5;
+  opacity: 0.7;
+  box-shadow: 0px 2px 7px rgba(0,0,0, 0.1);
+}
 .button-memo {
   width: 125px;
   height: 70px;
@@ -192,6 +206,12 @@ a.button-memo {
 {
     display: inline-block;
 }
-
+.align-back
+{
+    font-size:30px;
+    padding-left:30px;
+     padding-top:10px;
+    color:#000000
+}
 
 
