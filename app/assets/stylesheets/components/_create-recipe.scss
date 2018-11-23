@@ -1,0 +1,47 @@
+.login-header {
+  display: flex;
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 25px;
+}
+.active-header {
+  width: 50%;
+  padding-bottom: 3px;
+  font-weight: bold;
+}
+
+.unactive-header {
+  width: 50%;
+  padding-bottom: 5px;
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+
+.login-syndic {
+  color: #F76800;
+
+  a {
+    color: #F76800;
+  }
+}
+
+.login-syndic-active {
+  border-bottom: 2px solid #F76800;
+}
+
+.login-lawyer {
+  color: #999999;
+
+  a {
+    color: #999999;
+  }
+}
+
+.login-lawyer-active {
+  border-bottom: 2px solid #999999;
+}
+
