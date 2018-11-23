@@ -40,7 +40,10 @@ en:
   title_editer: 'Edit'
   invite: 'Book'
   add: 'Add'
-  addorsearch: 'Add or Search'
+  search: 'Search'
+  addorsearchadd: 'Add'
+  addorsearchsearch: 'Search'
+  buttonsearch: 'search in progress...'
   titre_memo_html: "Memorize your recipes with <strong>Memo</strong>Cook"
   titre_simple_memo_html: "<strong>Memo</strong>Cook"
   helpers:
@@ -90,13 +93,19 @@ en:
       name: "Name"
       desc: "My recipe"
       picture: "Picture"
-      or: "OR"
       search: "Search on"
-      recipe_name: "recipe name"
+      recipe_name: "Recipe name"
+    search:
+      title: "New recipe"
+      name: "Name"
+      desc: "My recipe"
+      picture: "Picture"
+      search: "Search on"
+      recipe_name: "Recipe name"
   simple_form:
     placeholders:
       recipe:
-        description: 'leave it blank if you search on Marmiton or 750gr'
+        description: 'Informations'
         label: "My recipe"
         label: "Picture of my recipe"
       reception:

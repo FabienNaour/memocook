@@ -41,7 +41,10 @@ fr:
   title_editer: 'Editer'
   invite: 'Reserver'
   add: 'Ajouter'
-  addorsearch: 'Ajout ou Recherche'
+  search: 'Rechercher'
+  addorsearchadd: 'Ajouter'
+  addorsearchsearch: 'Rechercher'
+  buttonsearch: 'recherche en cours...'
   titre_memo_html: "Mémorise tes recettes grâce à <strong>Memo</strong>Cook"
   titre_simple_memo_html: "<strong>Memo</strong>Cook"
   helpers:
@@ -90,13 +93,19 @@ fr:
       name: "Nom"
       desc: "Mes recettes"
       picture: "Photo"
-      or: "OU"
       search: "Rechercher sur"
-      recipe_name: "Nom de la recette"
+      recipe_name: "Nom de ma recette"
+    search:
+      title: "Nouvelle recette "
+      name: "Nom"
+      desc: "Mes recettes"
+      picture: "Photo"
+      search: "Rechercher sur"
+      recipe_name: "Nom de ma recette"
   simple_form:
     placeholders:
       recipe:
-        description: 'laisser vide si vous recherchez sur Marmiton ou 750gr'
+        description: 'Information'
         label: "Mes recettes"
         label: "Photo de la recette"
       reception:
