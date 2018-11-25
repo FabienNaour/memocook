@@ -27,7 +27,7 @@
         </div>
       <% else %>
 
-        <div class="row">
+<!--         <div class="row">
 
           <div class="col-xs-12 col-sm-6">
            <div class="icons-size">
@@ -36,7 +36,6 @@
             <% end %>
            </div>
           </div>
-
           <div class="col-xs-12 col-sm-6">
            <div class="icons-size">
             <%= link_to  friends_path, class: "button-home " do %>
@@ -44,9 +43,40 @@
             <% end %>
            </div>
           </div>
+        </div> -->
+
+
+        <div class="row">
+
+          <div class="col-xs-6 col-sm-6">
+           <div class="category-choices-home">
+            <%= link_to  recipes_path do %>
+              <div class="category-choice-avatar-home" >
+                 <div class=" img"> <%= image_tag("icons/ustensile-de-cuisine.png") %> </div>
+                <div class="text-home"> <%= t('.myrecipes') %> </div>
+              </div>
+            <% end %>
+           </div>
+          </div>
+
+          <div class="col-xs-6 col-sm-6">
+           <div class="category-choices-home">
+            <%= link_to  friends_path do %>
+              <div class="category-choice-avatar-home" >
+                 <div class=" img"> <%= image_tag("icons/AV9.png") %> </div>
+                <div class="text-home"> <%= t('.myfriends') %> </div>
+              </div>
+            <% end %>
+           </div>
+          </div>
+
+
 
         </div>
+
       <% end %>
+
+
    </div>
   </div>
 </div>

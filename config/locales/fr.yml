@@ -78,6 +78,7 @@ fr:
       add_recipes: "Ajouter"
       invite_friend: "Reserver "
       no_friends_html: "Il est temps de tester Memo<strong>Cook</strong>, enregistre ton 1er invité"
+      nb_invite: "%{count} invitation(s)"
     new:
       title: "Ajouter invité"
     show:

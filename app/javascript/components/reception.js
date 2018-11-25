@@ -16,3 +16,9 @@ $(document).ready(function(){
     $(this).toggleClass("active");
   });
 });
+
+$(document).ready(function(){
+  $(".category-choice-avatar").click(function(){
+    $(this).toggleClass("active");
+  });
+});

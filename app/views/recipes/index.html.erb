@@ -51,7 +51,7 @@
                       <% elsif recipe.logo == "750" %>
                       <%= image_tag "750g.png", height: 20 %>
                       <% else  %>
-                      <%= image_tag "toque.jpg", height: 20 %>
+                      <%= image_tag "topchef.jpg", height: 20 %>
                       <% end %>
                     </div>
 
@@ -61,8 +61,8 @@
 
               <div class="card-button-test">
                  <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
-                  <i class="fas fa-minus-circle" style="font-size:30px;color:#999999"></i>
-                  <% end %>
+                    <i class="fas fa-minus-circle btn-minus" ></i>
+                   <% end %>
               </div>
           </div>
 <% else %>
@@ -93,7 +93,7 @@
           <% elsif recipe.logo == "750" %>
           <%= image_tag "750g.png", height: 20 %>
           <% else  %>
-          <%= image_tag "toque.jpg", height: 20 %>
+          <%= image_tag "topchef.jpg", height: 20 %>
           <% end %>
         </div>
 
@@ -103,7 +103,7 @@
 
      <div class="card-button-test">
          <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
-          <i class="fas fa-minus-circle" style="font-size:30px;color:#999999"></i>
+            <i class="fas fa-minus-circle btn-minus" ></i>
           <% end %>
       </div>
 
@@ -119,7 +119,7 @@
 
 
         <%= link_to recipe_path(recipe.id), method: :delete, data: {toggle: "modal", target: "#deleteModal"} do %>
-            <i class="fas fa-plus-circle" style="font-size:30px;color:white"></i>
+          <i class="fa fa-plus-circle btn-plus"  ></i>
             <% end %>
 
 </div>
@@ -130,14 +130,14 @@
   <% end %>
 
   <div class="row">
-    <div class="col-xs-5 col-sm-6" >
+<!--     <div class="col-xs-5 col-sm-6" >
         <%= link_to root_path, class: " button-fleche-width  " do %>
         <i class="fas fa-angle-double-left" style="font-size:30px;color:#000000"></i>
         <% end %>
-    </div>
+    </div> -->
     <div class="col-xs-5 col-sm-6" >
         <%= link_to new_recipe_path do %>
-          <i class="fa fa-plus-circle" style="font-size:45px;color:#999999"></i>
+          <i class="fa fa-plus-circle btn-plus"  ></i>
           <% end %>
     </div>
  </div>

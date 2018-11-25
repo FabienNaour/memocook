@@ -16,14 +16,14 @@ def new
  @recipe = Recipe.new
  @items = []
  @items[0] = "Marmiton"
- @items[1] = "750g"
+ @items[1] = "750g.   "
 end
 
 def search
 @recipe = Recipe.new
  @items = []
  @items[0] = "Marmiton"
- @items[1] = "750g"
+ @items[1] = "750g.   "
 end
 
 def create
@@ -37,7 +37,7 @@ if params[:_method] == "post"
     @recipe = Recipe.new
     @items = []
     @items[0] = "Marmiton"
-    @items[1] = "750g"
+    @items[1] = "750g.   "
     render :search
   # sinon on ajoute la recette saisie, pas de lien vers un site cuisine
   #
@@ -73,7 +73,7 @@ else
       @recipe = Recipe.new
       @items = []
       @items[0] = "Marmiton"
-      @items[1] = "750g"
+      @items[1] = "750g.   "
       render :new
     # sinon on ajoute la recette saisie, pas de lien vers un site cuisine
     #
@@ -141,7 +141,7 @@ def suggestions
       @recipe = Recipe.new
       @items = []
       @items[0] = "Marmiton"
-      @items[1] = "750g"
+      @items[1] = "750g.   "
       render :search
 
   else
@@ -160,7 +160,7 @@ def suggestions
         @recipe = Recipe.new
         @items = []
         @items[0] = "Marmiton"
-        @items[1] = "750g"
+        @items[1] = "750g.   "
         render :new
       else
 
@@ -221,7 +221,7 @@ def suggestions
       @recipe = Recipe.new
       @items = []
       @items[0] = "Marmiton"
-      @items[1] = "750g"
+      @items[1] = "750g.   "
       render :new
     else
 
@@ -283,7 +283,7 @@ raise
       @recipe = Recipe.new
       @items = []
       @items[0] = "Marmiton"
-      @items[1] = "750g"
+      @items[1] = "750g.   "
       render :new
     # sinon on ajoute la recette saisie, pas de lien vers un site cuisine
     #
@@ -322,7 +322,7 @@ raise
         @recipe = Recipe.new
         @items = []
         @items[0] = "Marmiton"
-        @items[1] = "750g"
+        @items[1] = "750g.   "
         render :new
       else
 
@@ -383,7 +383,7 @@ raise
       @recipe = Recipe.new
       @items = []
       @items[0] = "Marmiton"
-      @items[1] = "750g"
+      @items[1] = "750g.   "
       render :new
     else
 

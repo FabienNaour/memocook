@@ -30,10 +30,10 @@
       </div>
 
 
-<div class="div cadrerecipe">
+<!-- <div class="div cadrerecipe"> -->
         <div class="row">
         <div class="col-xs-12" style="size:23px ;font-weight: bold">
-          <%= t('.search') %>
+          <%= t('.search') %><abbr title="required">*</abbr>
         </div>
       </div>
 
@@ -47,14 +47,14 @@
               <input class="hidden" type="checkbox" value="<%= index%>" name="items[]" id="items_<%= index%>">
               <label class="category-choice<%= index %>" for="items_<%= index%>">
                 <%= category %>
-                <i class="fa fa-search"></i>
+<!--                 <i class="fa fa-search"></i> -->
               </label>
             </div>
             <% end %>
           </div>
 
       </div>
-</div>
+<!-- </div> -->
      <div class="row">
         <div class="col-xs-2 col-md-1">
           <div class="icons-size">

@@ -10,6 +10,28 @@
             <%= f.input :name, required: true, autofocus: true %>
           </div>
         </div>
+
+      <div class="row">
+
+          <input type="hidden" name="items[]" value="">
+          <div class="category-choices">
+
+
+              <% @items.each_with_index do |category, index| %>
+            <div class="col-xs-4 col-sm-3">
+                <input class="hidden" type="checkbox" value="<%= index%>" name="items[]" id="items_<%= index%>">
+                <label class="category-choice-avatar" for="items_<%= index%>">
+
+                    <div class="img"><%= image_tag(category) %></div>
+
+                </label>
+                   </div>
+              <% end %>
+
+          </div>
+
+      </div>
+
         <!--        <div class="row">
           <div class="col-xs-12 col-sm-4 col-sm-offset-4">
             <%= f.input :email,

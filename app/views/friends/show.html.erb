@@ -44,7 +44,7 @@
                 <% elsif reception.recipe.logo == "750" %>
                 <%= image_tag "750g.png", height: 20 %>
                 <% else  %>
-                <%= image_tag "toque.jpg", height: 20 %>
+                <%= image_tag "topchef.jpg", height: 20 %>
                 <% end %>
               </div>
 
@@ -54,7 +54,7 @@
         </a>
          <div class="card-button-test">
              <%= link_to reception_path(reception.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
-              <i class="fas fa-minus-circle" style="font-size:30px;color:#000000"></i>
+              <i class="fas fa-minus-circle btn-minus" ></i>
               <% end %>
           </div>
 
@@ -84,7 +84,7 @@
           <% elsif reception.recipe.logo == "750" %>
           <%= image_tag "750g.png", height: 20 %>
           <% else  %>
-          <%= image_tag "toque.jpg", height: 20 %>
+          <%= image_tag "topchef.jpg", height: 20 %>
           <% end %>
         </div>
 
@@ -93,7 +93,7 @@
 
    <div class="card-button-test">
        <%= link_to reception_path(reception.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
-        <i class="fas fa-minus-circle" style="font-size:30px;color:#000000"></i>
+          <i class="fas fa-minus-circle btn-minus" ></i>
         <% end %>
     </div>
 

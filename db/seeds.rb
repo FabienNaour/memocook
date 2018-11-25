@@ -89,19 +89,22 @@ friend11 = Friend.create(
     name: "Ugo et Magali " ,
     email: 'ugo@gmail.com',
     telephone: "0622456789" ,
-    user: user1
+    user: user1,
+    avatar: "icons/AV1.png"
   )
 friend12 = Friend.create(
     name: "Tonio et Fatou " ,
     email: 'tonio@gmail.com',
     telephone: "0622456789" ,
-    user: user1
+    user: user1,
+    avatar: "icons/AV11.png"
   )
 friend13 = Friend.create(
-    name: "Marie et Loic " ,
+    name: "Marie " ,
     email: 'marie@gmail.com',
     telephone: "0622456789" ,
-    user: user1
+    user: user1,
+    avatar: "icons/AV12.png"
   )
 reception11 = Reception.create(
 
