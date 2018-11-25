@@ -21,8 +21,11 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 
         <a class="iframemodal" href="#myModal"  data-value="<%= reception.recipe.link %>">
-
-          <div class="card-test ">
+            <% if reception.date < DateTime.now  %>
+              <div class="card-test card-test-opacity ">
+            <% else %>
+             <div class="card-test ">
+            <% end %>
             <div class=" card-profile-test">
 
               <div class="card-avatar-test">

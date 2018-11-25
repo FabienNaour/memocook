@@ -165,6 +165,7 @@ padding: 10px;
   color: white;
   opacity: 1;
   }
+
 }
 .category-choice-avatar  img{
     width: 100%;
@@ -200,16 +201,20 @@ padding: 10px;
 .category-choices-home {
   display: flex;
   justify-content: space-around;
+
   // flex-wrap: wrap;
   // margin: 20px 0;
 }
+
 .text-home {
   font-family: 'Maven Pro', sans-serif;
   color: white;
   font-size: 30px;
   padding: 2px;
-  text-decoration: none;
+  text-decoration: underline #ff0000;
+
 }
 .text-home:hover {
-  text-decoration: none;
+  text-decoration: underline #ff0000;
+
   }

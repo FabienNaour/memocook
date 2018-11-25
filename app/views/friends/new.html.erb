@@ -19,7 +19,7 @@
 
               <% @items.each_with_index do |category, index| %>
             <div class="col-xs-4 col-sm-3">
-                <input class="hidden" type="checkbox" value="<%= index%>" name="items[]" id="items_<%= index%>">
+                <input class="hidden" type="radio" value="<%= index%>" name="items[]" id="items_<%= index%>">
                 <label class="category-choice-avatar" for="items_<%= index%>">
 
                     <div class="img"><%= image_tag(category) %></div>

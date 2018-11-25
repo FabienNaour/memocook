@@ -38,7 +38,7 @@ en:
   names: "They eat : "
   close_button: 'close'
   title_editer: 'Edit'
-  invite: 'Book'
+  invite: 'Invite'
   add: 'Add'
   search: 'Search'
   addorsearchadd: 'Add'
@@ -68,7 +68,7 @@ en:
       myfriends: "My Guests"
   receptions:
     new:
-      title: "New booking"
+      title: "New invitation"
       my_friends: "I invite"
       my_recipes: "I cook"
   friends:
@@ -76,7 +76,7 @@ en:
       title: "My guests"
       add_friend: "Add"
       add_recipes: "Add"
-      invite_friend: "Book "
+      invite_friend: "Invite "
       no_friends_html: "It's time to test Memo<strong>Cook</strong>, register your first guest"
       nb_invite: "%{count} invitation(s)"
     new:

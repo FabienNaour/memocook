@@ -1,6 +1,8 @@
 $(document).ready(function(){
   $(".category-choice").click(function(){
+
     $(this).toggleClass("active");
+
   });
 });
 
@@ -19,6 +21,11 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $(".category-choice-avatar").click(function(){
+
+     document.querySelectorAll('.category-choice-avatar').forEach((iframe)=>{
+      $(iframe).removeClass("active");
+
+    });
     $(this).toggleClass("active");
   });
 });
