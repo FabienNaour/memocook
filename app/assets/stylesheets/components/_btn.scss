@@ -29,15 +29,39 @@
   text-decoration: none;
   color: #ffffff;
 }
+.btn a {
+ color: #ffffff;
+}
+.btn a:hover {
+ text-decoration: none;
+}
 .btn-minus {
   font-size: 30px;
   color:#000000
 }
-.btn-plus {
-  font-size: 45px;
-  padding-top:10px;
+.btn-flex {
+  display: flex;
+  justify-content: space-around;
+
+}
+.btn-plus-small {
+  font-size: 30px;
+  padding-top:1px;
   color:#000000
 }
+.btn-plus {
+  font-size: 50px;
+  padding-top:1px;
+  color:#000000
+}
+.btn-ingredient {
+  font-size: 30px;
+  color:#000000
+}
+
 .btn-plus-padding {
   padding-top:10px;
+}
+.padding-0 {
+  padding:0px;
 }

@@ -39,7 +39,8 @@ recipe11 = Recipe.create(
     image: "https://images.marmitoncdn.org/recipephotos/multiphoto/8c/8c447c04-7792-45e4-91ca-9f5761a7e6cc_w350h250c1.jpg",
     user: user1,
     photo: "",
-    photoexist: false
+    photoexist: false,
+    ingredient: "-> choucroute\n-> sel\n-> charcuterie"
   )
 recipe12 = Recipe.create(
     name: "Poulet citron" ,
@@ -49,7 +50,8 @@ recipe12 = Recipe.create(
     image: "https://images.marmitoncdn.org/recipephotos/multiphoto/88/88cd2ecb-1bda-4570-98ee-a64082ffe973_w350h250c1.jpg",
     user: user1,
     photo: "",
-    photoexist: false
+    photoexist: false,
+    ingredient: "-> poulet\n-> sel\n-> citron"
   )
 recipe13 = Recipe.create(
     name: "Cabillaud purée" ,
@@ -59,7 +61,8 @@ recipe13 = Recipe.create(
     image: "https://images.marmitoncdn.org/recipephotos/multiphoto/a9/a927e657-825f-49b8-8dfa-7585a8b8fa7b_w350h250c1.jpg",
     user: user1,
     photo: "",
-    photoexist: false
+    photoexist: false,
+    ingredient: "-> cabillaud\n-> sel\n-> patate"
   )
 recipe14 = Recipe.create(
     name: "Moule frite" ,
@@ -69,7 +72,8 @@ recipe14 = Recipe.create(
     image: "https://images.marmitoncdn.org/recipephotos/multiphoto/0c/0c3fc5cf-6f24-4692-8c43-a62661293439_w350h250c1.jpg",
     user: user1,
     photo: "",
-    photoexist: false
+    photoexist: false,
+    ingredient: "-> Moules de cancale\n-> sel\n-> Pommes de terre"
   )
 recipe15 = Recipe.create(
     name: "Pizza royale" ,
@@ -79,7 +83,8 @@ recipe15 = Recipe.create(
     image: "https://static.750g.com/images/622-auto/b4d093dd2bffa8972341596dfc693999/pizza-royale-au-barbecue.jpeg",
     user: user1,
     photo: "",
-    photoexist: false
+    photoexist: false,
+    ingredient: ""
   )
 
 
@@ -139,20 +144,26 @@ user2 = User.create(
     password_confirmation: 'password'
   )
 recipe21 = Recipe.create(
-    name: "Choucroute user2" ,
-    link: "" ,
-    description: "description complete de la choucroute user2" ,
+    name: "Pizza royale" ,
+    logo: "750",
+    link: "https://www.750g.com/pizza-royale-au-barbecue-r75180.htm" ,
+    description: "description complete Pizza " ,
+    image: "https://static.750g.com/images/622-auto/b4d093dd2bffa8972341596dfc693999/pizza-royale-au-barbecue.jpeg",
     user: user2,
     photo: "",
-    photoexist: false
+    photoexist: false,
+    ingredient: ""
   )
 recipe22 = Recipe.create(
-    name: "Poulet citron user2" ,
-    link: "" ,
-    description: "description complete du poulet au citron user2" ,
+    name: "Pizza royale" ,
+    logo: "750",
+    link: "https://www.750g.com/pizza-royale-au-barbecue-r75180.htm" ,
+    description: "description complete Pizza " ,
+    image: "https://static.750g.com/images/622-auto/b4d093dd2bffa8972341596dfc693999/pizza-royale-au-barbecue.jpeg",
     user: user2,
     photo: "",
-    photoexist: false
+    photoexist: false,
+    ingredient: ""
   )
 
 

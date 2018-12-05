@@ -39,8 +39,8 @@
                 <% end %>
               </div>
             <div class="card-button-add-test">
-             <%= link_to recipes_path(recipe: {name: suggestion[:name], image: suggestion[:picture], link:suggestion[:link], logo: suggestion[:logo]}), method: :post do %>
-                <i class="fa fa-plus-circle btn-plus"  ></i>
+             <%= link_to recipes_path(recipe: {name: suggestion[:name], image: suggestion[:picture], link:suggestion[:link], logo: suggestion[:logo], ingredients: suggestion[:ingredients]}), method: :post do %>
+                <i class="fa fa-plus-circle btn-plus-small"  ></i>
               <% end %>
              </div>
 
