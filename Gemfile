@@ -24,6 +24,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'recipe_scraper'
 
 
 group :development do

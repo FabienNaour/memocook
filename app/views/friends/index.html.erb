@@ -64,11 +64,20 @@
               </div>
             </div>
 
+            <%= render 'partials/modal-delete-friend' , friend: friend%>
             <div class="card-button-test">
+                    <button type="button" class="btn padding-0"
+                         data-toggle="modal" data-target="#deleteModal<%= friend.id %>">
+                    <i class="fas fa-minus-circle btn-minus" ></i>
+                    </button>
+             </div>
+
+<!--             <div class="card-button-test">
                <%= link_to friend_path(friend.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
                 <i class="fas fa-minus-circle btn-minus" ></i>
                 <% end %>
-            </div>
+            </div> -->
+
        </div>
 </a>
       <% end %>
@@ -84,9 +93,9 @@
         <i class="fas fa-angle-double-left" ></i>
         <% end %>
     </div> -->
-    <div class="col-xs-12 " >
+      <div class="btn-flex">
         <%= link_to new_friend_path do %>
-          <i class="fa fa-plus-circle btn-plus btn-plus-padding"  ></i>
+          <i class="fa fa-plus-circle btn-plus"  ></i>
           <% end %>
     </div>
  </div>

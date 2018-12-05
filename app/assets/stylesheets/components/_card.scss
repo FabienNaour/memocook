@@ -17,7 +17,7 @@
   background-position: center;
   color: black;
   position: relative;
-  background: linear-gradient(180deg, white, white);
+  background: linear-gradient(180deg, #FFFFFF, #FFFFFF);
   margin-top: 10px;
   font-family: 'Maven Pro', sans-serif;
 }
@@ -25,9 +25,9 @@
   height: 100px;
   background-size: cover !important;
   background-position: center;
-  color: white;
+  color: #FFFFFF;
   position: relative;
-  background: linear-gradient(180deg, white, white);
+  background: linear-gradient(180deg, #FFFFFF, #FFFFFF);
   margin-top: 10px;
   font-family: 'Maven Pro', sans-serif;
   border-radius: 5%;
@@ -71,7 +71,7 @@
   line-height: 1;
   text-align: left;
   vertical-align: middle;
-  color: white;
+  color: #FFFFFF;
   margin-top: 17px;
 }
 .card-description h2 {
@@ -117,7 +117,7 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: black;
+  background: #000000;
   opacity: 0;
 }
 .card-link:hover {
@@ -135,7 +135,7 @@
     color: rgba(0,0,0,.87);
     background: #fff;
     width: 100%;
-    color: black;
+    color: #000000;
     font-size: 16px;
     font-family: 'Maven Pro', sans-serif;
     position: relative;
@@ -151,9 +151,9 @@
 .card-description-test h2  {
   position: absolute;
   top: 10px;
-  left: 95px;
+  left: 86px;
   font-size: 18px;
-  color: black;
+  color: #000000
 }
 
 
@@ -192,6 +192,20 @@
   top: 12px;
   right: 14px;
 }
+
+.card-button-test-opacity {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  opacity: 0.5;
+}
+
+.card-button-ingredient {
+  position: absolute;
+  bottom: 2px;
+  right: 16px;
+
+}
 .card-button-add-test {
   position: absolute;
   top: 2px;
@@ -200,7 +214,7 @@
 .card-how-many-test {
   position: absolute;
   bottom: 2px;
-  left: 220px;
+  right: 38px;
   width: 130px;
 }
 
@@ -214,7 +228,7 @@
 .card-time-test{
   position: absolute;
   bottom: 2px;
-  right: 2px;
+  right: 50px;
   font-size: 16px;
   text-transform: uppercase;
 

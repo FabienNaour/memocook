@@ -35,9 +35,9 @@ fr:
   sign_out: "Deconnexion"
   sign_in: "Connexion"
   send_me_reset_password_instructions: "Envoyez moi les instructions"
-  confirm_delete: 'Confirmer la suppression ?'
+  confirm_delete: 'Confirmer suppression:'
   names: "Ont adoré : "
-  close_button: 'fermer'
+  close_button: 'Fermer'
   title_editer: 'Editer'
   invite: 'Inviter'
   add: 'Ajouter'
@@ -47,6 +47,8 @@ fr:
   buttonsearch: 'recherche en cours...'
   titre_memo_html: "Mémorise tes recettes grâce à <strong>Memo</strong>Cook"
   titre_simple_memo_html: "<strong>Memo</strong>Cook"
+  delete: 'Supprimer'
+  cancel: 'Abandonner'
   helpers:
     submit:
       friend:

@@ -1,7 +1,7 @@
 class FriendsController < ApplicationController
   def show
     @friend = Friend.find(params[:id])
-    @receptions = Reception.where(friend_id: @friend).all.order(:date)
+    @receptions = Reception.where(friend_id: @friend).all.order(:date).reverse
   end
 
   def index
@@ -25,6 +25,7 @@ class FriendsController < ApplicationController
     @items = load_avatar
 
   end
+
 
   def create
 

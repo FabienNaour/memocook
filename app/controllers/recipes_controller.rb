@@ -42,11 +42,18 @@ if params[:_method] == "post"
   # sinon on ajoute la recette saisie, pas de lien vers un site cuisine
   #
   else
+
     @recipe = Recipe.new(recipes_params)
+
     @recipe.user = current_user
     @recipe.photo = ""
     @recipe.photoexist = false
     @recipe.description = ""
+    @recipe.ingredient = ""
+    #on parcourt les ingredients
+    params[:recipe][:ingredients].each_with_index do | ingredient , index|
+      @recipe.ingredient += "-> #{ingredient}\n"
+    end
 
     if @recipe.save
       redirect_to recipes_path
@@ -113,6 +120,7 @@ end
 
 
 def destroy
+
   @recipe = Recipe.find(params[:id])
   @recipe.destroy
   redirect_to recipes_path
@@ -128,6 +136,7 @@ def suggestions
 
   # DEBUT MARMITON
   require 'open-uri'
+  require 'recipe_scraper'
 
   @search_recipe = params[:recipe][:name]
   @search_provider = params[:items]
@@ -187,18 +196,39 @@ def suggestions
                 else
                   link_recipe = element.attribute('href').value
                 end
+                # on supprime le s de https sinon RecipeScraper plante
+                link_recipe.slice!(4)
+
+                marmiton_url = 'http://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
+                url = 'http://www.750g.com/cote-de-boeuf-sweet-and-hot-r41872.htm'
+
+                recipe = RecipeScraper::Recipe.new marmiton_url
+
+
+
+# will return recipe.to_hash
+# --------------
+# { :cooktime => 7,
+#        :image => "http://images.marmitoncdn.org/recipephotos/multiphoto/7b/7b4e95f5-37e0-4294-bebe-cde86c30817f_normal.jpg",
+#        :© => ["2 beaux avocat", "2 steaks hachés de boeuf", "2 tranches de cheddar", "quelques feuilles de salade", "1/2 oignon rouge", "1 tomate", "graines de sésame", "1 filet d'huile d'olive", "1 pincée de sel", "1 pincée de poivre"],
+#        :preptime => 20,
+#        :steps => ["Laver et couper la tomate en rondelles", "Cuire les steaks à la poêle avec un filet d'huile d'olive", "Saler et poivrer", "Toaster les graines de sésames", "Ouvrir les avocats en 2, retirer le noyau et les éplucher", "Monter les burger en plaçant un demi-avocat face noyau vers le haut, déposer un steak, une tranche de cheddar sur le steak bien chaud pour qu'elle fonde, une rondelle de tomate, une rondelle d'oignon, quelques feuilles de salade et terminer par la seconde moitié d'avocat", "Parsemer quelques graines de sésames."],
+#        :title => "Burger d'avocat",
+#  }
+
+
                 @suggestions << {
                 link: link_recipe ,
                 name: element.search('.recipe-card__title')[0].text.strip,
                 picture: element.search('.recipe-card__picture img').attribute('src').value,
-                logo: "M"
-
+                logo: "M",
+                ingredients:recipe.to_hash[:ingredients],
                 }
               end #end if
             end #each do element
            index_recipes += 12
           # on s'arrete aux 3 premieres pages
-           boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 3 ))
+           boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 10 ))
           end #while boucle
 
       end #else if (html_doc.search('.recipe-search__nb-results')[0] == nil)
@@ -241,7 +271,8 @@ def suggestions
             link: "https://www.750g.com" + element.search('.c-recipe-row__title a').attribute('href').value,
             name: element.search('.c-recipe-row__title a')[0].text.strip,
             picture: element.search('.c-recipe-row__media img').attribute('data-src').value,
-            logo: "750"
+            logo: "750",
+            ingredients:[""],
             }
           # end #end if
         end #each do element
@@ -258,7 +289,7 @@ end
 #ANCIENNE VERSION
 def suggestionsBACKUP
 
-raise
+
   # DEBUT MARMITON
   require 'open-uri'
   @search_recipe = params[:recipe][:name]
@@ -422,7 +453,7 @@ end
   private
 
   def recipes_params
-    params.require(:recipe).permit(:name, :photo, :logo, :link, :description, :image, :user, :photo, :photoexist )
+    params.require(:recipe).permit(:name, :photo, :logo, :link, :description, :image, :user, :photo, :photoexist, :ingredients )
   end
 
 end

@@ -21,7 +21,7 @@
       <div class="row">
 
         <%= render 'partials/recipe-from-list' %>
-
+        <%= render 'partials/modal-ingredient' %>
         <% @recipes.each do |recipe| %>
 <!-- Marmiton or 750gr -->
 <% if recipe.link != "" %>
@@ -64,10 +64,29 @@
                     <i class="fas fa-minus-circle btn-minus" ></i>
                    <% end %>
               </div>
+
+    <%= render 'partials/modal-delete-recipe' , recipe: recipe%>
+    <div class="card-button-test">
+            <button type="button" class="btn padding-0"
+                 data-toggle="modal" data-target="#deleteModal<%= recipe.id %>">
+            <i class="fas fa-minus-circle btn-minus" ></i>
+            </button>
+     </div>
+
+
+
+             <% if recipe.logo == "M"%>
+              <div class="card-button-ingredient">
+                <a class="iframemodale" href="#myModale"  data-name= "<%=recipe.name%>" data-value="<%=recipe.ingredient%>">
+                    <i class="fas fa-utensils btn-ingredient" ></i>
+                </a>
+              </div>
+            <% end %>
           </div>
 <% else %>
 <!-- Recette perso -->
 <%= render 'partials/recipe-from-list-comment', recipe: recipe %>
+
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 
   <a data-toggle="modal" href="#myModal<%= recipe.id %>">
@@ -75,10 +94,18 @@
 
     <div class="card-test">
       <div class=" card-profile-test" >
-        <div class="card-description-test">
-          <div class="card-avatar-test1">
+        <% if recipe.photoexist %>
+           <div class="card-avatar-test">
+              <img class="img" src="<%=recipe.photo %>">
+            </div>
+        <% else %>
+           <div class="card-avatar-test img">
+              <%= image_tag "icons/ustensile-de-cuisine.png"%>
+           </div>
+        <% end %>
 
-          </div>
+        <div class="card-description-test">
+
           <% str = recipe.name %>
           <h2><%= str.length > 29 ? str[0...29] + "..." : str[0...29] %></h2>
         </div>
@@ -100,27 +127,14 @@
       </div>
     </div>
   </a>
-
-     <div class="card-button-test">
-         <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
+    <%= render 'partials/modal-delete-recipe' , recipe: recipe%>
+    <div class="card-button-test">
+            <button type="button" class="btn padding-0"
+                 data-toggle="modal" data-target="#deleteModal<%= recipe.id %>">
             <i class="fas fa-minus-circle btn-minus" ></i>
-          <% end %>
-      </div>
+            </button>
+     </div>
 
-
-
-
-        <%= render 'partials/modal-delete' , recipe: recipe%>
-
-        <button type="button" class="btn btn-outline-danger"
-             data-toggle="modal" data-target="#deleteModal">
-          Delete
-        </button>
-
-
-        <%= link_to recipe_path(recipe.id), method: :delete, data: {toggle: "modal", target: "#deleteModal"} do %>
-          <i class="fa fa-plus-circle btn-plus"  ></i>
-            <% end %>
 
 </div>
 <% end %>
@@ -129,21 +143,25 @@
     </div>
   <% end %>
 
-  <div class="row">
+
 <!--     <div class="col-xs-5 col-sm-6" >
         <%= link_to root_path, class: " button-fleche-width  " do %>
         <i class="fas fa-angle-double-left" style="font-size:30px;color:#000000"></i>
         <% end %>
     </div> -->
-    <div class="col-xs-5 col-sm-6" >
-        <%= link_to new_recipe_path do %>
-          <i class="fa fa-plus-circle btn-plus"  ></i>
-          <% end %>
+<br />
+    <div class="btn-flex">
+
+          <%= link_to new_recipe_path do %>
+            <i class="fa fa-plus-circle btn-plus"  ></i>
+            <% end %>
+
     </div>
- </div>
+<br />
 
 
 </div>
+
 
 
 
