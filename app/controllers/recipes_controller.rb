@@ -202,7 +202,7 @@ def suggestions
                 marmiton_url = 'http://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
                 url = 'http://www.750g.com/cote-de-boeuf-sweet-and-hot-r41872.htm'
 
-                # recipe = RecipeScraper::Recipe.new link_recipe
+                recipe = RecipeScraper::Recipe.new link_recipe
 
 
 
@@ -222,14 +222,13 @@ def suggestions
                 name: element.search('.recipe-card__title')[0].text.strip,
                 picture: element.search('.recipe-card__picture img').attribute('src').value,
                 logo: "M",
-                # ingredients:recipe.to_hash[:ingredients],
-                ingredients:[""],
+                ingredients:recipe.to_hash[:ingredients],
                 }
               end #end if
             end #each do element
            index_recipes += 12
           # on s'arrete aux 3 premieres pages
-           boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 10 ))
+           boucle = false if ((index_recipes >= nb_recipes) || (index_recipes > 3 ))
           end #while boucle
 
       end #else if (html_doc.search('.recipe-search__nb-results')[0] == nil)
@@ -286,6 +285,15 @@ def suggestions
   end # else  @search_recipe == "" || @search_provider.length == 0
 
 end
+
+
+
+
+
+
+
+
+
 
 #ANCIENNE VERSION
 def suggestionsBACKUP
