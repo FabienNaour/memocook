@@ -7,8 +7,8 @@ def show
 end
 
 def index
-  @recipes = Recipe.where(user_id: current_user).all.order(:name)
-
+  #@recipes = Recipe.where(user_id: current_user).all.order(:name)
+@recipes = Recipe.where(user_id: current_user).all.order(:created_at).reverse
 
 end
 
@@ -202,7 +202,7 @@ def suggestions
                 marmiton_url = 'http://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
                 url = 'http://www.750g.com/cote-de-boeuf-sweet-and-hot-r41872.htm'
 
-                recipe = RecipeScraper::Recipe.new marmiton_url
+                recipe = RecipeScraper::Recipe.new link_recipe
 
 
 

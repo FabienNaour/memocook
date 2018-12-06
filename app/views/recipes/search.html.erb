@@ -1,60 +1,59 @@
-<div class="container">
+
+
+
+  <div class="container">
+
   <div class="form-input">
+
     <div class="login-header">
-      <div class="active-header login-syndic login-syndic-active">
-        <%= t('search') %>
-      </div>
-      <div class="unactive-header login-lawyer">
+
+      <div class="unactive-header login-syndic">
         <%= link_to t('add'), new_recipe_path, class: "" %>
       </div>
-
+        <div class="active-header login-lawyer login-lawyer-active">
+          <%= t('add') %>
+        </div>
     </div>
 
-    <%= simple_form_for @recipe, url: suggestions_recipes_path(), method: :post do |f| %>
+    <%= simple_form_for @recipe do |f| %>
+
+
 <!--     <h3><%= t('.title') %></h3> -->
 
     <div class="form-cells">
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 <!--           <%= f.input :name, required: true, autofocus: true , placeholder: "recipe name", label: "Name"%>
- -->          <!-- CE BLOC REMPLACE CELUI DU DESSUS AFIN DE POUVOIR INSERER LE margin-left -->
+ -->
+          <!-- CE BLOC REMPLACE CELUI DU DESSUS AFIN DE POUVOIR INSERER LE margin-left -->
           <div class="form-group string required recipe_name" >
             <label class="form-control-label string required" style=" margin-left:0px;" for="recipe_name"><%= t('.name') %>
               <abbr title="required">*</abbr>
             </label>
-
-            <input class="form-control string required" style="margin-left:0px; " autofocus="autofocus" required="required" aria-required="true" placeholder="<%=t('.recipe_name')%>" type="text" name="recipe[name]" id="recipe_name">
+            <% aa = t('.recipe_name') %>
+            <input class="form-control string required" style="margin-left:0px; " autofocus="autofocus" required="required" aria-required="true" placeholder="<%=aa%>" type="text" name="recipe[name]" id="recipe_name">
           </div>
             <!-- END BLOC -->
+
         </div>
       </div>
-
-
-<!-- <div class="div cadrerecipe"> -->
-        <div class="row">
-        <div class="col-xs-12" style="size:23px ;font-weight: bold">
-          <%= t('.search') %><abbr title="required">*</abbr>
-        </div>
-      </div>
-
+<div class="div cadrerecipe">
       <div class="row">
-
-          <input type="hidden" name="items[]" value="">
-          <div class="category-choices">
-            <% @items.each_with_index do |category, index| %>
-
-            <div class="col-xs-12 col-md-6">
-              <input class="hidden" type="checkbox" value="<%= index%>" name="items[]" id="items_<%= index%>">
-              <label class="category-choice<%= index %>" for="items_<%= index%>">
-                <%= category %>
-<!--                 <i class="fa fa-search"></i> -->
-              </label>
-            </div>
-            <% end %>
-          </div>
-
+        <div class="col-xs-12">
+          <%= f.input :description, autofocus: true %>
+        </div>
       </div>
-<!-- </div> -->
+
+        <div class="row">
+<!--           <div class="col-xs-12 hidden-xs hidden-sm hidden-md ">
+ -->          <div class="col-xs-12  ">
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden %>
+              </div>
+        </div>
+</div>
+
+
      <div class="row">
         <div class="col-xs-2 col-md-1">
           <div class="icons-size">
@@ -65,7 +64,7 @@
         </div>
         <div class="col-xs-6 col-sm-6 col-sm-offset-4">
 
-            <%= f.submit  t('addorsearchsearch'), class: "button-custo", data: { disable_with: t('buttonsearch') } %>
+            <%= f.submit  t('addorsearchadd'), class: "button-custo" %>
         </div>
       </div>
 
