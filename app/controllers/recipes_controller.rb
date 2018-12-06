@@ -197,11 +197,11 @@ def suggestions
                   link_recipe = element.attribute('href').value
                 end
                 # on supprime le s de https sinon RecipeScraper plante
-                link_recipe.slice!(4)
+                # link_recipe.slice!(4)
 
-                marmiton_url = 'http://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
+                # marmiton_url = 'http://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
 
-                recipe = RecipeScraper::Recipe.new link_recipe
+                # recipe = RecipeScraper::Recipe.new link_recipe
 
 
 
@@ -221,7 +221,8 @@ def suggestions
                 name: element.search('.recipe-card__title')[0].text.strip,
                 picture: element.search('.recipe-card__picture img').attribute('src').value,
                 logo: "M",
-                ingredients:recipe.to_hash[:ingredients],
+                # ingredients:recipe.to_hash[:ingredients],
+                ingredients:[""]
                 }
               end #end if
             end #each do element
