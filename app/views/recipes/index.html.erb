@@ -59,29 +59,25 @@
                 </div>
             </a>
 
+
+
+              <%= render 'partials/modal-delete-recipe' , recipe: recipe%>
               <div class="card-button-test">
-                 <%= link_to recipe_path(recipe.id), method: :delete, data: { confirm: t('confirm_delete') } do %>
-                    <i class="fas fa-minus-circle btn-minus" ></i>
-                   <% end %>
-              </div>
-
-    <%= render 'partials/modal-delete-recipe' , recipe: recipe%>
-    <div class="card-button-test">
-            <button type="button" class="btn padding-0"
-                 data-toggle="modal" data-target="#deleteModal<%= recipe.id %>">
-            <i class="fas fa-minus-circle btn-minus" ></i>
-            </button>
-     </div>
+                      <button type="button" class="btn padding-0"
+                           data-toggle="modal" data-target="#deleteModal<%= recipe.id %>">
+                      <i class="fas fa-minus-circle btn-minus" ></i>
+                      </button>
+               </div>
 
 
-
-             <% if recipe.logo == "M"%>
+<!-- STANDBYE AFFICHAGE INGREDIENTS
+ --><!--              <% if recipe.logo == "M"%>
               <div class="card-button-ingredient">
                 <a class="iframemodale" href="#myModale"  data-name= "<%=recipe.name%>" data-value="<%=recipe.ingredient%>">
                     <i class="fas fa-utensils btn-ingredient" ></i>
                 </a>
               </div>
-            <% end %>
+            <% end %> -->
           </div>
 <% else %>
 <!-- Recette perso -->

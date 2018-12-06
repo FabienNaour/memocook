@@ -196,11 +196,10 @@ def suggestions
                 else
                   link_recipe = element.attribute('href').value
                 end
+                # le HTTP ne fonctionne pas sur HEROKU, ne pas utiliser cette GEM
                 # on supprime le s de https sinon RecipeScraper plante
                 # link_recipe.slice!(4)
-
                 # marmiton_url = 'http://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
-
                 # recipe = RecipeScraper::Recipe.new link_recipe
 
 
