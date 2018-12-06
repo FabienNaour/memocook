@@ -194,13 +194,15 @@ def suggestions
                 if (p == nil)
                   link_recipe = "https://www.marmiton.org" + element.attribute('href').value
                 else
+                  link_recipe_full = element.attribute('href').value
                   link_recipe = element.attribute('href').value
                 end
-                # le HTTP ne fonctionne pas sur HEROKU, ne pas utiliser cette GEM
+
                 # on supprime le s de https sinon RecipeScraper plante
-                # link_recipe.slice!(4)
-                # marmiton_url = 'http://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
-                # recipe = RecipeScraper::Recipe.new link_recipe
+
+                 # link_recipe.slice!(4)
+                marmiton_url = 'https://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
+                recipe = RecipeScraper::Recipe.new link_recipe
 
 
 
@@ -216,12 +218,12 @@ def suggestions
 
 
                 @suggestions << {
-                link: link_recipe ,
+                link: link_recipe_full ,
                 name: element.search('.recipe-card__title')[0].text.strip,
                 picture: element.search('.recipe-card__picture img').attribute('src').value,
                 logo: "M",
-                # ingredients:recipe.to_hash[:ingredients],
-                ingredients:[""]
+                ingredients:recipe.to_hash[:ingredients]
+
                 }
               end #end if
             end #each do element
@@ -233,6 +235,7 @@ def suggestions
       end #else if (html_doc.search('.recipe-search__nb-results')[0] == nil)
       # FIN MARMITON
     end #if @search_provider.include? "0"
+
   #DEBUT 750gr
 
   if @search_provider.include? "1"
@@ -264,15 +267,31 @@ def suggestions
         html_doc = open_file(url)
 
         html_doc.search('.c-recipe-row').each do |element|
-          # on ne selectinne que les fiches (donc recettes)
-          # if (element.search('.recipe-card__rating')[0] != nil)
-            @suggestions << {
-            link: "https://www.750g.com" + element.search('.c-recipe-row__title a').attribute('href').value,
-            name: element.search('.c-recipe-row__title a')[0].text.strip,
-            picture: element.search('.c-recipe-row__media img').attribute('data-src').value,
-            logo: "750",
-            ingredients:[""],
-            }
+
+
+          link_recipe_full = "https://www.750g.com" + element.search('.c-recipe-row__title a').attribute('href').value
+          link_recipe = "https://www.750g.com" + element.search('.c-recipe-row__title a').attribute('href').value
+
+          # on supprime le s de https sinon RecipeScraper plante
+
+          # link_recipe.slice!(4)
+          # marmiton_url = 'http://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
+          recipe = RecipeScraper::Recipe.new link_recipe
+
+
+          if (recipe.to_hash[:title] != "")
+
+
+            # on ne selectinne que les fiches (donc recettes)
+            # if (element.search('.recipe-card__rating')[0] != nil)
+              @suggestions << {
+              link: link_recipe_full,
+              name: element.search('.c-recipe-row__title a')[0].text.strip,
+              picture: element.search('.c-recipe-row__media img').attribute('data-src').value,
+              logo: "750",
+              ingredients:recipe.to_hash[:ingredients],
+              }
+            end
           # end #end if
         end #each do element
        index_recipes += 1
