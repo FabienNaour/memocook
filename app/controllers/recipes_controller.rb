@@ -202,7 +202,7 @@ def suggestions
                 marmiton_url = 'http://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
                 url = 'http://www.750g.com/cote-de-boeuf-sweet-and-hot-r41872.htm'
 
-                recipe = RecipeScraper::Recipe.new link_recipe
+                # recipe = RecipeScraper::Recipe.new link_recipe
 
 
 
@@ -222,7 +222,8 @@ def suggestions
                 name: element.search('.recipe-card__title')[0].text.strip,
                 picture: element.search('.recipe-card__picture img').attribute('src').value,
                 logo: "M",
-                ingredients:recipe.to_hash[:ingredients],
+                # ingredients:recipe.to_hash[:ingredients],
+                ingredients:[""],
                 }
               end #end if
             end #each do element
