@@ -31,12 +31,7 @@ iframe {
     *width: 100%;
 }
 
-.scroll-wrapper {
-  -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
 
-  /* important:  dimensions or positioning here! */
-}
   /* hide mobile version by default */
   .iframerecipe .mobile {
     display: none;
