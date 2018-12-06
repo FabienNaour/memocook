@@ -200,7 +200,6 @@ def suggestions
                 link_recipe.slice!(4)
 
                 marmiton_url = 'http://www.marmiton.org/recettes/recette_burger-d-avocat_345742.aspx'
-                url = 'http://www.750g.com/cote-de-boeuf-sweet-and-hot-r41872.htm'
 
                 recipe = RecipeScraper::Recipe.new link_recipe
 
