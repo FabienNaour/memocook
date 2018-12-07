@@ -3,14 +3,14 @@
 
 
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "recette.png", height: 50 %>
+      <%= image_tag "recette.png", height: 30 %>
     <% end %>
 
 
 
    <% if user_signed_in? %>
       <div class="navbar-wagon-logo">
-        <h3>Memo<strong>Cook</strong></h3>
+        <h1><%= t('memo_cooking_html') %></h1>
       </div>
 
     <% else%>

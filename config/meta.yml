@@ -1,0 +1,5 @@
+meta_product_name: "MemoCook"
+meta_title: "MemoCook - Memorize your recipes"
+meta_description: "Never cook twice the same recipe for your friends and family"
+meta_image: "recette.png"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

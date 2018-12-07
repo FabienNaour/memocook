@@ -1,5 +1,6 @@
 
 <div class="container">
+<br />
   <div class="row">
     <div class="col-xs-12 col-md-12">
 
@@ -7,38 +8,28 @@
           <%= link_to :back, class: " button-fleche-width  " do %>
           <i class="fas fa-angle-double-left"></i>
           <% end %></span>
-         <span class="font30px"><%= @recipe.name%> </span>
-
     </div>
   </div>
+<br />
 
+  <% if @recipe.link != "" %>
 
+    <div class="iframerecipe">
 
+        <iframe class="mobile" height="100%" width="100%" scrolling="no" src="<%= @recipe.link%>"></iframe>
 
-<!-- AFFICHAGE VIDEO YOUTUBE ok il faut embed
- -->
-<!--  <div class="col-xs-12 ">
-  <div class="video-wrapper">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/1b99rSw2g_0" width="800" height="448" frameborder="0"></iframe>
+        <iframe class="desktop" height="1000" width="100%" scrolling="yes" src="<%= @recipe.link%>"></iframe>
     </div>
-  </div>
- </div>
-</div> -->
+  <% else %>
+      <div class="modal-body modal-body-custo">
+              <div class="modal-description"><%= @recipe.description %>
+              </div>
+                <% if @recipe.photoexist  %>
+                  <%= cl_image_tag @recipe.photo, height: 600, width: 350, crop: :fill %>
+                <% end %>
 
-
-
-<!-- Affichage Website -->
-<!-- Affichage Mobile -->
-<!--  ou Affichage desktop -->
-
-
-  <div class="iframerecipe">
-
-      <iframe class="mobile" height="100%" width="100%" scrolling="no" src="<%= @recipe.link%>"></iframe>
-
-      <iframe class="desktop" height="1000" width="100%" scrolling="yes" src="<%= @recipe.link%>"></iframe>
-    </div>
+      </div>
+  <% end %>
 
 </div>
 

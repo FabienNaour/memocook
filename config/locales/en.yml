@@ -30,6 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  errorpage404: "Oops, the page you are looking for <br>
+    does not exist ....."
   profile: "Profile"
   sign_out: "Sign out"
   sign_in: "Sign in"
@@ -44,8 +46,8 @@ en:
   addorsearchadd: 'Add'
   addorsearchsearch: 'Search'
   buttonsearch: 'search in progress...'
-  titre_memo_html: "Memorize your recipes with <strong>Memo</strong>Cook"
-  titre_simple_memo_html: "<strong>Memo</strong>Cook"
+  titre_memo_html: "Memorize your recipes with <strong>Memo</strong>Cooking"
+  memo_cooking_html: "<strong>Memo</strong>Cooking"
   delete: 'Delete'
   cancel: 'Cancel'
   helpers:

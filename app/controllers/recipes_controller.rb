@@ -239,14 +239,19 @@ def suggestions
   #DEBUT 750gr
 
   if @search_provider.include? "1"
+
+
+
     url = "https://www.750g.com/recherche.htm?search=#{@search_recipe}"
     html_doc = open_file(url)
     # on recupere le Nb de recettes à parser
     nb_recipes = 0
 
     html_doc.search('.u-title-section').each do |element|
+
       if element.text.strip.match(/(\d{1,5})/) != nil
             nb_recipes = element.text.strip.match(/(\d{1,5})/)[1].to_i
+
       end
     end # each do
     if (nb_recipes == 0)

@@ -2,13 +2,13 @@
 
   <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "recipe.png", height: 50 %>
+      <%= image_tag "recipe.png", height: 30 %>
     <% end %>
 
 
    <% if user_signed_in? %>
       <div class="home-navbar-wagon-logo">
-        <h1><%= t('titre_simple_memo_html') %></h1>
+        <h1><%= t('memo_cooking_html') %></h1>
       </div>
     <% else%>
       <div class="home-navbar-wagon-flag " >
