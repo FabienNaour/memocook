@@ -7,15 +7,16 @@
 
     <div class="div cadre">
       <div class="row">
-
+<!-- ON REMPLACE MODAL PAR SHOW CAR IFRAME FONCTIONNE MAL AVEC MODAL -->
       <%= render 'partials/recipe-from-list' %>
-      <% @suggestions.each do |suggestion| %>
+
+    <% @suggestions.each do |suggestion| %>
 
       <div class="col-xs-12 col-sm-6 col-lg-4">
+<!-- ON REMPLACE MODAL PAR SHOW CAR IFRAME FONCTIONNE MAL AVEC MODAL -->
+         <a class="iframemodal" href="#myModal" data-value="<%=suggestion[:link]%>">
 
-        <a class="iframemodal" href="#myModal" data-value="<%=suggestion[:link]%>">
-
-
+<!--         <%= link_to  showsuggestion_recipes_path , method: :post do %> -->
           <div class="card-test ">
             <div class=" card-profile-test">
 
@@ -27,8 +28,6 @@
                 <% str = suggestion[:name] %>
                 <h2><%= str.length > 29 ? str[0...29] + "..." : str[0...29] %></h2>
               </div>
-
-
               <div class="card-user-test">
                 <% if suggestion[:logo] == "M"%>
                 <%= image_tag "marmiton.png", height: 30 %>
@@ -39,14 +38,16 @@
                 <% end %>
               </div>
             <div class="card-button-add-test">
-             <%= link_to recipes_path(recipe: {name: suggestion[:name], image: suggestion[:picture], link:suggestion[:link], logo: suggestion[:logo], ingredients: suggestion[:ingredients]}), method: :post do %>
+             <%= link_to recipes_path(recipe: {nb_of_persons:suggestion[:nb_of_persons] ,name: suggestion[:name], image: suggestion[:picture], link:suggestion[:link], logo: suggestion[:logo], ingredients: suggestion[:ingredients]}), method: :post do %>
                 <i class="fa fa-plus-circle btn-plus-small"  ></i>
               <% end %>
              </div>
 
             </div>
           </div>
+<!--       <% end %> -->
         </a>
+
       </div>
       <% end %>
     </div>

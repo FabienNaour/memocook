@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
+    get '/mentions' => 'pages#mentions'
 
     resources :receptions, only: [:new , :create, :destroy ]
     resources :friends, only: [:show , :index , :new , :create, :destroy]
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
     resources :recipes, only: [:show , :index , :new , :create, :destroy] do
       get :search, on: :collection
       post :suggestions, on: :collection
+      post :showsuggestion, on: :collection
     end
   end
 

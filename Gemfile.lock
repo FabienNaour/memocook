@@ -224,7 +224,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    recipe_scraper (2.2.3)
+    recipe_scraper (2.2.4)
       nokogiri
     redis (4.0.3)
     responders (2.4.0)
@@ -317,7 +317,7 @@ DEPENDENCIES
   puma
   rails (= 5.2.1)
   rails-i18n
-  recipe_scraper (~> 2.2.3)
+  recipe_scraper (~> 2.2.4)
   redis
   sass-rails
   simple_form

@@ -11,8 +11,8 @@
     <div class="div cadre">
       <div class="row">
 
-
-      <%= render 'partials/recipe-from-list' %>
+<!-- ON SUPPRIME MODAL CAR IFRAME FONCTIONNE MAL AVEC MODAL -->
+<!--       <%= render 'partials/recipe-from-list' %> -->
       <%= render 'partials/modal-ingredient' %>
 
         <% @receptions.each do |reception| %>
@@ -21,7 +21,7 @@
 
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 
-        <a class="iframemodal" href="#myModal"  data-value="<%= reception.recipe.link %>">
+<!--         <a class="iframemodal" href="#myModal"  data-value="<%= reception.recipe.link %>"> -->
             <% if reception.date < DateTime.now  %>
               <div class="card-test card-test-opacity ">
             <% else %>
@@ -55,7 +55,7 @@
             </div>
           </div>
 
-        </a>
+<!--         </a> -->
 
           <%= render 'partials/modal-delete-recipe-friend' , reception: reception%>
 

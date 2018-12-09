@@ -26,6 +26,8 @@ def search
  @items[1] = "750g.   "
 end
 
+
+
 def create
 
 # on crée recette marmiton ou 750g issue du SEARCH
@@ -50,6 +52,9 @@ if params[:_method] == "post"
     @recipe.photoexist = false
     @recipe.description = ""
     @recipe.ingredient = ""
+
+    @recipe.ingredient =  params[:recipe][:nb_of_persons] + " " + t('people')  + "\n"
+
     #on parcourt les ingredients
     params[:recipe][:ingredients].each_with_index do | ingredient , index|
       @recipe.ingredient += "-> #{ingredient}\n"
@@ -131,6 +136,10 @@ def open_file(url)
 end
 
 #END ANCIENNE VERSION
+
+def showsuggestion
+
+end
 
 def suggestions
 
@@ -222,7 +231,8 @@ def suggestions
                 name: element.search('.recipe-card__title')[0].text.strip,
                 picture: element.search('.recipe-card__picture img').attribute('src').value,
                 logo: "M",
-                ingredients:recipe.to_hash[:ingredients]
+                ingredients:recipe.to_hash[:ingredients],
+                nb_of_persons:recipe.nb_of_persons
 
                 }
               end #end if
@@ -295,6 +305,7 @@ def suggestions
               picture: element.search('.c-recipe-row__media img').attribute('data-src').value,
               logo: "750",
               ingredients:recipe.to_hash[:ingredients],
+              nb_of_persons:recipe.nb_of_persons
               }
             end
           # end #end if

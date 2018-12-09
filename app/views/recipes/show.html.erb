@@ -1,6 +1,6 @@
 
 <div class="container">
-<br />
+  <br />
   <div class="row">
     <div class="col-xs-12 col-md-12">
 
@@ -10,12 +10,10 @@
           <% end %></span>
     </div>
   </div>
-<br />
+  <br />
 
   <% if @recipe.link != "" %>
-
     <div class="iframerecipe">
-
         <iframe class="mobile" height="100%" width="100%" scrolling="no" src="<%= @recipe.link%>"></iframe>
 
         <iframe class="desktop" height="1000" width="100%" scrolling="yes" src="<%= @recipe.link%>"></iframe>
@@ -27,7 +25,6 @@
                 <% if @recipe.photoexist  %>
                   <%= cl_image_tag @recipe.photo, height: 600, width: 350, crop: :fill %>
                 <% end %>
-
       </div>
   <% end %>
 
