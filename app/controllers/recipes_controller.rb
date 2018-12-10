@@ -45,11 +45,16 @@ if params[:_method] == "post"
 
     @recipe = Recipe.new(recipes_params)
 
+
+
     @recipe.user = current_user
     @recipe.photo = ""
     @recipe.photoexist = false
     @recipe.description = ""
     @recipe.ingredient = ""
+    #on ajoute nb de personnes au debut de la liste ingredients
+    @recipe.ingredient =  params[:recipe][:nb_of_persons] + " " + t('people')  + "\n"
+
     #on parcourt les ingredients
     params[:recipe][:ingredients].each_with_index do | ingredient , index|
       @recipe.ingredient += "-> #{ingredient}\n"
@@ -222,9 +227,11 @@ def suggestions
                 name: element.search('.recipe-card__title')[0].text.strip,
                 picture: element.search('.recipe-card__picture img').attribute('src').value,
                 logo: "M",
-                ingredients:recipe.to_hash[:ingredients]
+                ingredients:recipe.to_hash[:ingredients],
+                nb_of_persons: recipe.nb_of_persons
 
                 }
+
               end #end if
             end #each do element
            index_recipes += 12
@@ -290,6 +297,7 @@ def suggestions
               picture: element.search('.c-recipe-row__media img').attribute('data-src').value,
               logo: "750",
               ingredients:recipe.to_hash[:ingredients],
+              nb_of_persons: recipe.nb_of_persons
               }
             end
           # end #end if
@@ -480,7 +488,7 @@ end
   private
 
   def recipes_params
-    params.require(:recipe).permit(:name, :photo, :logo, :link, :description, :image, :user, :photo, :photoexist, :ingredients )
+    params.require(:recipe).permit(:name, :photo, :logo, :link, :description, :image, :user, :photo, :photoexist, :ingredients)
   end
 
 end

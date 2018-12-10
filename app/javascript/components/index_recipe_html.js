@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('#myModal iframe').forEach((iframe)=>{
       setIframeLink(iframe,'');
     });
+
   })
 
   //for each modal, we will listen for a click and bind click with named function
@@ -57,6 +58,11 @@ const modales = document.querySelectorAll(".iframemodale");
     document.querySelectorAll('#myModale iframe').forEach((iframe)=>{
       setIframeLinke(iframe,'');
     });
+    // on efface les couleurs bouton
+    button = document.getElementById("button");
+      button.classList.remove("button-custo-color-marmiton");
+      button.classList.remove("button-custo-color-750");
+
   })
 
   //for each modal, we will listen for a click and bind click with named function
@@ -89,6 +95,19 @@ const modales = document.querySelectorAll(".iframemodale");
 
 
     });
+      const lebutton = document.getElementById("button");
+      //si bouton Marmiton on affiche couleur orange sinon vert
+      if (event.currentTarget.dataset.logo === "M")
+      {
+        lebutton.classList.add("button-custo-color-marmiton");
+      }
+      else
+      {
+        lebutton.classList.add("button-custo-color-750");
+      }
+
+
+
      //open modal with JQuery
      $('#myModale').modal();
 }
