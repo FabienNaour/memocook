@@ -3,6 +3,7 @@ ActiveAdmin.register Recipe do
     selectable_column
     id_column
     column :name
+    column :user
     column :link
     column :description
     column :image
@@ -17,6 +18,7 @@ ActiveAdmin.register Recipe do
   form do |f|
     f.inputs "Identity" do
       f.input :name
+      f.input :user
       f.input :link
       f.input :description
       f.input :image
@@ -26,7 +28,7 @@ ActiveAdmin.register Recipe do
     f.actions
   end
 
-  permit_params  :name, :link, :description, :image, :logo
+  permit_params  :name, :link, :description, :image, :logo, :user
 end
 
 

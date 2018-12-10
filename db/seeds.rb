@@ -20,15 +20,16 @@ user1 = User.create(
     email: 'user1@gmail.com',
     password: 'password',
     password_confirmation: 'password',
-
+    admin: false
 
   )
-adminuser = AdminUser.create!(
+adminuser = User.create(
     email: 'admin@gmail.com',
     password: 'password',
-    password_confirmation: 'password')
-
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+    password_confirmation: 'password',
+    admin: true
+)
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 
 recipe11 = Recipe.create(
@@ -138,62 +139,10 @@ reception15 = Reception.create(
     friend: friend11 ,
     recipe: recipe15
   )
-user2 = User.create(
-    email: 'user2@gmail.com',
-    password: 'password',
-    password_confirmation: 'password'
-  )
-recipe21 = Recipe.create(
-    name: "Pizza royale" ,
-    logo: "750",
-    link: "https://www.750g.com/pizza-royale-au-barbecue-r75180.htm" ,
-    description: "description complete Pizza " ,
-    image: "https://static.750g.com/images/622-auto/b4d093dd2bffa8972341596dfc693999/pizza-royale-au-barbecue.jpeg",
-    user: user2,
-    photo: "",
-    photoexist: false,
-    ingredient: ""
-  )
-recipe22 = Recipe.create(
-    name: "Pizza royale" ,
-    logo: "750",
-    link: "https://www.750g.com/pizza-royale-au-barbecue-r75180.htm" ,
-    description: "description complete Pizza " ,
-    image: "https://static.750g.com/images/622-auto/b4d093dd2bffa8972341596dfc693999/pizza-royale-au-barbecue.jpeg",
-    user: user2,
-    photo: "",
-    photoexist: false,
-    ingredient: ""
-  )
 
 
 
-# friend21 = Friend.create(
-#     name: "Ugo et Magali user2" ,
-#     email: 'ugo@gmail.com',
-#     telephone: "0622456789" ,
-#     user: user2
-#   )
-# friend22 = Friend.create(
-#     name: "Tonio et Fatou user2" ,
-#     email: 'tonio@gmail.com',
-#     telephone: "0622456789" ,
-#     user: user2
-#   )
-# friend23 = Friend.create(
-#     name: "Marie et Loic user2" ,
-#     email: 'marie@gmail.com',
-#     telephone: "0622456789" ,
-#     user: user2
-#   )
-# reception21 = Reception.create(
-#     date: DateTime.new(2018,2,3),
-#     friend: friend21 ,
-#     recipe: recipe21
-#   )
-# reception22 = Reception.create(
-#     date: DateTime.new(2018,2,3),
-#     friend: friend21 ,
-#     recipe: recipe22
-#   )
+
+
+
 puts "seeds terminés"
