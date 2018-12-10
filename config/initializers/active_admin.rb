@@ -1,7 +1,5 @@
 def authenticate_admin!
-raise
   redirect_to new_user_session_path unless current_user && current_user.admin
-    #redirect_to new_user_session_path unless  !current_admin_user.nil?
 end
 
 
@@ -12,14 +10,18 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Memocook"
-config.authentication_method = :authenticate_admin!
+  config.site_title = "MemoCooking"
+  config.authentication_method = :authenticate_admin!
 
-config.current_user_method = :current_user
+  config.current_user_method = :current_user
 
-config.logout_link_path = :destroy_user_session_path
+  config.logout_link_path = :destroy_user_session_path
 
-config.logout_link_method = :delete
+  config.logout_link_method = :delete
+
+
+
+
 
 # config.current_user_method = :current_admin_user
 

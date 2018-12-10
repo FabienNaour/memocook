@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-
-  devise_for :users
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
-  ActiveAdmin.routes(self)
+  #devise_for :users  NAOUR
+  # devise_for :admin_users, ActiveAdmin::Devise.config NAOUR
 
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
@@ -19,6 +16,12 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_for :users
+  devise_scope :user do
+  get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
+  ActiveAdmin.routes(self)
 
 end
 
