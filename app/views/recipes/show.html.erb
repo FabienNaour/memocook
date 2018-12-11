@@ -20,10 +20,9 @@
     </div>
   <% else %>
       <div class="modal-body modal-body-custo">
-              <div class="modal-description"><%= @recipe.description %>
-              </div>
+              <div class="modal-description"><%= @recipe.description %> </div>
                 <% if @recipe.photoexist  %>
-                  <%= cl_image_tag @recipe.photo, height: 600, width: 350, crop: :fill %>
+                  <%= cl_image_tag @recipe.photo, height: 600, width: 370, crop: :fill %>
                 <% end %>
       </div>
   <% end %>

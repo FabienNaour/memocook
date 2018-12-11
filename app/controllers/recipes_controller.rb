@@ -63,6 +63,10 @@ if params[:_method] == "post"
     if @recipe.save
       redirect_to recipes_path
     else
+      @recipe = Recipe.new
+      @items = []
+      @items[0] = "Marmiton"
+      @items[1] = "750g.   "
       render :search
     end
   end
@@ -98,9 +102,15 @@ else
       @recipe.image =  ""
       @recipe.photo = @search_photo
       @recipe.photoexist = @photoexist
+
       if @recipe.save
+
         redirect_to recipes_path
       else
+        @recipe = Recipe.new
+        @items = []
+        @items[0] = "Marmiton"
+        @items[1] = "750g.   "
         render :new
       end
     end
