@@ -61,22 +61,27 @@
 
           <% if reception.date < DateTime.now  %>
             <div class="card-button-test card-button-test-opacity">
+                  <button type="button" class="btn padding-0 opacity-05"
+                       data-toggle="modal" data-target="#deleteModal<%= reception.id %>">
+                  <i class="fas fa-minus-circle btn-minus" ></i>
+                  </button>
           <% else %>
            <div class="card-button-test ">
-          <% end %>
-
                   <button type="button" class="btn padding-0"
                        data-toggle="modal" data-target="#deleteModal<%= reception.id %>">
                   <i class="fas fa-minus-circle btn-minus" ></i>
                   </button>
+          <% end %>
+
+
            </div>
 
 
-            <div class="card-button-ingredient">
+<!--             <div class="card-button-ingredient">
               <a class="iframemodale" href="#myModale"  data-value="<%=reception.recipe.ingredient%>">
                   <i class="fas fa-utensils btn-ingredient" ></i>
               </a>
-            </div>
+            </div> -->
 
 
           </div>
