@@ -36,6 +36,7 @@ en:
   profile: "Profile"
   sign_out: "Sign out"
   sign_in: "Sign in"
+  sign_up: "Sign up"
   send_me_reset_password_instructions: "Send me instructions"
   confirm_delete: 'Confirm delete:'
   names: "They eat : "

@@ -37,6 +37,7 @@ fr:
   profile: "Profil"
   sign_out: "Deconnexion"
   sign_in: "Connexion"
+  sign_up: "Inscription"
   send_me_reset_password_instructions: "Envoyez moi les instructions"
   confirm_delete: 'Confirmer suppression:'
   names: "Ont adoré : "

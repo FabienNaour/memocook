@@ -48,9 +48,13 @@
     <% else %>
 
 
+        <%= link_to new_user_registration_path, class: "home-navbar-wagon-item home-navbar-wagon-link" do %>
+          <i class="fa fa-user-plus"></i> <%= t("sign_up") %>
+        <% end %>
+
       <!-- Login link (when logged out) -->
       <%= link_to new_user_session_path, class: "home-navbar-wagon-item home-navbar-wagon-link" do %>
-        <i class="fa fa-user"></i> <%= t("sign_in") %>
+        <i class="fa fa-sign-in-alt"></i> <%= t("sign_in") %>
       <% end %>
     <% end %>
   </div>
@@ -74,6 +78,11 @@
           <% end %>
         </li>
       <% else %>
+        <li>
+          <%= link_to new_user_registration_path, class: "home-navbar-wagon-item home-navbar-wagon-link" do %>
+            <i class="fa fa-user-plus"></i> <%= t("sign_up") %>
+          <% end %>
+        </li>
         <li>
           <%= link_to new_user_session_path, class: "home-navbar-wagon-item home-navbar-wagon-link" do %>
             <i class="fa fa-sign-in-alt"></i> <%= t("sign_in") %>
