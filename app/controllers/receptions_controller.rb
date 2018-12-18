@@ -21,6 +21,7 @@ class ReceptionsController < ApplicationController
     @recipes_list = params[:reception][:recipe_id]
     @recipes_list.delete_if(&:blank?)
     @date= params[:reception][:date]
+    @description=params[:reception][:description]
 
 
     if (@friends_list.length != 0 && @recipes_list.length != 0 && @date != "")
@@ -33,7 +34,8 @@ class ReceptionsController < ApplicationController
           Reception.create(
               date: Date.parse(@date) ,
               friend: @friend_invitation,
-              recipe: @recipe_invitation
+              recipe: @recipe_invitation,
+              description: @description
             )
         end
       end
@@ -49,6 +51,6 @@ class ReceptionsController < ApplicationController
   private
 
   def receptions_params
-    params.require(:reception).permit(:date,:friend_id,:recipe_id)
+    params.require(:reception).permit(:date,:friend_id,:recipe_id, description)
   end
 end

@@ -79,15 +79,16 @@
         </li>
       <% else %>
         <li>
-          <%= link_to new_user_registration_path, class: "home-navbar-wagon-item home-navbar-wagon-link" do %>
-            <i class="fa fa-user-plus"></i> <%= t("sign_up") %>
-          <% end %>
-        </li>
-        <li>
           <%= link_to new_user_session_path, class: "home-navbar-wagon-item home-navbar-wagon-link" do %>
             <i class="fa fa-sign-in-alt"></i> <%= t("sign_in") %>
           <% end %>
         </li>
+        <li>
+          <%= link_to new_user_registration_path, class: "home-navbar-wagon-item home-navbar-wagon-link" do %>
+            <i class="fa fa-user-plus"></i> <%= t("sign_up") %>
+          <% end %>
+        </li>
+
       <% end %>
       </ul>
     </div>

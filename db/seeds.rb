@@ -116,28 +116,33 @@ reception11 = Reception.create(
 
     date: DateTime.new(2018,4,6),
     friend: friend11 ,
-    recipe: recipe11
+    recipe: recipe11,
+    description: ""
   )
 reception12 = Reception.create(
     date: DateTime.new(2018,2,4),
     friend: friend11 ,
-    recipe: recipe12
+    recipe: recipe12,
+    description: ""
   )
 
 reception13 = Reception.create(
     date: DateTime.new(2018,3,5),
     friend: friend11 ,
-    recipe: recipe13
+    recipe: recipe13,
+    description: ""
   )
 reception14 = Reception.create(
     date: DateTime.new(2018,1,3),
     friend: friend11 ,
-    recipe: recipe14
+    recipe: recipe14,
+    description: ""
   )
 reception15 = Reception.create(
     date: DateTime.new(2018,2,2),
     friend: friend11 ,
-    recipe: recipe15
+    recipe: recipe15,
+    description: ""
   )
 
 

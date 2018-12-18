@@ -72,8 +72,14 @@
                   <i class="fas fa-minus-circle btn-minus" ></i>
                   </button>
           <% end %>
-
-
+<!--           on affiche l'icone commentaire si il existe
+ -->        <% if reception.description != "" %>
+                <div class="card-button-test-ingredient">
+                  <a class="iframemodale" href="#myModale"  data-logo= "reception.recipe.logo" data-name= "" data-value="<%=reception.description%>">
+                      <i class="fas fa-comment-alt btn-ingredient" ></i>
+                  </a>
+                </div>
+          <% end %>
            </div>
 
 
