@@ -83,7 +83,7 @@ en:
       add_friend: "Add"
       add_recipes: "Add"
       invite_friend: "Invite "
-      no_friends_html: "It's time to test Memo<strong>Cook</strong>, register your first guest"
+      no_friends_html: "It's time to test Memo<strong>Cooking</strong>, register your first guest"
       nb_invite: "%{count} invitation(s)"
     new:
       title: "Add guest"
@@ -94,7 +94,7 @@ en:
     index:
       title: "My recipes"
       button_add: "Add "
-      no_recipes_html: "It's time to test Memo<strong>Cook</strong>, register your first recipe"
+      no_recipes_html: "It's time to test Memo<strong>Cooking</strong>, register your first recipe"
     new:
       title: "New recipe"
       name: "Name"
