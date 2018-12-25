@@ -55,6 +55,8 @@ class FriendsController < ApplicationController
         if @friend.save
           redirect_to friends_path
         else
+          @items = []
+          @items = load_avatar
           render :new
         end
   end
