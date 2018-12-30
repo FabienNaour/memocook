@@ -95,7 +95,12 @@
 <%= render 'partials/recipe-comment', reception: reception %>
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
   <a data-toggle="modal" href="#myModal<%= reception.id %>">
-    <div class="card-test">
+      <% if reception.date < DateTime.now  %>
+        <div class="card-test card-test-opacity ">
+      <% else %>
+       <div class="card-test ">
+      <% end %>
+    <!-- <div class="card-test"> -->
       <div class=" card-profile-test" >
 
         <% if reception.recipe.photoexist %>
@@ -135,13 +140,26 @@
 
 
     <%= render 'partials/modal-delete-recipe-friend' , reception: reception%>
+
+
+
+
+
+
     <div class="card-button-test">
-            <button type="button" class="btn padding-0"
+            <button type="button" class="btn padding-0 "
                  data-toggle="modal" data-target="#deleteModal<%= reception.id %>">
             <i class="fas fa-minus-circle btn-minus" ></i>
             </button>
      </div>
-
+<!--           on affiche l'icone commentaire si il existe
+-->        <% if reception.description != "" %>
+          <div class="card-button-test-ingredient-1">
+            <a class="iframemodale" href="#myModale"  data-logo= "reception.recipe.logo" data-name= "" data-value="<%=reception.description%>">
+                <i class="fas fa-comment-alt btn-ingredient" ></i>
+            </a>
+          </div>
+    <% end %>
   </a>
 
 </div>
